@@ -25,6 +25,7 @@ public class ArcadeMenu extends Application {
 			AnchorPane pane = loader.load();
 			
 			MenuController menuController = loader.getController();
+			menuController.setArcadeMenu(this);
 			
 			Scene scene = new Scene(pane);
 			
