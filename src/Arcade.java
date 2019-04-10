@@ -10,10 +10,10 @@ public class Arcade {
 		menu = new ArcadeMenu();
 		controller = new MenuController();
 		factory = new GameFactory();
-		database = new ScoreDatabase();
+		database = new ScoreDatabase("High Scores");
 	}
 
-    public void playGame() {
+    private void playGame() {
 
     }
 	
