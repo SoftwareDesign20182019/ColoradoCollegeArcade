@@ -12,6 +12,10 @@ public class Arcade {
 		factory = new GameFactory();
 		database = new ScoreDatabase();
 	}
+
+    public void playGame() {
+
+    }
 	
 	public static void main(String[] args) {
 		Arcade arcade = new Arcade();
