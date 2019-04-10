@@ -6,7 +6,8 @@ public class GameFactory {
     public Game selectGame(int userChoice) {
         switch (userChoice) {
             case 1:
-                return new RandomScore();
+                RandomScore randomScore = new RandomScore();
+                return randomScore;
             default:
                 return null;
         }
