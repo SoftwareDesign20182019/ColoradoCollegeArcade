@@ -8,7 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 
-public class ArcardeMenu extends Application {
+public class ArcadeMenu extends Application {
 
 	private Stage primaryStage;
 	
@@ -23,6 +23,7 @@ public class ArcardeMenu extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader(Main.class.getResource("/MenuFXML.fxml"));
 			AnchorPane pane = loader.load();
+			
 			MenuController menuController = loader.getController();
 			
 			Scene scene = new Scene(pane);

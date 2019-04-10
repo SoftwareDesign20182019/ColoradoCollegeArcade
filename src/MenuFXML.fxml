@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
 
+<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ArcardeMenu">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000d5" height="700.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <Line endX="600.0" endY="670.0" startY="670.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="641.0" startY="641.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="613.0" startY="613.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="586.0" startY="586.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="562.0" startY="562.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="539.0" startY="539.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="518.0" startY="518.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="500.0" startY="500.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="486.0" startY="486.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="475.0" startY="475.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="468.0" startY="468.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="462.0" startY="462.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="458.0" startY="458.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="455.0" startY="455.0" stroke="#369aa37a" />
+      <Line endX="600.0" endY="453.0" startY="453.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="452.0" startY="452.0" stroke="#369aa37b" />
+      <Line endX="300.0" endY="452.0" startX="300.0" startY="700.0" stroke="#369aa37b" />
+      <QuadCurve controlX="520.0" controlY="490.0" endX="450.0" endY="452.0" fill="#ffffff00" startX="600.0" startY="650.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="80.0" controlY="490.0" endX="150.0" endY="452.0" fill="#ffffff00" startY="650.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="170.0" controlY="500.0" endX="230.0" endY="452.0" fill="#ffffff00" startX="140.0" startY="700.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="430.0" controlY="500.0" endX="370.0" endY="452.0" fill="#ffffff00" startX="460.0" startY="700.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="580.0" controlY="460.0" endX="500.0" endY="452.0" fill="#ffffff00" startX="600.0" startY="500.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="20.0" controlY="460.0" endX="100.0" endY="452.0" fill="#ffffff00" startY="500.0" stroke="#379aa17a" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
