@@ -1,9 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Random;
 
 public class ScoreDatabase {
     private static final String PORT_NUMBER = "8898";
@@ -27,7 +25,6 @@ public class ScoreDatabase {
                     "jdbc:mysql://localhost:" + PORT_NUMBER + "/" + databaseName + "?user=root&password=root&serverTimezone=UTC"); // MySQL
             stmt = conn.createStatement();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -38,27 +35,32 @@ public class ScoreDatabase {
      */
     private void createTable(String tableName)  {
         String tableValues = "id int NOT NULL AUTO_INCREMENT, " +
-                             "name varchar(3) NOT NULL, " +
-                             "score int NO NULL" +
-                             "primary key (id)";
+                "name varchar(3) NOT NULL, " +
+                "score int NO NULL" +
+                "primary key (id)";
         String sql = "create table if not exists " + tableName + " (" + tableValues + ");";
         try {
             stmt.execute(sql);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
-//    private void addScore(String table, String name, int score)  {
-//////        String sql = "insert into Student (name) values ('" + name + "')";
-////        //TODO make sure that table name is coming in in proper format
-////        String sql = "insert into " + table +
-////        try {
-////            stmt.executeUpdate(sql);
-////        } catch (SQLException e) {
-////            // TODO Auto-generated catch block
-////            e.printStackTrace();
-////        }
-////    }
+    private void addScore(String table, String name, int score) {
+        String sql = "insert into " + table + " (id, name, score) values ('" + name + "', " + score;
+        try {
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void getScores(String table) {
+        String sql = "SELECT name, score FROM " + table;
+        try {
+            stmt.execute(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
