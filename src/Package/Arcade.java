@@ -19,12 +19,22 @@ public class Arcade {
 	}
 	*/
 	
-	public void runNewGame(int choice) {
+	public String runNewGame(int choice) {
+		int highScore;
+		String playerName;
+		String gameName;
+		
     	Game game = factory.selectGame(choice);
-    	int highScore = game.playGame();
-    	String playerName = game.getName();
-    	String gameName = game.toString();
-    	database.addScore(gameName, playerName, highScore);
+    	if (game != null) {
+        	highScore = game.playGame();
+        	playerName = game.getName();
+        	gameName = game.toString();
+        	database.addScore(gameName, playerName, highScore);
+    	}
+    	else {
+        	gameName = null;	
+    	}
+    	return gameName;
 	}
 	
 	private void showMenu() {
