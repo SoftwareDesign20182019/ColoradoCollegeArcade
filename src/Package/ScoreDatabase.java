@@ -8,23 +8,12 @@ import java.sql.Statement;
 public class ScoreDatabase {
     private static final String PORT_NUMBER = "8889";
     private Connection conn;
-    //private Statement stmt;
+    private Statement stmt;
 
     public ScoreDatabase(String databaseName){
-//        createDatabase(databaseName);
+        createConnection(databaseName);
     }
-    
-    public void createDatabase(String databaseName) {
-		try (
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root,");
-                Statement stmt = connection.createStatement()
-        ) {
-			String sql = ("create database if not exists " + databaseName);
-			stmt.execute(sql);
-		} catch(SQLException ex) {
-			ex.printStackTrace();
-		}
-	}
+
 
     /**
      * Creates a connection to the server and database and creates a database with databaseName if one does not already exist
@@ -32,13 +21,13 @@ public class ScoreDatabase {
      */
     public void createConnection(String databaseName) {
         try {
-            //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root");
-            //stmt = conn.createStatement();
-            //String sql = "create database if not exists " + databaseName;
-            //stmt.execute(sql);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root");
+            stmt = conn.createStatement();
+            String sql = "create database if not exists " + databaseName;
+            stmt.execute(sql);
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:" + PORT_NUMBER + "/" + databaseName + "?user=root&password=root&serverTimezone=UTC"); // MySQL
-            //stmt = conn.createStatement();
+            stmt = conn.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
         }
