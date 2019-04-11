@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPress" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.MenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000d5" height="700.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
       <Label alignment="CENTER" ellipsisString="" prefHeight="34.0" prefWidth="600.0" text="Choose Your Game">
@@ -51,7 +51,7 @@
             <Font name="Silom" size="18.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="8.0" stroke="BLACK" strokeType="INSIDE" width="20.0" x="23.0" y="110.0">
+      <Rectangle fx:id="selectorRec" arcHeight="5.0" arcWidth="5.0" height="8.0" stroke="BLACK" strokeType="INSIDE" width="20.0" x="23.0" y="110.0">
          <fill>
             <LinearGradient endX="0.8894230769230769" endY="0.8942307692307693" startX="0.10576923076923077">
                <stops>
@@ -77,7 +77,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Circle radius="92.0" stroke="TRANSPARENT" strokeType="INSIDE" translateX="300.0" translateY="452.0">
+      <Circle radius="100.0" stroke="TRANSPARENT" strokeType="INSIDE" translateX="300.0" translateY="452.0">
          <fill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -111,6 +111,6 @@
       <Line endX="600.0" endY="613.0" startY="613.0" stroke="#369aa37b" />
       <Line endX="600.0" endY="641.0" startY="641.0" stroke="#369aa37b" />
       <Line endX="600.0" endY="670.0" startY="670.0" stroke="#369aa37b" />
-      <Button layoutX="270.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Button" />
+      <Button layoutX="650.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleButtonPress" text="Button" />
    </children>
 </AnchorPane>

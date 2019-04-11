@@ -7,6 +7,8 @@ import javafx.stage.*;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 public class ArcadeMenu extends Application {
 
@@ -21,6 +23,8 @@ public class ArcadeMenu extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
 		primaryStage.setTitle("Menu");
 		primaryStage.setScene(new Scene(root, 600,700));
+		
+		
 		primaryStage.show();
 		
 	}
