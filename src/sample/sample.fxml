@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000d6" height="700.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="86.0" layoutY="614.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
+         <fill>
+            <LinearGradient endX="0.5288461538461539" endY="1.0" startX="0.5288461538461539">
+               <stops>
+                  <Stop color="#6dafc2" />
+                  <Stop color="#e497d1" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Line endX="500.0" layoutX="100.0" layoutY="676.0" startX="-100.0" stroke="#c30ecd" />
+      <Line endX="500.0" layoutX="100.0" layoutY="656.0" startX="-100.0" stroke="#c30ecd" />
+      <Line endX="500.0" layoutX="100.0" layoutY="640.0" startX="-100.0" stroke="#c30ecd" />
+      <Line endX="500.0" layoutX="100.0" layoutY="628.0" startX="-100.0" stroke="#c30ecd" />
+      <Line endX="500.0" layoutX="100.0" layoutY="620.0" startX="-100.0" stroke="#c30ecd" />
+      <Line endX="500.0" layoutX="100.0" layoutY="616.0" startX="-100.0" stroke="#c30ecd" />
+      <Line endX="300.0" endY="700.0" startX="300.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="350.0" endY="700.0" startX="325.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="250.0" endY="700.0" startX="275.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="200.0" endY="700.0" startX="250.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="400.0" endY="700.0" startX="350.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="150.0" endY="700.0" startX="225.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="450.0" endY="700.0" startX="375.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="100.0" endY="700.0" startX="200.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="500.0" endY="700.0" startX="400.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="50.0" endY="700.0" startX="175.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="550.0" endY="700.0" startX="425.0" startY="616.0" stroke="#c30ecd" />
+      <Line endY="700.0" startX="150.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="600.0" endY="700.0" startX="450.0" startY="616.0" stroke="#c30ecd" />
+      <Line endY="676.0" startX="125.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="600.0" endY="674.0" startX="475.0" startY="616.0" stroke="#c30ecd" />
+      <Line endY="656.0" startX="100.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="600.0" endY="656.0" startX="500.0" startY="616.0" stroke="#c30ecd" />
+      <Line endY="640.0" startX="75.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="600.0" endY="640.0" startX="525.0" startY="616.0" stroke="#c30ecd" />
+      <Line endY="628.0" startX="50.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="600.0" endY="628.0" startX="550.0" startY="616.0" stroke="#c30ecd" />
+      <Line endY="620.0" startX="25.0" startY="616.0" stroke="#c30ecd" />
+      <Line endX="600.0" endY="620.0" startX="575.0" startY="616.0" stroke="#c30ecd" />
+      <Label layoutX="191.0" layoutY="150.0" text="High Scores" textFill="#85c2f5">
+         <font>
+            <Font name="Silom" size="35.0" />
+         </font>
+      </Label>
+      <Line endX="223.0" endY="193.0" startX="193.0" startY="193.0" stroke="#80d0ff" strokeWidth="3.0" />
+      <Line endX="404.0" endY="193.0" startX="253.0" startY="193.0" stroke="#80d0ff" strokeWidth="3.0" />
+      <Label layoutX="145.0" layoutY="50.0" text="GAME NAME" textFill="#85c2f5">
+         <font>
+            <Font name="Silom" size="50.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
