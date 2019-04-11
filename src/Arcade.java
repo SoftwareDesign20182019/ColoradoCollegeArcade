@@ -12,13 +12,23 @@ public class Arcade {
 		factory = new GameFactory();
 		database = new ScoreDatabase("High Scores");
 	}
+	
+	private void updateDatabase(String gameName, String name, int score) {
+		database.addScore(gameName, name, score);
+	}
+	
+	private void showMenu() {
+    	String[] args = {};
+    	menu.main(args);
+	}
 
-    private void playGame() {
-
+    private void playGame(Arcade arcade) {
+    	arcade.showMenu();
     }
 	
 	public static void main(String[] args) {
 		Arcade arcade = new Arcade();
+		playGame(arcade);
 	}
 
 }

@@ -33,7 +33,7 @@ public class ScoreDatabase {
      * Creates a table if one does not already exist
      * @param tableName - the name of the table
      */
-    private void createTable(String tableName)  {
+    public void createTable(String tableName)  {
         String tableValues = "id int NOT NULL AUTO_INCREMENT, " +
                 "name varchar(3) NOT NULL, " +
                 "score int NO NULL" +
@@ -46,7 +46,7 @@ public class ScoreDatabase {
         }
     }
 
-    private void addScore(String table, String name, int score) {
+    public void addScore(String table, String name, int score) {
         String sql = "insert into " + table + " (id, name, score) values ('" + name + "', " + score;
         try {
             stmt.executeUpdate(sql);
@@ -55,7 +55,7 @@ public class ScoreDatabase {
         }
     }
 
-    private void getScores(String table) {
+    public void getScores(String table) {
         String sql = "SELECT name, score FROM " + table;
         try {
             stmt.execute(sql);
