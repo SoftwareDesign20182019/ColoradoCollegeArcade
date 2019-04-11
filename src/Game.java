@@ -1,5 +1,7 @@
 public interface Game {
-	
-	public int playGame();
+
+	int playGame();
+
+	String toString();
 	
 }

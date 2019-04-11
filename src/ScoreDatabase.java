@@ -4,20 +4,24 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ScoreDatabase {
-    private static final String PORT_NUMBER = "8898";
+    private static final String PORT_NUMBER = "8889";
     private Statement stmt;
 
-    public ScoreDatabase(String databaseName){
-        createConnection(databaseName);
+    public ScoreDatabase() {
+//        createConnection("ArcadeGames");
+//        System.out.println("created connection");
     }
+
 
     /**
      * Creates a connection to the server and database and creates a database with databaseName if one does not already exist
      * @param databaseName - the name of the database to open a connection to or create if not already made
      */
     public void createConnection(String databaseName) {
+
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root");
+
             stmt = conn.createStatement();
             String sql = "create database if not exists " + databaseName;
             stmt.execute(sql);
@@ -63,4 +67,8 @@ public class ScoreDatabase {
             e.printStackTrace();
         }
     }
+
+//    public static void main(String[] args){
+////        ScoreDatabase database = new ScoreDatabase("ArcadeGames");
+//    }
 }
