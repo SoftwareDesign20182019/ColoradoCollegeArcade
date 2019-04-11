@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 public class ArcadeMenu extends Application {
 
 	private Stage primaryStage;
-	private Arcade arcade;
 	
 	/**
 	 * simple constructor for the class
@@ -27,7 +26,6 @@ public class ArcadeMenu extends Application {
 	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception{
-		
 		this.primaryStage = primaryStage;
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
 		
@@ -40,7 +38,6 @@ public class ArcadeMenu extends Application {
 		primaryStage.show();
 		
 	}
-	
 	/**
 	 * main method for launching the application
 	 * @param args empty

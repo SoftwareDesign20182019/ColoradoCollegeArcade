@@ -1,9 +1,6 @@
 package Package;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * Class for accessing the high score database
@@ -28,7 +25,7 @@ public class ScoreDatabase {
      * Creates a connection to the server and database and creates a database with databaseName if one does not already exist
      * @param databaseName - the name of the database to open a connection to or create if not already made
      */
-    private void createConnection(String databaseName) {
+    public boolean createConnection(String databaseName) {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root");
             stmt = conn.createStatement();
@@ -37,8 +34,10 @@ public class ScoreDatabase {
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:" + PORT_NUMBER + "/" + databaseName + "?user=root&password=root&serverTimezone=UTC"); // MySQL
             stmt = conn.createStatement();
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -46,7 +45,7 @@ public class ScoreDatabase {
      * Creates a table if one does not already exist
      * @param tableName - the name of the table
      */
-    private void createTable(String tableName)  {
+    public boolean createTable(String tableName) {
         String tableValues = "id int NOT NULL AUTO_INCREMENT, " +
                 "name varchar(3) NOT NULL, " +
                 "score int NOT NULL, " +
@@ -55,8 +54,10 @@ public class ScoreDatabase {
         try {
 //        	Statement stmt = this.conn.createStatement();
             stmt.execute(sql);
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -66,14 +67,16 @@ public class ScoreDatabase {
      * @param name - the 3 character name
      * @param score - the score
      */
-    public void addScore(String table, String name, int score) {
+    public boolean addScore(String table, String name, int score) {
         createTable(table);
         String sql = "insert into " + table + " (name, score) values ('" + name + "', " + score + ")";
         try {
 //        	Statement stmt = this.conn.createStatement();
             stmt.executeUpdate(sql);
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -82,11 +85,46 @@ public class ScoreDatabase {
      * Gets the scores from a table (game)
      * @param table - the game to retrieve high scores from
      */
-    public void getScores(String table) {
+    public boolean getScores(String table) {
         String sql = "SELECT name, score FROM " + table;
         try {
 //        	Statement stmt = this.conn.createStatement();
             stmt.execute(sql);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public int[] getScores2(String table) {
+        int count = 0;
+        try {
+            ResultSet rset = stmt.executeQuery("select score from " + table);
+            while (rset.next()) {
+                count++;
+            }
+            int[] ids = new int[count];
+            rset = stmt.executeQuery("select score from " + table);
+            count = 0;
+            while (rset.next()) {
+                ids[count] = rset.getInt("id");
+                count++;
+            }
+            return ids;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void getScores3(String table) {
+        try {
+            ResultSet rs = stmt.executeQuery("SELECT score FROM " + table);
+            while (rs.next()) {
+                System.out.println(rs.getInt("score"));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
