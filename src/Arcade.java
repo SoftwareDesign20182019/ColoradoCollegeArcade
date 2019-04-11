@@ -5,6 +5,7 @@ public class Arcade {
 	private MenuController controller;
 	private GameFactory factory;
 	private ScoreDatabase database;
+	private Game game;
 	
 	public Arcade() {
 		menu = new ArcadeMenu();
@@ -24,6 +25,8 @@ public class Arcade {
 
     private void playGame(Arcade arcade) {
     	arcade.showMenu();
+    	game = factory.selectGame(userChoice);
+    	game.playGame();
     }
 	
 	public static void main(String[] args) {
