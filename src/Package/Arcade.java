@@ -24,8 +24,6 @@ public class Arcade {
     	int highScore = game.playGame();
     	String playerName = game.getName();
     	String gameName = game.toString();
-//		database.createConnection("ArcadeGames");
-    	database.createTable(gameName);
     	database.addScore(gameName, playerName, highScore);
 	}
 	
