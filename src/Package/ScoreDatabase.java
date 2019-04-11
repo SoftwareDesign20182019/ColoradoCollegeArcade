@@ -45,7 +45,7 @@ public class ScoreDatabase {
      * Creates a table if one does not already exist
      * @param tableName - the name of the table
      */
-    public boolean createTable(String tableName)  {
+    public boolean createTable(String tableName) {
         String tableValues = "id int NOT NULL AUTO_INCREMENT, " +
                 "name varchar(3) NOT NULL, " +
                 "score int NOT NULL, " +
@@ -119,10 +119,10 @@ public class ScoreDatabase {
         }
     }
 
-    public void getScores3(String table){
+    public void getScores3(String table) {
         try {
             ResultSet rs = stmt.executeQuery("SELECT score FROM " + table);
-            while(rs.next()){
+            while (rs.next()) {
                 System.out.println(rs.getInt("score"));
             }
         } catch (SQLException e) {
