@@ -36,33 +36,38 @@ public class MenuController {
 		{
 			choice = selection;
 			System.out.println("CHOICE: "+choice);
-			arcade.runNewGame(choice);
+			if (choice == 5)
+				System.exit(0);
+//			arcade.runNewGame(choice);
 		}
 		//DOWN
-		else if (e.getCode() == KeyCode.S && selection == 3 ) {
+		else if (e.getCode() == KeyCode.S && selection == 4) {
+			selectorRec.setY(230);
+			selection++;
+		} else if (e.getCode() == KeyCode.S && selection == 3 ) {
 			selectorRec.setY(200);
 			selection++;
-		}
-		else if (e.getCode() == KeyCode.S && selection == 2 ) {
+		} else if (e.getCode() == KeyCode.S && selection == 2 ) {
 			selectorRec.setY(170);
 			selection++;
-		}
-		else if (e.getCode() == KeyCode.S && selection == 1 ) {
+		} else if (e.getCode() == KeyCode.S && selection == 1 ) {
 			selectorRec.setY(140);
 			selection++;
 		}
-		
+
+
 		//UP
 		else if (e.getCode() == KeyCode.W && selection == 2 ) {
 			selectorRec.setY(110);
 			selection--;
-		}
-		else if (e.getCode() == KeyCode.W && selection == 3 ) {
+		} else if (e.getCode() == KeyCode.W && selection == 3 ) {
 			selectorRec.setY(140);
 			selection--;
-		}
-		else if (e.getCode() == KeyCode.W && selection == 4 ) {
+		} else if (e.getCode() == KeyCode.W && selection == 4 ) {
 			selectorRec.setY(170);
+			selection--;
+		} else if (e.getCode() == KeyCode.W && selection == 5) {
+			selectorRec.setY(200);
 			selection--;
 		}
 		

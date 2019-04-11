@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPress" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.MenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000d5" height="700.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
@@ -112,5 +110,10 @@
       <Line endX="600.0" endY="641.0" startY="641.0" stroke="#369aa37b" />
       <Line endX="600.0" endY="670.0" startY="670.0" stroke="#369aa37b" />
       <Button layoutX="650.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleButtonPress" text="Button" />
+       <Label layoutX="50.0" layoutY="223.0" text="Quit" textFill="WHITE">
+           <font>
+               <Font name="Silom" size="18.0"/>
+           </font>
+       </Label>
    </children>
 </AnchorPane>
