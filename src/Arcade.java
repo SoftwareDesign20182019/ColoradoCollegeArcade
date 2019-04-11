@@ -9,7 +9,7 @@ public class Arcade {
 	
 	public Arcade() {
 		menu = new ArcadeMenu();
-		controller = new MenuController();
+		controller = new MenuController(menu, this);
 		factory = new GameFactory();
 		database = new ScoreDatabase("High Scores");
 	}
@@ -18,20 +18,25 @@ public class Arcade {
 		database.addScore(gameName, name, score);
 	}
 	
+	public void startNewGame(int choice) {
+    	game = factory.selectGame(choice);
+    	game.playGame();
+	}
+	
 	private void showMenu() {
     	String[] args = {};
     	menu.main(args);
 	}
-
+	
+	/*
     private void playGame(Arcade arcade) {
     	arcade.showMenu();
-    	game = factory.selectGame(userChoice);
-    	game.playGame();
     }
+    */
 	
 	public static void main(String[] args) {
 		Arcade arcade = new Arcade();
-		playGame(arcade);
+		arcade.showMenu();
 	}
 
 }
