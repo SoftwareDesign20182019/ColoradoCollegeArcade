@@ -11,7 +11,7 @@ public class Arcade {
 		menu = new ArcadeMenu();
 		controller = new MenuController(menu, this);
 		factory = new GameFactory();
-		database = new ScoreDatabase("High Scores");
+		database = new ScoreDatabase("HighScores");
 	}
 	
 	private void updateDatabase(String gameName, String name, int score) {
