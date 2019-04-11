@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000d5" height="700.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <Label alignment="CENTER" prefHeight="34.0" prefWidth="600.0" text="Choose Your Game">
+         <font>
+            <Font name="Silom" size="51.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7692307692307693" startX="1.0" startY="0.3028846153846154">
+               <stops>
+                  <Stop color="#3ab1bc" />
+                  <Stop color="#3ab1bc" offset="0.007434944237918215" />
+                  <Stop color="WHITE" offset="0.4214046822742475" />
+                  <Stop color="WHITE" offset="0.633275727020676" />
+                  <Stop color="#023af0" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="300.0" stroke="TRANSPARENT" strokeType="INSIDE" translateY="400.0" width="600.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.04807692307692307" startX="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#96369cf7" />
+                  <Stop color="#96369cf7" offset="0.007434944237918215" />
+                  <Stop color="#41254563" offset="0.8587360594795539" />
+                  <Stop color="#d807eb00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Circle radius="92.0" stroke="TRANSPARENT" strokeType="INSIDE" translateX="300.0" translateY="452.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#ee00ff" />
+                  <Stop color="#ee00ff" offset="0.007434944237918215" />
+                  <Stop color="#631d6300" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Circle>
+      <QuadCurve controlX="20.0" controlY="460.0" endX="100.0" endY="452.0" fill="#ffffff00" startY="500.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="580.0" controlY="460.0" endX="500.0" endY="452.0" fill="#ffffff00" startX="600.0" startY="500.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="430.0" controlY="500.0" endX="370.0" endY="452.0" fill="#ffffff00" startX="460.0" startY="700.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="170.0" controlY="500.0" endX="230.0" endY="452.0" fill="#ffffff00" startX="140.0" startY="700.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="80.0" controlY="490.0" endX="150.0" endY="452.0" fill="#ffffff00" startY="650.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="520.0" controlY="490.0" endX="450.0" endY="452.0" fill="#ffffff00" startX="600.0" startY="650.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <Line endX="300.0" endY="452.0" startX="300.0" startY="700.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="452.0" startY="452.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="453.0" startY="453.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="455.0" startY="455.0" stroke="#369aa37a" />
+      <Line endX="600.0" endY="458.0" startY="458.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="462.0" startY="462.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="468.0" startY="468.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="475.0" startY="475.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="486.0" startY="486.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="500.0" startY="500.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="518.0" startY="518.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="539.0" startY="539.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="562.0" startY="562.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="586.0" startY="586.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="613.0" startY="613.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="641.0" startY="641.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="670.0" startY="670.0" stroke="#369aa37b" />
+   </children>
+</AnchorPane>
