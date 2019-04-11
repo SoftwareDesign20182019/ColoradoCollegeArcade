@@ -5,11 +5,20 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Class for accessing the high score database
+ * Can create a connection, create a table for a game, and add and get scores
+ */
 public class ScoreDatabase {
     private static final String PORT_NUMBER = "8889";
     private Connection conn;
     private Statement stmt;
 
+    /**
+     * Constructor that creates a connection with the database, or creates a new one if there is not one already
+     *
+     * @param databaseName - the name of the database
+     */
     public ScoreDatabase(String databaseName){
         createConnection(databaseName);
     }
@@ -19,7 +28,7 @@ public class ScoreDatabase {
      * Creates a connection to the server and database and creates a database with databaseName if one does not already exist
      * @param databaseName - the name of the database to open a connection to or create if not already made
      */
-    public void createConnection(String databaseName) {
+    private void createConnection(String databaseName) {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root");
             stmt = conn.createStatement();
@@ -37,34 +46,46 @@ public class ScoreDatabase {
      * Creates a table if one does not already exist
      * @param tableName - the name of the table
      */
-    public void createTable(String tableName)  {
+    private void createTable(String tableName)  {
         String tableValues = "id int NOT NULL AUTO_INCREMENT, " +
                 "name varchar(3) NOT NULL, " +
                 "score int NOT NULL, " +
                 "primary key (id)";
         String sql = "create table if not exists " + tableName + " (" + tableValues + ");";
         try {
-        	Statement stmt = this.conn.createStatement();
+//        	Statement stmt = this.conn.createStatement();
             stmt.execute(sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Adds a score to the table, creating a table for the game if one does not exist already
+     * @param table - the game
+     * @param name - the 3 character name
+     * @param score - the score
+     */
     public void addScore(String table, String name, int score) {
+        createTable(table);
         String sql = "insert into " + table + " (name, score) values ('" + name + "', " + score + ")";
         try {
-        	Statement stmt = this.conn.createStatement();
+//        	Statement stmt = this.conn.createStatement();
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * TODO error handling if the table doesn't exist?
+     * Gets the scores from a table (game)
+     * @param table - the game to retrieve high scores from
+     */
     public void getScores(String table) {
         String sql = "SELECT name, score FROM " + table;
         try {
-        	Statement stmt = this.conn.createStatement();
+//        	Statement stmt = this.conn.createStatement();
             stmt.execute(sql);
         } catch (SQLException e) {
             e.printStackTrace();
