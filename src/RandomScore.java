@@ -7,4 +7,8 @@ public class RandomScore implements Game {
     private int scoreGame(){
         return (int) (Math.random() * 10);
     }
+    
+    public String toString() {
+    	return "RandomScore";
+    }
 }
