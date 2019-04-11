@@ -1,5 +1,11 @@
 package Package;
 
+/**
+ * main class for operating the arcade
+ * handles database interactions, the creation of games,
+ * and the playing of games
+ *
+ */
 public class Arcade {
 	
 	private ArcadeMenu menu;
@@ -8,17 +14,22 @@ public class Arcade {
 	private ScoreDatabase database;
 	private Game game;
 	
+	/**
+	 * simple constructor for the arcade,
+	 * creates a new game factory and database for storing scores
+	 */
 	public Arcade() {
 		factory = new GameFactory();
 		database = new ScoreDatabase("ArcadeGames");
 	}
 	
-	/*
-	private void updateDatabase(String gameName, String name, int score) {
-		database.addScore(gameName, name, score);
-	}
-	*/
-	
+	/**
+	 * takes the choice picked from the game menu and
+	 * creates a corresponding game to be played
+	 * then saves the high score, player, and game to the database
+	 * @param choice integer choice for the game to play
+	 * @return the string representation of each game
+	 */
 	public String runNewGame(int choice) {
 		int highScore;
 		String playerName;
@@ -37,16 +48,26 @@ public class Arcade {
     	return gameName;
 	}
 	
+	/**
+	 * starts the arcade menu application
+	 */
 	private void showMenu() {
     	String[] args = {};
-//    	menu.setArcade(this);
 		ArcadeMenu.main(args);
 	}
 	
+	/**
+	 * creates a new arcade menu application
+	 */
 	private void createMenu() {
 		menu = new ArcadeMenu();
 	}
-			
+	
+	/**
+	 * main method for the class -
+	 * creates an instance of this class for calling other methods
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Arcade arcade = new Arcade();
 		arcade.createMenu();

@@ -6,14 +6,25 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * class for the creation of the javaFX game menu
+ *
+ */
 public class ArcadeMenu extends Application {
 
 	private Stage primaryStage;
 	private Arcade arcade;
 	
+	/**
+	 * simple constructor for the class
+	 */
 	public ArcadeMenu() {
 	}
 	
+	/**
+	 * overriden method from Application parent
+	 * connects the FXML file to the stage
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception{
 		
@@ -30,10 +41,10 @@ public class ArcadeMenu extends Application {
 		
 	}
 	
-	public void setArcade(Arcade arcade) {
-//		this.arcade = arcade;
-	}
-
+	/**
+	 * main method for launching the application
+	 * @param args empty
+	 */
     public static void main(String[] args) {
 		launch(args);
 	}

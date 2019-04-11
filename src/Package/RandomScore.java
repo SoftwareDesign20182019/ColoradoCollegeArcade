@@ -1,16 +1,32 @@
 package Package;
 import java.util.Random;
 
+/**
+ * Game implementation that randomly returns high score to the player
+ *
+ */
 public class RandomScore implements Game {
 
+	/**
+	 * runs the game
+	 * @return the high score for the game
+	 */
     public int playGame(){
         return scoreGame();
     }
-
+    
+    /**
+     * gives a random high score for the game
+     * @return the randomly calculated integer
+     */
     private int scoreGame(){
-        return (int) (Math.random() * 10);
+        return (int) (Math.random() * 100000);
     }
     
+    /**
+     * currently gives the player a random 3-letter name
+     * @return the 3 letter name string
+     */
     public String getName() {
     	Random r = new Random();
     	String name = "";
@@ -21,6 +37,10 @@ public class RandomScore implements Game {
     	return name;
     }
     
+    /**
+     * gives the string representation of the game
+     * @return the string representation
+     */
     public String toString() {
     	return "RandomScore";
     }

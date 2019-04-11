@@ -6,6 +6,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 
+/**
+ * Controller class for the game select menu view
+ */
 public class MenuController {
 	
 	private ArcadeMenu arcadeMenu;
@@ -15,16 +18,28 @@ public class MenuController {
 	
 	@FXML
 	private Rectangle selectorRec;
-
+	
+	/**
+	 * simple constructor creates an instance of an arcade
+	 */
 	public MenuController() {
 		arcade = new Arcade();
 	}
 	
+	/**
+	 * buttonPress handler for pressing the button in menu view
+	 * @param event the clicking of the button
+	 */
 	@FXML
 	public void handleButtonPress(ActionEvent event) {
 		System.out.println("I AM WILL");
 	}
 	
+	/**
+	 * keyPress handler for scrolling through various game options
+	 * in the game menu
+	 * @param e the keyEvent (pressing of a key)
+	 */
 	@FXML
 	private void handleKeyPress(KeyEvent e)
 	{

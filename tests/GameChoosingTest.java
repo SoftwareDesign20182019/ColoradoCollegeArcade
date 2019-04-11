@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class gameChoosingTest {
+public class GameChoosingTest {
 	private Arcade arcade;
 	
 	@Before
