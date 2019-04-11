@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
@@ -10,7 +11,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000d5" height="700.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
-      <Label alignment="CENTER" prefHeight="34.0" prefWidth="600.0" text="Choose Your Game">
+      <Label alignment="CENTER" ellipsisString="" prefHeight="34.0" prefWidth="600.0" text="Choose Your Game">
          <font>
             <Font name="Silom" size="51.0" />
          </font>
@@ -25,7 +26,21 @@
                </stops>
             </LinearGradient>
          </textFill>
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
       </Label>
+      <Label text="Driving Range" textFill="WHITE" translateX="50.0" translateY="100.0">
+         <font>
+            <Font name="Silom" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Endless Runner" textFill="WHITE" translateX="50.0" translateY="130.0">
+         <font>
+            <Font name="Silom" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="30.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" width="200.0" x="40.0" y="100.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="300.0" stroke="TRANSPARENT" strokeType="INSIDE" translateY="400.0" width="600.0">
          <fill>
             <LinearGradient endX="1.0" endY="0.04807692307692307" startX="1.0" startY="1.0">
