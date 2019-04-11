@@ -1,21 +1,24 @@
 package Package;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ScoreDatabase {
-    private static final String PORT_NUMBER = "3306";
+    private static final String PORT_NUMBER = "8889";
     private Connection conn;
     //private Statement stmt;
 
     public ScoreDatabase(String databaseName){
-        createDatabase(databaseName);
+//        createDatabase(databaseName);
     }
     
     public void createDatabase(String databaseName) {
 		try (
-				Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/", 
-						"root", "root");
-				Statement stmt = connection.createStatement();
-				) {
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root,");
+                Statement stmt = connection.createStatement()
+        ) {
 			String sql = ("create database if not exists " + databaseName);
 			stmt.execute(sql);
 		} catch(SQLException ex) {

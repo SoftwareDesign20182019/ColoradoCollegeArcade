@@ -15,11 +15,9 @@ public class MenuController {
 	
 	@FXML
 	private Rectangle selectorRec;
-	
-	
-	public void setArcade(Arcade arcade)
-	{
-		this.arcade = arcade;
+
+	public MenuController() {
+		arcade = new Arcade();
 	}
 	
 	@FXML
@@ -30,7 +28,7 @@ public class MenuController {
 	@FXML
 	private void handleKeyPress(KeyEvent e)
 	{
-		
+
 		//ENTER
 		if (e.getCode() == KeyCode.ENTER)
 		{
@@ -38,7 +36,7 @@ public class MenuController {
 			System.out.println("CHOICE: "+choice);
 			if (choice == 5)
 				System.exit(0);
-//			arcade.runNewGame(choice);
+			arcade.runNewGame(choice);
 		}
 		//DOWN
 		else if (e.getCode() == KeyCode.S && selection == 4) {

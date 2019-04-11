@@ -6,11 +6,11 @@ public class Arcade {
 	private MenuController controller;
 	private GameFactory factory;
 	private ScoreDatabase database;
-	//private Game game;
+	private Game game;
 	
 	public Arcade() {
 		factory = new GameFactory();
-		database = new ScoreDatabase("HighScores");
+		database = new ScoreDatabase("ArcadeGames");
 	}
 	
 	/*
@@ -24,13 +24,15 @@ public class Arcade {
     	int highScore = game.playGame();
     	String playerName = game.getName();
     	String gameName = game.toString();
+		database.createConnection("ArcadeGames");
     	database.createTable(gameName);
     	database.addScore(gameName, playerName, highScore);
 	}
 	
 	private void showMenu() {
     	String[] args = {};
-    	menu.main(args);
+//    	menu.setArcade(this);
+		ArcadeMenu.main(args);
 	}
 	
 	private void createMenu() {
