@@ -16,6 +16,7 @@ public class ArcadeMenu extends Application {
 	public void start(Stage primaryStage) throws Exception{
 		
 		this.primaryStage = primaryStage;
+		
 	
 		Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
 		primaryStage.setTitle("Menu");

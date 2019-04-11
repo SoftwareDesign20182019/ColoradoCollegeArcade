@@ -8,21 +8,22 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.MenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000d5" height="700.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
       <Label alignment="CENTER" ellipsisString="" prefHeight="34.0" prefWidth="600.0" text="Choose Your Game">
          <font>
-            <Font name="Silom" size="51.0" />
+            <Font name="Silom" size="50.0" />
          </font>
          <textFill>
-            <LinearGradient endX="1.0" endY="0.7692307692307693" startX="1.0" startY="0.3028846153846154">
+            <LinearGradient endX="1.0" endY="0.7884615384615384" startX="1.0" startY="0.3028846153846154">
                <stops>
-                  <Stop color="#3ab1bc" />
-                  <Stop color="#3ab1bc" offset="0.007434944237918215" />
+                  <Stop color="#3a76ba" />
+                  <Stop color="#3a76ba" offset="0.10780669144981413" />
                   <Stop color="WHITE" offset="0.4214046822742475" />
-                  <Stop color="WHITE" offset="0.633275727020676" />
-                  <Stop color="#023af0" offset="1.0" />
+                  <Stop color="#f08802" offset="0.7732342007434942" />
+                  <Stop color="#ed02ed7f" offset="0.8959107806691443" />
+                  <Stop color="#ed02ed7f" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -30,17 +31,40 @@
             <Point3D />
          </rotationAxis>
       </Label>
-      <Label text="Driving Range" textFill="WHITE" translateX="50.0" translateY="100.0">
+      <Label text="High Score Generator" textFill="WHITE" translateX="50.0" translateY="100.0">
          <font>
             <Font name="Silom" size="18.0" />
          </font>
       </Label>
-      <Label text="Endless Runner" textFill="WHITE" translateX="50.0" translateY="130.0">
+      <Label text="Deathrace For Love" textFill="WHITE" translateX="50.0" translateY="130.0">
          <font>
             <Font name="Silom" size="18.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="30.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" width="200.0" x="40.0" y="100.0" />
+      <Label text="Isley's Revenge" textFill="WHITE" translateX="50.0" translateY="160.0">
+         <font>
+            <Font name="Silom" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Driving Range" textFill="WHITE" translateX="50.0" translateY="190.0">
+         <font>
+            <Font name="Silom" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="8.0" stroke="BLACK" strokeType="INSIDE" width="20.0" x="23.0" y="110.0">
+         <fill>
+            <LinearGradient endX="0.8894230769230769" endY="0.8942307692307693" startX="0.10576923076923077">
+               <stops>
+                  <Stop color="#466ee0" />
+                  <Stop color="#466ee0" offset="0.12267657992565055" />
+                  <Stop color="WHITE" offset="0.379182156133829" />
+                  <Stop color="#e48d1b" offset="0.5752508361204014" />
+                  <Stop color="#f073e1" offset="0.929368029739777" />
+                  <Stop color="#f073e1" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="300.0" stroke="TRANSPARENT" strokeType="INSIDE" translateY="400.0" width="600.0">
          <fill>
             <LinearGradient endX="1.0" endY="0.04807692307692307" startX="1.0" startY="1.0">
@@ -87,5 +111,6 @@
       <Line endX="600.0" endY="613.0" startY="613.0" stroke="#369aa37b" />
       <Line endX="600.0" endY="641.0" startY="641.0" stroke="#369aa37b" />
       <Line endX="600.0" endY="670.0" startY="670.0" stroke="#369aa37b" />
+      <Button layoutX="270.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Button" />
    </children>
 </AnchorPane>
