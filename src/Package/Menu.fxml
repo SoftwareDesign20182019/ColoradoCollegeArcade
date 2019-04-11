@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPress" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.MenuController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000d5" height="700.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2b2b2b" height="700.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
       <Label alignment="CENTER" ellipsisString="" prefHeight="34.0" prefWidth="600.0" text="Choose Your Game">
          <font>
             <Font name="Silom" size="50.0" />
@@ -28,6 +33,9 @@
          <rotationAxis>
             <Point3D />
          </rotationAxis>
+         <effect>
+            <Bloom threshold="0.43" />
+         </effect>
       </Label>
       <Label text="High Score Generator" textFill="WHITE" translateX="50.0" translateY="100.0">
          <font>
@@ -62,6 +70,9 @@
                </stops>
             </LinearGradient>
          </fill>
+         <effect>
+            <Glow level="0.6" />
+         </effect>
       </Rectangle>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="300.0" stroke="TRANSPARENT" strokeType="INSIDE" translateY="400.0" width="600.0">
          <fill>
@@ -86,33 +97,102 @@
             </RadialGradient>
          </fill>
       </Circle>
-      <QuadCurve controlX="20.0" controlY="460.0" endX="100.0" endY="452.0" fill="#ffffff00" startY="500.0" stroke="#379aa17a" strokeType="INSIDE" />
-      <QuadCurve controlX="580.0" controlY="460.0" endX="500.0" endY="452.0" fill="#ffffff00" startX="600.0" startY="500.0" stroke="#379aa17a" strokeType="INSIDE" />
-      <QuadCurve controlX="430.0" controlY="500.0" endX="370.0" endY="452.0" fill="#ffffff00" startX="460.0" startY="700.0" stroke="#379aa17a" strokeType="INSIDE" />
-      <QuadCurve controlX="170.0" controlY="500.0" endX="230.0" endY="452.0" fill="#ffffff00" startX="140.0" startY="700.0" stroke="#379aa17a" strokeType="INSIDE" />
-      <QuadCurve controlX="80.0" controlY="490.0" endX="150.0" endY="452.0" fill="#ffffff00" startY="650.0" stroke="#379aa17a" strokeType="INSIDE" />
-      <QuadCurve controlX="520.0" controlY="490.0" endX="450.0" endY="452.0" fill="#ffffff00" startX="600.0" startY="650.0" stroke="#379aa17a" strokeType="INSIDE" />
-      <Line endX="300.0" endY="452.0" startX="300.0" startY="700.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="452.0" startY="452.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="453.0" startY="453.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="455.0" startY="455.0" stroke="#369aa37a" />
-      <Line endX="600.0" endY="458.0" startY="458.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="462.0" startY="462.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="468.0" startY="468.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="475.0" startY="475.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="486.0" startY="486.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="500.0" startY="500.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="518.0" startY="518.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="539.0" startY="539.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="562.0" startY="562.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="586.0" startY="586.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="613.0" startY="613.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="641.0" startY="641.0" stroke="#369aa37b" />
-      <Line endX="600.0" endY="670.0" startY="670.0" stroke="#369aa37b" />
+      <QuadCurve controlX="20.0" controlY="460.0" endX="100.0" endY="452.0" fill="#ffffff00" startY="500.0" stroke="#379aa17a" strokeType="INSIDE" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></QuadCurve>
+      <QuadCurve controlX="580.0" controlY="460.0" endX="500.0" endY="452.0" fill="#ffffff00" startX="600.0" startY="500.0" stroke="#379aa17a" strokeType="INSIDE" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></QuadCurve>
+      <QuadCurve controlX="430.0" controlY="500.0" endX="370.0" endY="452.0" fill="#ffffff00" startX="460.0" startY="700.0" stroke="#379aa17a" strokeType="INSIDE" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></QuadCurve>
+      <QuadCurve controlX="170.0" controlY="500.0" endX="230.0" endY="452.0" fill="#ffffff00" startX="140.0" startY="700.0" stroke="#379aa17a" strokeType="INSIDE" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></QuadCurve>
+      <QuadCurve controlX="80.0" controlY="490.0" endX="150.0" endY="452.0" fill="#ffffff00" startY="650.0" stroke="#379aa17a" strokeType="INSIDE" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></QuadCurve>
+      <QuadCurve controlX="520.0" controlY="490.0" endX="450.0" endY="452.0" fill="#ffffff00" startX="600.0" startY="650.0" stroke="#379aa17a" strokeType="INSIDE" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></QuadCurve>
+      <Line endX="300.0" endY="452.0" startX="300.0" startY="700.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="452.0" startY="452.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="453.0" startY="453.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="455.0" startY="455.0" stroke="#369aa37a" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="458.0" startY="458.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="462.0" startY="462.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="468.0" startY="468.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="475.0" startY="475.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="486.0" startY="486.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="500.0" startY="500.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="518.0" startY="518.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="539.0" startY="539.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="562.0" startY="562.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="586.0" startY="586.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="613.0" startY="613.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="641.0" startY="641.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
+      <Line endX="600.0" endY="670.0" startY="670.0" stroke="#369aa37b" strokeWidth="2.0">
+         <effect>
+            <Bloom threshold="0.0" />
+         </effect></Line>
       <Button layoutX="650.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleButtonPress" text="Button" />
-       <Label layoutX="50.0" layoutY="223.0" text="Quit" textFill="WHITE">
+       <Label layoutX="50.0" text="Quit" textFill="WHITE" translateY="220.0">
            <font>
-               <Font name="Silom" size="18.0"/>
+               <Font name="Silom" size="18.0" />
            </font>
        </Label>
    </children>
