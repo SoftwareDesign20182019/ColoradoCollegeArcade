@@ -12,7 +12,7 @@ public class Arcade {
 	
 	private ArcadeMenu menu;
 	private MenuController controller;
-	private GameFactory factory;
+	private ApplicationFactory factory;
 	private ScoreDatabase database;
 	private Game game;
     private HashMap<String, String> topTenScores;
@@ -22,7 +22,7 @@ public class Arcade {
 	 * creates a new game factory and database for storing scores
 	 */
     public Arcade() {
-		factory = new GameFactory();
+		factory = new ApplicationFactory();
 		database = new ScoreDatabase("ArcadeGames");
         topTenScores = new HashMap<>();
 	}
