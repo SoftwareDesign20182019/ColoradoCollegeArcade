@@ -12,7 +12,7 @@ public class RandomScore implements Game {
 	 * runs the game
 	 * @return the high score for the game
 	 */
-    public int playGame(Stage stage) throws Exception{
+    public int playGame(Stage stage, Arcade arcade) throws Exception{
         return scoreGame();
     }
     
@@ -45,4 +45,12 @@ public class RandomScore implements Game {
     public String toString() {
     	return "RandomScore";
     }
+    
+    public boolean isGameDone() {
+    	return true;
+    }
+    
+    public void setGameToDone() {
+    }
+
 }

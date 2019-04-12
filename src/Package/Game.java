@@ -11,7 +11,7 @@ public interface Game {
 	 * runs the game
 	 * @return the score of the game
 	 */
-	int playGame(Stage stage) throws Exception;
+	int playGame(Stage stage, Arcade arcade) throws Exception;
 	
 	/**
 	 * prompts the user to enter their name via a new javaFX window
@@ -24,5 +24,10 @@ public interface Game {
 	 * @return the string
 	 */
 	String toString();
+	
+    public boolean isGameDone();
+    
+    public void setGameToDone();
+
 	
 }

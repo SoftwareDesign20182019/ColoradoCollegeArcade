@@ -35,24 +35,25 @@ public class Arcade {
 	 * @return the string representation of each game
 	 * @throws Exception 
 	 */
-	public String runNewGame(int choice) throws Exception {
-		Stage stage = new Stage();
-		int highScore;
-		String playerName;
-		String gameName;
-		
-    	Game game = factory.selectGame(choice);
+	public void runNewGame(int choice) throws Exception {
+		Stage stage = new Stage();		
+    	game = factory.selectGame(choice);
     	if (game != null) {
-        	highScore = game.playGame(stage);
-        	playerName = game.getName();
-        	gameName = game.toString();
-            database.addScore(gameName, playerName, Integer.toString(highScore));
-            topTenScores = database.getScores(gameName);
+        	game.playGame(stage, this);
+        	//playerName = game.getName();
+        	//gameName = game.toString();
+            //database.addScore(gameName, playerName, Integer.toString(highScore));
+            //topTenScores = database.getScores(gameName);
     	}
-    	else {
-        	gameName = null;	
-    	}
-    	return gameName;
+	}
+	
+	public void gameUpdate(int score) {
+		int highScore = score;
+		String playerName = game.getName();
+		String gameName = game.toString();
+        database.addScore(gameName, playerName, Integer.toString(highScore));
+        topTenScores = database.getScores(gameName);
+		
 	}
 	
 	/**
