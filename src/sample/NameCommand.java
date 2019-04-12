@@ -3,6 +3,9 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+/**
+ * Command class for selecting a letter and changing the corresponding label to that letter
+ */
 public class NameCommand implements Command {
     private int row;
     private int col;
@@ -13,12 +16,18 @@ public class NameCommand implements Command {
     private Label label;
 
 
-    //TODO PASS IN THE INSTANCE OF THE TEXT BOX FOR THIS COMMAND INSTEAD OF THE INT
+    /**
+     * Constructor that takes the arguments for this instance of the command
+     * Initializes the 2dArray of the alphabet
+     *
+     * @param row   - the row number when enter was pressed
+     * @param col   - the column number when enter was pressed
+     * @param label - the label to be changed
+     */
     public NameCommand(int row, int col, Label label) {
         this.row = row;
         this.col = col;
         this.label = label;
-//        this.text1 = text1;
         alphabet = new String[3][10];
         alphabet[0][0] = "A";
         alphabet[0][1] = "B";
@@ -55,16 +64,21 @@ public class NameCommand implements Command {
 
     }
 
+    /**
+     * Sets the texts of the label to the indicated letter
+     * @return - the letter selected
+     */
     @Override
     public String execute() {
 
-//        text1.setTextContent(alphabet[row][col]);
         label.setText(alphabet[row][col]);
-        System.out.println(alphabet[row][col]);
         return alphabet[row][col];
     }
 
 
+    /**
+     * Sets the label to a space, appearing blank
+     */
     @Override
     public void undo() {
         label.setText(alphabet[2][8]);

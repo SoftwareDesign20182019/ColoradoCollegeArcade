@@ -9,8 +9,10 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.Stack;
 
+/**
+ * Controller class for the name selector GUI
+ */
 public class Controller {
-    private Main main;
     private int row = 0;
     private int column = 0;
     private boolean topRow;
@@ -38,6 +40,9 @@ public class Controller {
     @FXML
     private Label label3;
 
+    /**
+     * Constructor that initializes variables
+     */
     public Controller() {
         this.stack = new Stack<Command>();
         topRow = true;
@@ -46,22 +51,27 @@ public class Controller {
         rightCol = false;
     }
 
+    /**
+     * Button press event necessary for functionality because of weird button bug
+     *
+     * @param event - button press
+     */
     @FXML
     public void handleButtonPress(ActionEvent event) {
 
     }
 
+    /**
+     * Handles key presses and does different actions based on the key pressed and the state
+     * @param e - the key event
+     */
     @FXML
     private void handleKeyPress(KeyEvent e) {
         //ENTER
         if (e.getCode() == KeyCode.ENTER) {
-//            choice = selection; //a method for selection
-            System.out.println("ENTER");
 
             //BACKSPACE
-            System.out.println(stack.isEmpty());
             if (!stack.isEmpty() && row == 2 && column == 8) {
-                System.out.println("undo");
                 Command command = stack.pop();
                 command.undo();
                 lettersInputed--;
@@ -70,10 +80,12 @@ public class Controller {
             //ENTER
             else if (lettersInputed == 3 && row == 2 && column == 9) {
                 String name = letterOne + letterTwo + letterThree;
-                System.out.println(name);
                 System.exit(0);
-                //TODO ENTER THEIR NAME AND GO TO NEXT SCREEN
-            } else if (!(row == 2 && column == 9) && !(row == 2 && column == 8)) {
+                //TODO RETURN NAME AND GO TO NEXT SCREEN
+            }
+
+            //LETTER SELECTION
+            else if (!(row == 2 && column == 9) && !(row == 2 && column == 8)) {
                 switch (lettersInputed) {
                     case 0:
                         Command commandOne = new NameCommand(row, column, label1);
@@ -120,7 +132,9 @@ public class Controller {
         }
     }
 
-
+    /**
+     * Move the cursor one letter up
+     */
     private void moveUp() {
         row--;
         currentY -= 55;
@@ -130,6 +144,9 @@ public class Controller {
         bottomRow = false;
     }
 
+    /**
+     * Moves the cursor one letter down
+     */
     private void moveDown() {
         row++;
         currentY += 55;
@@ -139,6 +156,9 @@ public class Controller {
         topRow = false;
     }
 
+    /**
+     * Moves the cursor one letter left
+     */
     private void moveLeft() {
         column--;
         currentX -= 45;
@@ -148,6 +168,9 @@ public class Controller {
         rightCol = false;
     }
 
+    /**
+     * Moves the cursor one letter right
+     */
     private void moveRight() {
         column++;
         currentX += 45;
