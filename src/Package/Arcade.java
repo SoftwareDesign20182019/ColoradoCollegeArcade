@@ -9,7 +9,7 @@ public class Arcade {
 	private GameFactory factory;
 	private ScoreDatabase database;
 	private Game game;
-    HashMap<String, String> topTenScores;
+    private HashMap<String, String> topTenScores;
 
 	public Arcade() {
 		factory = new GameFactory();
@@ -28,8 +28,6 @@ public class Arcade {
     	int highScore = game.playGame();
     	String playerName = game.getName();
     	String gameName = game.toString();
-//		database.createConnection("ArcadeGames");
-//    	database.createTable(gameName);
         database.addScore(gameName, playerName, Integer.toString(highScore));
         topTenScores = database.getScores(game.toString());
 	}
