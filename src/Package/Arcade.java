@@ -19,14 +19,9 @@ public class Arcade {
 	}
 	*/
 	
-	public void runNewGame(int choice) {
-    	Game game = factory.selectGame(choice);
-    	int highScore = game.playGame();
-    	String playerName = game.getName();
-    	String gameName = game.toString();
-//		database.createConnection("ArcadeGames");
-    	database.createTable(gameName);
-    	database.addScore(gameName, playerName, highScore);
+	public void runNewGame(int choice) throws Exception {
+		GameFactory factory = new GameFactory();
+		game = factory.selectGame(choice);
 	}
 	
 	private void showMenu() {

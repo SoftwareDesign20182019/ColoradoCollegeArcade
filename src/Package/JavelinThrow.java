@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class JavelinThrow extends Application {
+public class JavelinThrow extends Application implements Game {
 	
 	private Stage primaryStage;
 
@@ -29,5 +29,22 @@ public class JavelinThrow extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	@Override
+	public int playGame() {
+		String[] args = {};
+		main(args);
+		return 0;
+	}
+
+	public String toString() {
+		return "javelinThrow";
+	}
+	
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

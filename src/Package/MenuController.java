@@ -26,7 +26,7 @@ public class MenuController {
 	}
 	
 	@FXML
-	private void handleKeyPress(KeyEvent e)
+	private void handleKeyPress(KeyEvent e) throws Exception
 	{
 
 		//ENTER

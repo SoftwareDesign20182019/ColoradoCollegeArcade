@@ -17,7 +17,7 @@ import javafx.util.Duration;
 import javafx.animation.*;
 import javafx.animation.Animation.Status;
 
-public class JavelinController implements Initializable{
+public class JavelinController implements Initializable {
 	
 	@FXML
 	ImageView javelinMan;
@@ -93,7 +93,7 @@ public class JavelinController implements Initializable{
 	
 	private void displayScore() throws Exception
 	{
-		String newLabel = "You Scored: " + total + "! (Press S to quit)";
+		String newLabel = "You Scored: " + total + "! (Game Over)";
 		label.setText(newLabel);
 		
 		ParallelTransition labelMove = new ParallelTransition();
@@ -148,7 +148,6 @@ public class JavelinController implements Initializable{
 		{
 			power++;
 		}
-		System.out.println("Power: " + power);
 	}
 	
 	private void accuracyBarAnimation()
@@ -176,7 +175,6 @@ public class JavelinController implements Initializable{
 	private void accuracyBarStop()
 	{
 		accuracyBarSequence.stop();
-		System.out.println("ACCURACY: " + (int) accuracyBar.getTranslateX());
 		if(accuracyBar.getTranslateX() > 100)
 		{
 			accuracy = (int) accuracyBar.getTranslateX();
@@ -189,9 +187,7 @@ public class JavelinController implements Initializable{
 			accuracy = 100 - accuracy;
 			accuracy = 100 - accuracy;
 		}
-		System.out.println("Accuracy: " + accuracy);
 		total = (int) (accuracy + power)/2;
-		System.out.println("Total: " + total );
 	}
 	
 	private int returnScore() {
@@ -227,7 +223,6 @@ public class JavelinController implements Initializable{
 		else if (e.getCode() == KeyCode.S && sequence == 4)
 		{
 			returnScore();
-			System.exit(0);
 		}
 	}
 

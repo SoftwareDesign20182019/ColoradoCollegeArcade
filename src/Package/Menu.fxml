@@ -42,7 +42,7 @@
             <Font name="Silom" size="18.0" />
          </font>
       </Label>
-      <Label text="Deathrace For Love" textFill="WHITE" translateX="50.0" translateY="130.0">
+      <Label text="Javelin Throw!" textFill="WHITE" translateX="50.0" translateY="130.0">
          <font>
             <Font name="Silom" size="18.0" />
          </font>
