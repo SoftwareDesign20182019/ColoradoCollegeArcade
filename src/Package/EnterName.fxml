@@ -68,16 +68,16 @@
                 <Bloom />
             </effect>
         </Label>
-        <Label layoutX="235.0" layoutY="275.0" text="A" textFill="#f59943" translateY="-85.0">
+        <Label fx:id="label1" layoutX="235.0" layoutY="275.0" text=" " textFill="#f59943" translateY="-85.0">
             <font>
                 <Font name="Silom" size="48.0" />
             </font></Label>
-        <Label layoutX="283.0" layoutY="275.0" text="B" textFill="#f59943" translateY="-85.0">
+        <Label fx:id="label2" layoutX="283.0" layoutY="275.0" text=" " textFill="#f59943" translateY="-85.0">
             <font>
                 <Font name="Silom" size="48.0" />
             </font>
         </Label>
-        <Label layoutX="331.0" layoutY="275.0" text="C" textFill="#f59943" translateY="-85.0">
+        <Label fx:id="label3" layoutX="331.0" layoutY="275.0" text=" " textFill="#f59943" translateY="-85.0">
             <font>
                 <Font name="Silom" size="48.0" />
             </font>
@@ -257,7 +257,6 @@
                 <Font name="Silom" size="48.0"/>
             </font>
         </Label>
-        <Text fx:id="text1" layoutX="124.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text"/>
         <Button layoutX="700.0" layoutY="800.0" mnemonicParsing="false" onAction="#handleButtonPress"
                 text="Bottom Text"/>
     </children>

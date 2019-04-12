@@ -2,15 +2,17 @@ package Package;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 
-import javax.xml.soap.Text;
 import java.util.Stack;
 
+/**
+ * Controller class for the name selector GUI
+ */
 public class Controller {
-    private Main main;
     private int row = 0;
     private int column = 0;
     private boolean topRow;
@@ -20,14 +22,27 @@ public class Controller {
     private int currentX = 76;
     private int currentY = 338;
     private Stack<Command> stack;
-    private int lettersInputed;
+    private int lettersInputed = 0;
+    private String letterOne;
+    private String letterTwo;
+    private String letterThree;
+
 
     @FXML
     private Rectangle selectorRec;
 
-    //    @FXML
-    private Text text1;
+    @FXML
+    private Label label1;
 
+    @FXML
+    private Label label2;
+
+    @FXML
+    private Label label3;
+
+    /**
+     * Constructor that initializes variables
+     */
     public Controller() {
         this.stack = new Stack<Command>();
         topRow = true;
@@ -36,30 +51,63 @@ public class Controller {
         rightCol = false;
     }
 
+    /**
+     * Button press event necessary for functionality because of weird button bug
+     *
+     * @param event - button press
+     */
     @FXML
     public void handleButtonPress(ActionEvent event) {
 
     }
 
+    /**
+     * Handles key presses and does different actions based on the key pressed and the state
+     * @param e - the key event
+     */
     @FXML
     private void handleKeyPress(KeyEvent e) {
         //ENTER
         if (e.getCode() == KeyCode.ENTER) {
-//            choice = selection; //a method for selection
-            System.out.println("ENTER");
 
             //BACKSPACE
             if (!stack.isEmpty() && row == 2 && column == 8) {
                 Command command = stack.pop();
                 command.undo();
+                lettersInputed--;
             }
 
             //ENTER
             else if (lettersInputed == 3 && row == 2 && column == 9) {
-                //TODO ENTER THEIR NAME AND GO TO NEXT SCREEN
-            } else {
-                Command command = new NameCommand(row, column, text1);
-                command.execute();
+                String name = letterOne + letterTwo + letterThree;
+                System.exit(0);
+                //TODO RETURN NAME AND GO TO NEXT SCREEN
+            }
+
+            //LETTER SELECTION
+            else if (!(row == 2 && column == 9) && !(row == 2 && column == 8)) {
+                switch (lettersInputed) {
+                    case 0:
+                        Command commandOne = new NameCommand(row, column, label1);
+                        letterOne = commandOne.execute();
+                        stack.push(commandOne);
+
+                        lettersInputed++;
+                        break;
+                    case 1:
+                        Command commandTwo = new NameCommand(row, column, label2);
+                        letterTwo = commandTwo.execute();
+                        stack.push(commandTwo);
+                        lettersInputed++;
+                        break;
+                    case 2:
+                        Command commandThree = new NameCommand(row, column, label3);
+                        letterThree = commandThree.execute();
+                        stack.push(commandThree);
+                        lettersInputed++;
+                        break;
+                }
+
             }
         }
         //MOVE UP
@@ -84,25 +132,33 @@ public class Controller {
         }
     }
 
-
+    /**
+     * Move the cursor one letter up
+     */
     private void moveUp() {
         row--;
-        currentY -= 60;
+        currentY -= 55;
         selectorRec.setY(currentY);
         if (row == 0)
             topRow = true;
         bottomRow = false;
     }
 
+    /**
+     * Moves the cursor one letter down
+     */
     private void moveDown() {
         row++;
-        currentY += 60;
+        currentY += 55;
         selectorRec.setY(currentY);
         if (row == 2)
             bottomRow = true;
         topRow = false;
     }
 
+    /**
+     * Moves the cursor one letter left
+     */
     private void moveLeft() {
         column--;
         currentX -= 45;
@@ -112,6 +168,9 @@ public class Controller {
         rightCol = false;
     }
 
+    /**
+     * Moves the cursor one letter right
+     */
     private void moveRight() {
         column++;
         currentX += 45;
