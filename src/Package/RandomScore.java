@@ -1,5 +1,6 @@
 package Package;
 import java.util.Random;
+import javafx.stage.Stage;
 
 /**
  * Game implementation that randomly returns high score to the player
@@ -11,7 +12,7 @@ public class RandomScore implements Game {
 	 * runs the game
 	 * @return the high score for the game
 	 */
-    public int playGame(){
+    public int playGame(Stage stage) throws Exception{
         return scoreGame();
     }
     
