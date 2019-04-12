@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Arc?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="700.0" maxWidth="600.0" minHeight="700.0" minWidth="600.0"
+            onKeyPressed="#handleKeyPress" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="sample.Controller">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2b2b2b" height="700.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" height="86.0" layoutY="614.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
@@ -233,16 +231,34 @@
             <Font name="Silom" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="365.0" layoutY="305.0" text="⏎" textFill="#f59943" translateX="-16.0" translateY="90.0">
+        <Label layoutX="362.0" layoutY="299.0" text="⏎" textFill="#f59943" translateX="119.0" translateY="90.0">
          <font>
             <Font name="Silom" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="410.0" layoutY="305.0" text="⌫" textFill="#f59943" translateX="-15.0" translateY="103.0">
+        <Label layoutX="406.0" layoutY="305.0" text="⌫" textFill="#f59943" translateX="30.0" translateY="103.0">
          <font>
             <Font name="Silom" size="28.0" />
          </font>
       </Label>
-      <Line endX="110.0" endY="340.0" startX="79.0" startY="340.0" stroke="#80d0ff" strokeWidth="3.0" />
+        <Rectangle fx:id="selectorRec" arcHeight="5.0" arcWidth="5.0" fill="#82d1ff" height="7.0" stroke="BLACK"
+                   strokeType="INSIDE" width="37.0" x="76.0" y="338.0">
+            <effect>
+                <Bloom threshold="0.37"/>
+            </effect>
+        </Rectangle>
+        <Label layoutX="356.0" layoutY="395.0" text="." textFill="#f59943">
+            <font>
+                <Font name="Silom" size="48.0"/>
+            </font>
+        </Label>
+        <Label layoutX="395.0" layoutY="394.0" text="-" textFill="#f59943">
+            <font>
+                <Font name="Silom" size="48.0"/>
+            </font>
+        </Label>
+        <Text fx:id="text1" layoutX="124.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text"/>
+        <Button layoutX="700.0" layoutY="800.0" mnemonicParsing="false" onAction="#handleButtonPress"
+                text="Bottom Text"/>
     </children>
 </AnchorPane>
