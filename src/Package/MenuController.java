@@ -22,7 +22,7 @@ public class MenuController {
 	
 	@FXML
 	public void handleButtonPress(ActionEvent event) {
-		System.out.println("I AM WILL");
+
 	}
 	
 	@FXML
