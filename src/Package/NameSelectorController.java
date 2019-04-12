@@ -61,6 +61,10 @@ public class NameSelectorController {
 
     }
 
+    public String returnName(String name) {
+        return name;
+    }
+
     /**
      * Handles key presses and does different actions based on the key pressed and the state
      * @param e - the key event
@@ -80,6 +84,7 @@ public class NameSelectorController {
             //ENTER
             else if (lettersInputed == 3 && row == 2 && column == 9) {
                 String name = letterOne + letterTwo + letterThree;
+                returnName(name);
                 System.exit(0);
                 //TODO RETURN NAME AND GO TO NEXT SCREEN
             }
