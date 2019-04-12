@@ -1,8 +1,7 @@
 package sample;
 
 import javafx.fxml.FXML;
-
-import javax.xml.soap.Text;
+import javafx.scene.control.Label;
 
 public class NameCommand implements Command {
     private int row;
@@ -11,14 +10,15 @@ public class NameCommand implements Command {
     private String[][] alphabet;
 
     @FXML
-    private Text text1;
+    private Label label;
 
 
     //TODO PASS IN THE INSTANCE OF THE TEXT BOX FOR THIS COMMAND INSTEAD OF THE INT
-    public NameCommand(int row, int col, Text text1) {
+    public NameCommand(int row, int col, Label label) {
         this.row = row;
         this.col = col;
-        this.text1 = text1;
+        this.label = label;
+//        this.text1 = text1;
         alphabet = new String[3][10];
         alphabet[0][0] = "A";
         alphabet[0][1] = "B";
@@ -50,18 +50,23 @@ public class NameCommand implements Command {
         alphabet[2][5] = "Z";
         alphabet[2][6] = ".";
         alphabet[2][7] = "-";
-        alphabet[2][8] = "&";
+        alphabet[2][8] = " ";
         alphabet[2][9] = "*";
 
     }
 
     @Override
-    public void execute() {
-        text1.setTextContent(alphabet[row][col]);
+    public String execute() {
+
+//        text1.setTextContent(alphabet[row][col]);
+        label.setText(alphabet[row][col]);
+        System.out.println(alphabet[row][col]);
+        return alphabet[row][col];
     }
+
 
     @Override
     public void undo() {
-
+        label.setText(alphabet[2][8]);
     }
 }

@@ -2,7 +2,7 @@ package sample;
 
 public interface Command {
 
-    void execute();
+    String execute();
 
     void undo();
 }
