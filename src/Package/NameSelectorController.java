@@ -10,9 +10,9 @@ import javafx.scene.shape.Rectangle;
 import java.util.Stack;
 
 /**
- * Controller class for the name selector GUI
+ * NameSelectorController class for the name selector GUI
  */
-public class Controller {
+public class NameSelectorController {
     private int row = 0;
     private int column = 0;
     private boolean topRow;
@@ -43,7 +43,7 @@ public class Controller {
     /**
      * Constructor that initializes variables
      */
-    public Controller() {
+    public NameSelectorController() {
         this.stack = new Stack<Command>();
         topRow = true;
         bottomRow = false;
