@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 public class NameSelector extends Application {
 
+    private String name;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("HighScores.fxml"));
@@ -23,7 +25,9 @@ public class NameSelector extends Application {
         stage.show();
     }
 
-
-    public static void main(String[] args) {
+    public String openNameSelector(Stage stage) throws Exception {
+        start(stage);
+        return name;
     }
+
 }
