@@ -19,17 +19,7 @@ public class ApplicationFactory {
                 return randomScore;
             case 2:
             	JavelinGame javelinGame = new JavelinGame();
-            	
-            	FXMLLoader loader = new FXMLLoader(getClass().getResource("Javelin.fxml"));
-        		Parent javelinRoot = loader.load();
-        		//JavelinController controller = loader.<JavelinController>getController();
-        		//controller.initData(javelinGame);
-        		Stage javelinStage = new Stage();
-        		javelinStage.setTitle("Javelin Game");
-        		javelinStage.setScene(new Scene(javelinRoot, 800,400));
-        		javelinStage.show();
             	return javelinGame;
-            	
             default:
                 return null;
         }

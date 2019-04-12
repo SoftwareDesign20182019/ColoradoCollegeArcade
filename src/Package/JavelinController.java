@@ -40,6 +40,7 @@ public class JavelinController implements Initializable {
 	private int total;
 	private int distance;
 	private JavelinGame game;
+	private boolean isGameDone;
 	
 	SequentialTransition powerBarSequence;
 	SequentialTransition accuracyBarSequence;
@@ -55,6 +56,7 @@ public class JavelinController implements Initializable {
 	}
 	
 	public void initData(JavelinGame game) {
+		isGameDone = false;
 		this.game = game;
 	}
 	
@@ -199,7 +201,7 @@ public class JavelinController implements Initializable {
 		game.setScore(total);
 		game.setGameDone();
 	}
-	
+		
 	@FXML
 	public void handleButtonPress(ActionEvent event){}
 	

@@ -12,7 +12,8 @@ public class Arcade {
 	
 	private ArcadeMenu menu;
 	private MenuController controller;
-	private ApplicationFactory factory;
+	private ApplicationFactory appFactory;
+	private ViewFactory viewFactory;
 	private ScoreDatabase database;
 	private Game game;
     private HashMap<String, String> topTenScores;
@@ -22,7 +23,8 @@ public class Arcade {
 	 * creates a new game factory and database for storing scores
 	 */
     public Arcade() {
-		factory = new ApplicationFactory();
+    	viewFactory = new ViewFactory();
+		appFactory = new ApplicationFactory();
 		database = new ScoreDatabase("ArcadeGames");
         topTenScores = new HashMap<>();
 	}
@@ -40,12 +42,11 @@ public class Arcade {
 		String playerName;
 		String gameName;
 		
-    	Game game = factory.selectGame(choice);
+    	Game game = appFactory.selectGame(choice);
+    	viewFactory.openView(choice);
     	if (game != null) {
-    		while(!game.isGameDone()) {
-    			highScore = game.getScore();
-    		}
-    		System.out.println("Game has finished");
+    		while(!game.isGameDone()) {}
+    		highScore = game.getScore();
         	playerName = game.getName();
         	gameName = game.toString();
             database.addScore(gameName, playerName, Integer.toString(highScore));
