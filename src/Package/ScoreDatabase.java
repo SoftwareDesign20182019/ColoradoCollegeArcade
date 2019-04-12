@@ -1,6 +1,7 @@
 package Package;
 
 import java.sql.*;
+import java.util.*;
 
 /**
  * Class for accessing the high score database
@@ -48,7 +49,7 @@ public class ScoreDatabase {
     public boolean createTable(String tableName) {
         String tableValues = "id int NOT NULL AUTO_INCREMENT, " +
                 "name varchar(3) NOT NULL, " +
-                "score int NOT NULL, " +
+                "score varchar(50) NOT NULL, " +
                 "primary key (id)";
         String sql = "create table if not exists " + tableName + " (" + tableValues + ");";
         try {
@@ -67,66 +68,95 @@ public class ScoreDatabase {
      * @param name - the 3 character name
      * @param score - the score
      */
-    public boolean addScore(String table, String name, int score) {
+    public void addScore(String table, String name, String score) {
         createTable(table);
         String sql = "insert into " + table + " (name, score) values ('" + name + "', " + score + ")";
         try {
 //        	Statement stmt = this.conn.createStatement();
             stmt.executeUpdate(sql);
-            return true;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
     }
 
     /**
      * TODO error handling if the table doesn't exist?
-     * Gets the scores from a table (game)
+     * Returns the top ten scores from a game
      * @param table - the game to retrieve high scores from
+     * @return LinkedHashMap<String ,   String> - the hashmap of the top ten names and scores
      */
-    public boolean getScores(String table) {
+    public LinkedHashMap<String, String> getScores(String table) {
         String sql = "SELECT name, score FROM " + table;
+        HashMap<String, String> hashMap = new HashMap<>();
         try {
-//        	Statement stmt = this.conn.createStatement();
-            stmt.execute(sql);
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    public int[] getScores2(String table) {
-        int count = 0;
-        try {
-            ResultSet rset = stmt.executeQuery("select score from " + table);
-            while (rset.next()) {
-                count++;
-            }
-            int[] ids = new int[count];
-            rset = stmt.executeQuery("select score from " + table);
-            count = 0;
-            while (rset.next()) {
-                ids[count] = rset.getInt("id");
-                count++;
-            }
-            return ids;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    public void getScores3(String table) {
-        try {
-            ResultSet rs = stmt.executeQuery("SELECT score FROM " + table);
+            ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                System.out.println(rs.getInt("score"));
+                hashMap.put(rs.getString(1), rs.getString(2));
             }
+            System.out.println(hashMap);
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(sortHashMapByValues(hashMap));
+        System.out.println(topTenScores(sortHashMapByValues(hashMap)));
+        return (topTenScores(sortHashMapByValues(hashMap)));
+    }
+
+    /**
+     * Sorts a hashmap by the values (scores)
+     *
+     * @param passedMap - the initial hashmap
+     * @return - the sorted hashmap
+     */
+    private LinkedHashMap<String, String> sortHashMapByValues(
+            HashMap<String, String> passedMap) {
+        List<String> mapKeys = new ArrayList<>(passedMap.keySet());
+        List<String> mapValues = new ArrayList<>(passedMap.values());
+        Collections.sort(mapValues, Collections.reverseOrder());
+        Collections.sort(mapKeys, Collections.reverseOrder());
+
+        LinkedHashMap<String, String> sortedMap =
+                new LinkedHashMap<>();
+
+        Iterator<String> valueIt = mapValues.iterator();
+        while (valueIt.hasNext()) {
+            String val = valueIt.next();
+            Iterator<String> keyIt = mapKeys.iterator();
+
+            while (keyIt.hasNext()) {
+                String key = keyIt.next();
+                String comp1 = passedMap.get(key);
+                String comp2 = val;
+
+                if (comp1.equals(comp2)) {
+                    keyIt.remove();
+                    sortedMap.put(key, val);
+                    break;
+                }
+            }
+        }
+        return sortedMap;
+    }
+
+    /**
+     * Returns the first ten key-value pairs of a hashmap, filling in remaining entries with "   "=0 if
+     * there are less than 10 entries in the hashmap
+     *
+     * @param hashMap - a SORTED hashmap
+     * @return the hashmap of size 10
+     */
+    private LinkedHashMap<String, String> topTenScores(LinkedHashMap<String, String> hashMap) {
+        List<String> mapKeys = new ArrayList<>(hashMap.keySet());
+        if (hashMap.size() < 10) {
+            for (int i = hashMap.size(); i < 10; i++) {
+                hashMap.put("   ", "0");
+            }
+        } else {
+            for (int i = 10; i < hashMap.size(); i++) {
+                hashMap.remove(mapKeys.get(i));
+            }
+        }
+        return hashMap;
     }
 }

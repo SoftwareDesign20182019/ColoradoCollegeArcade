@@ -1,5 +1,7 @@
 package Package;
 
+import java.util.HashMap;
+
 /**
  * main class for operating the arcade
  * handles database interactions, the creation of games,
@@ -13,14 +15,16 @@ public class Arcade {
 	private GameFactory factory;
 	private ScoreDatabase database;
 	private Game game;
-	
+    private HashMap<String, String> topTenScores;
+
 	/**
 	 * simple constructor for the arcade,
 	 * creates a new game factory and database for storing scores
 	 */
-	public Arcade() {
+    public Arcade() {
 		factory = new GameFactory();
 		database = new ScoreDatabase("ArcadeGames");
+        topTenScores = new HashMap<>();
 	}
 	
 	/**
@@ -40,7 +44,8 @@ public class Arcade {
         	highScore = game.playGame();
         	playerName = game.getName();
         	gameName = game.toString();
-        	database.addScore(gameName, playerName, highScore);
+            database.addScore(gameName, playerName, Integer.toString(highScore));
+            topTenScores = database.getScores(gameName);
     	}
     	else {
         	gameName = null;	
