@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 public class JavelinThrow extends Application implements Game {
 	
 	private Stage primaryStage;
+	private int score;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -25,9 +26,15 @@ public class JavelinThrow extends Application implements Game {
 		primaryStage.show();
 	}
 	
+	
+	
 	public int playGame(Stage stage) throws Exception {
 		start(stage);
-		return 0;
+		return score;
+	}
+	
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 	public String toString() {
