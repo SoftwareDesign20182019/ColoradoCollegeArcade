@@ -33,8 +33,9 @@ public class Arcade {
 	 * then saves the high score, player, and game to the database
 	 * @param choice integer choice for the game to play
 	 * @return the string representation of each game
+	 * @throws Exception 
 	 */
-	public String runNewGame(int choice) {
+	public String runNewGame(int choice) throws Exception {
 		int highScore;
 		String playerName;
 		String gameName;

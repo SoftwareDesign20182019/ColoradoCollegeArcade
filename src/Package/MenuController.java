@@ -32,7 +32,7 @@ public class MenuController {
 	 */
 	@FXML
 	public void handleButtonPress(ActionEvent event) {
-		System.out.println("I AM WILL");
+
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public class MenuController {
 	 * @param e the keyEvent (pressing of a key)
 	 */
 	@FXML
-	private void handleKeyPress(KeyEvent e)
+	private void handleKeyPress(KeyEvent e) throws Exception
 	{
 
 		//ENTER

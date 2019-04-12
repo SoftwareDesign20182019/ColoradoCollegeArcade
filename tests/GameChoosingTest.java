@@ -14,17 +14,29 @@ public class GameChoosingTest {
 	
 	@Test
 	public void createAGame() {
-		assertNotNull(arcade.runNewGame(1));
+		try {
+			assertNotNull(arcade.runNewGame(1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Test
 	public void givesCorrectGame() {
-		assertEquals(arcade.runNewGame(1), "RandomScore");
+		try {
+			assertEquals(arcade.runNewGame(1), "RandomScore");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Test
 	public void nullIfNoGame() {
-		assertNull(arcade.runNewGame(10));
+		try {
+			assertNull(arcade.runNewGame(10));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
