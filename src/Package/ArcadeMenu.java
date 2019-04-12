@@ -10,7 +10,8 @@ import javafx.stage.Stage;
  * class for the creation of the javaFX game menu
  *
  */
-public class ArcadeMenu extends Application {
+public class
+ArcadeMenu extends Application {
 
 	private Stage primaryStage;
 	
@@ -43,6 +44,7 @@ public class ArcadeMenu extends Application {
 	 * @param args empty
 	 */
     public static void main(String[] args) {
-		launch(args);
+    	ArcadeMenu menu = new ArcadeMenu();
+    	menu.launch(args);
 	}
 }

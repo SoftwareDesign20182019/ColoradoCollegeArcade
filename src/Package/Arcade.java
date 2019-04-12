@@ -16,6 +16,7 @@ public class Arcade {
 	private ScoreDatabase database;
 	private Game game;
     private HashMap<String, String> topTenScores;
+    private HighScoreScreen scoreScreen;
 
 	/**
 	 * simple constructor for the arcade,
@@ -25,6 +26,7 @@ public class Arcade {
 		factory = new GameFactory();
 		database = new ScoreDatabase("ArcadeGames");
         topTenScores = new HashMap<>();
+
 	}
 	
 	/**
@@ -46,9 +48,12 @@ public class Arcade {
         	gameName = game.toString();
             database.addScore(gameName, playerName, Integer.toString(highScore));
             topTenScores = database.getScores(gameName);
+            scoreScreen = new HighScoreScreen(gameName);
+            //String[] args = {};
+            //scoreScreen.main(args);
     	}
     	else {
-        	gameName = null;	
+        	gameName = null;
     	}
     	return gameName;
 	}
