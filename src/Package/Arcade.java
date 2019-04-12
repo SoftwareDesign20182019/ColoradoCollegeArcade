@@ -1,5 +1,7 @@
 package Package;
 
+import java.util.HashMap;
+
 public class Arcade {
 	
 	private ArcadeMenu menu;
@@ -7,10 +9,12 @@ public class Arcade {
 	private GameFactory factory;
 	private ScoreDatabase database;
 	private Game game;
-	
+    HashMap<String, String> topTenScores;
+
 	public Arcade() {
 		factory = new GameFactory();
 		database = new ScoreDatabase("ArcadeGames");
+        topTenScores = new HashMap<>();
 	}
 	
 	/*
@@ -25,8 +29,9 @@ public class Arcade {
     	String playerName = game.getName();
     	String gameName = game.toString();
 //		database.createConnection("ArcadeGames");
-    	database.createTable(gameName);
-    	database.addScore(gameName, playerName, highScore);
+//    	database.createTable(gameName);
+        database.addScore(gameName, playerName, Integer.toString(highScore));
+        topTenScores = database.getScores(game.toString());
 	}
 	
 	private void showMenu() {
