@@ -9,7 +9,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class ScoreDatabaseTest {
-    private static final String DATABASE_NAME = "ArcadeGames";
+    private static final String DATABASE_NAME = "TestDatabase";
     private ScoreDatabase database;
     private Game random;
 
@@ -26,18 +26,18 @@ public class ScoreDatabaseTest {
 
     @Test
     public void createTableTest() {
-        assertTrue(database.createTable(random.getName()));
+        assertTrue(database.createTable(random.toString()));
     }
 
     @Test
     public void addScoreTest() {
-        assertTrue(database.addScore(random.getName(), "tst", random.playGame()));
+        assertTrue(database.addScore(random.toString(), "tst", "18"));
     }
 
     @Test
     public void getScoresTest() {
 //        assertTrue(database.getScores(random.getName()));
-        assertNotNull(database.getScores2(random.getName()));
+        assertNotNull(database.getScores(random.toString()));
     }
 
 }

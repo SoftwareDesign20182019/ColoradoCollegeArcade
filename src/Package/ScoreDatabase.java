@@ -68,14 +68,16 @@ public class ScoreDatabase {
      * @param name - the 3 character name
      * @param score - the score
      */
-    public void addScore(String table, String name, String score) {
+    public boolean addScore(String table, String name, String score) {
         createTable(table);
         String sql = "insert into " + table + " (name, score) values ('" + name + "', " + score + ")";
         try {
 //        	Statement stmt = this.conn.createStatement();
             stmt.executeUpdate(sql);
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -93,13 +95,10 @@ public class ScoreDatabase {
             while (rs.next()) {
                 hashMap.put(rs.getString(1), rs.getString(2));
             }
-            System.out.println(hashMap);
             rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(sortHashMapByValues(hashMap));
-        System.out.println(topTenScores(sortHashMapByValues(hashMap)));
         return (topTenScores(sortHashMapByValues(hashMap)));
     }
 
