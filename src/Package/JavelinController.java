@@ -39,7 +39,6 @@ public class JavelinController implements Initializable {
 	private int accuracy;
 	private int total;
 	private int distance;
-	private JavelinThrow game;
 	
 	SequentialTransition powerBarSequence;
 	SequentialTransition accuracyBarSequence;
@@ -52,10 +51,6 @@ public class JavelinController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		
-	}
-	
-	public void initData(JavelinThrow game) {
-		this.game = game;
 	}
 	
 	private void moveJavelinMan() throws Exception
@@ -195,9 +190,8 @@ public class JavelinController implements Initializable {
 		total = (int) (accuracy + power)/2;
 	}
 	
-	private void returnScore() {
-		game.setScore(total);
-		game.setGameToDone();
+	private int returnScore() {
+		return total;
 	}
 	
 	@FXML
@@ -224,9 +218,13 @@ public class JavelinController implements Initializable {
 			accuracyBarStop();
 			moveJavelinMan();
 			displayScore();
-			returnScore();
 			sequence++;
+			returnScore();
 		}
+//		else if (e.getCode() == KeyCode.S && sequence == 4)
+//		{
+//			returnScore();
+//		}
 	}
 
 
