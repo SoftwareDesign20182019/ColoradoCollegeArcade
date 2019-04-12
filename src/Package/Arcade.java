@@ -1,5 +1,5 @@
 package Package;
-
+import javafx.stage.Stage;
 import java.util.HashMap;
 
 /**
@@ -36,13 +36,14 @@ public class Arcade {
 	 * @throws Exception 
 	 */
 	public String runNewGame(int choice) throws Exception {
+		Stage stage = new Stage();
 		int highScore;
 		String playerName;
 		String gameName;
 		
     	Game game = factory.selectGame(choice);
     	if (game != null) {
-        	highScore = game.playGame();
+        	highScore = game.playGame(stage);
         	playerName = game.getName();
         	gameName = game.toString();
             database.addScore(gameName, playerName, Integer.toString(highScore));

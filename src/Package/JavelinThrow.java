@@ -1,14 +1,12 @@
 package Package;
 
 import java.io.IOException;
+import java.util.Random;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class JavelinThrow extends Application implements Game {
@@ -26,15 +24,9 @@ public class JavelinThrow extends Application implements Game {
 		
 		primaryStage.show();
 	}
-
-	public static void main(String[] args) {
-		launch(args);
-	}
-
-	@Override
-	public int playGame() {
-		String[] args = {};
-		main(args);
+	
+	public int playGame(Stage stage) throws Exception {
+		start(stage);
 		return 0;
 	}
 
@@ -42,9 +34,13 @@ public class JavelinThrow extends Application implements Game {
 		return "javelinThrow";
 	}
 	
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public String getName() {
+    	Random r = new Random();
+    	String name = "";
+    	for (int i = 0; i < 3; i++) {
+    		char letterInName = (char)(r.nextInt(26) + 'a');
+    		name = name + letterInName;
+    	}
+    	return name;
+    }
 }
