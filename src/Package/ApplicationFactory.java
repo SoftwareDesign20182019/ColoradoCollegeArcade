@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 /**
  * Class for the factory that switches to the user-selected game
  */
-public class GameFactory {
+public class ApplicationFactory {
 
     public Game selectGame(int userChoice) throws Exception {
         switch (userChoice) {
@@ -19,7 +19,10 @@ public class GameFactory {
                 return randomScore;
             case 2:
             	JavelinThrow javelinGame = new JavelinThrow();
-            	return javelinGame;
+                return javelinGame;
+            case 3:
+                HighScore highScore = new HighScore();
+                return highScore;
             default:
                 return null;
         }

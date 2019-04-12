@@ -51,12 +51,12 @@
             <Font name="Silom" size="18.0" />
          </font>
       </Label>
-      <Label text="High Score" textFill="WHITE" translateX="50.0" translateY="160.0">
+      <Label text="Bottom Text" textFill="WHITE" translateX="50.0" translateY="160.0">
          <font>
             <Font name="Silom" size="18.0" />
          </font>
       </Label>
-      <Label text="Bottom Text" textFill="WHITE" translateX="50.0" translateY="190.0">
+      <Label text="Enter Name" textFill="WHITE" translateX="50.0" translateY="190.0">
          <font>
             <Font name="Silom" size="18.0" />
          </font>
