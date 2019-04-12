@@ -51,7 +51,7 @@ public class MenuController {
 			System.out.println("CHOICE: "+choice);
 			if (choice == 5)
 				System.exit(0);
-			arcade.runNewGame(choice);
+			arcade.runNewApplication(choice);
 		}
 		//DOWN
 		else if (e.getCode() == KeyCode.S && selection == 4) {

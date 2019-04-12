@@ -15,7 +15,7 @@ public class GameChoosingTest {
 	@Test
 	public void createAGame() {
 		try {
-			assertNotNull(arcade.runNewGame(1));
+			assertNotNull(arcade.runNewApplication(1));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -24,7 +24,7 @@ public class GameChoosingTest {
 	@Test
 	public void givesCorrectGame() {
 		try {
-			assertEquals(arcade.runNewGame(1), "RandomScore");
+			assertEquals(arcade.runNewApplication(1), "RandomScore");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -33,7 +33,7 @@ public class GameChoosingTest {
 	@Test
 	public void nullIfNoGame() {
 		try {
-			assertNull(arcade.runNewGame(10));
+			assertNull(arcade.runNewApplication(10));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -8,9 +8,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Class for the factory that switches to the user-selected game
+ * Class for the factory that switches to the user-selected application
  */
-public class GameFactory {
+public class ApplicationFactory {
 
     public Game selectGame(int userChoice) throws Exception {
         switch (userChoice) {
@@ -18,14 +18,17 @@ public class GameFactory {
                 RandomScore randomScore = new RandomScore();
                 return randomScore;
             case 2:
- 
+            	JavelinGame javelinGame = new JavelinGame();
+            	
             	FXMLLoader loader = new FXMLLoader(getClass().getResource("Javelin.fxml"));
         		Parent javelinRoot = loader.load();
+        		//JavelinController controller = loader.<JavelinController>getController();
+        		//controller.initData(javelinGame);
         		Stage javelinStage = new Stage();
-        		javelinStage.setTitle("Menu");
+        		javelinStage.setTitle("Javelin Game");
         		javelinStage.setScene(new Scene(javelinRoot, 800,400));
         		javelinStage.show();
-            	return null;
+            	return javelinGame;
             	
             default:
                 return null;

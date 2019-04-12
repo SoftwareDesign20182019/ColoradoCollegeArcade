@@ -1,28 +1,23 @@
 package Package;
 import java.util.Random;
 
-/**
- * Game implementation that randomly returns high score to the player
- *
- */
-public class RandomScore implements Game {
+public class JavelinGame implements Game {
 
+	private int gameScore;
+	private boolean gameDone;
+	
+	public JavelinGame () {
+		gameDone = false;
+	}
+		
 	/**
 	 * gets the high score
 	 * @return the high score for the game
 	 */
-    public int getScore(){
-        return scoreGame();
-    }
-    
-    /**
-     * gives a random high score for the game
-     * @return the randomly calculated integer
-     */
-    private int scoreGame(){
-        return (int) (Math.random() * 100000);
-    }
-    
+	public int getScore() {
+		return gameScore;
+	}
+	
     /**
      * currently gives the player a random 3-letter name
      * @return the 3 letter name string
@@ -42,12 +37,25 @@ public class RandomScore implements Game {
      * @return the string representation
      */
     public String toString() {
-    	return "RandomScore";
+    	return "JavelinThrow";
+    }
+    
+    /**
+     * sets the high score
+     * @param the integer score to set
+     */
+    public void setScore(int score) {
+    	gameScore = score;
+    }
+    
+    public void setGameDone() {
+    	gameDone = true;
     }
     
     public boolean isGameDone() {
-    	return true;
+    	return gameDone;
     }
-    
-    public void setGameDone() {}
+
+
+	
 }

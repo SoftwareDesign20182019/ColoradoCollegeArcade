@@ -12,7 +12,7 @@ public class Arcade {
 	
 	private ArcadeMenu menu;
 	private MenuController controller;
-	private GameFactory factory;
+	private ApplicationFactory factory;
 	private ScoreDatabase database;
 	private Game game;
     private HashMap<String, String> topTenScores;
@@ -22,7 +22,7 @@ public class Arcade {
 	 * creates a new game factory and database for storing scores
 	 */
     public Arcade() {
-		factory = new GameFactory();
+		factory = new ApplicationFactory();
 		database = new ScoreDatabase("ArcadeGames");
         topTenScores = new HashMap<>();
 	}
@@ -35,14 +35,17 @@ public class Arcade {
 	 * @return the string representation of each game
 	 * @throws Exception 
 	 */
-	public String runNewGame(int choice) throws Exception {
-		int highScore;
+	public String runNewApplication(int choice) throws Exception {
+		int highScore = 0;
 		String playerName;
 		String gameName;
 		
     	Game game = factory.selectGame(choice);
     	if (game != null) {
-        	highScore = game.playGame();
+    		while(!game.isGameDone()) {
+    			highScore = game.getScore();
+    		}
+    		System.out.println("Game has finished");
         	playerName = game.getName();
         	gameName = game.toString();
             database.addScore(gameName, playerName, Integer.toString(highScore));
