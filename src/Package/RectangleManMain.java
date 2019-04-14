@@ -70,7 +70,6 @@ public class RectangleManMain extends Application implements Game{
 
 	@Override
 	public void stop(){
-		System.out.println("Stage is closing");
-		// Save file
+		rectangleManStage.close();
 	}
 }

@@ -401,7 +401,7 @@ public class RectangleManController {
 
 		if (e.getCode() == KeyCode.ENTER && canExit)
 		{
-			System.exit(0);
+			rectangleManMain.stop();
 		}
 		if (e.getCode() == KeyCode.ENTER && !gameStarted)
 		{
