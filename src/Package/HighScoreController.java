@@ -122,39 +122,42 @@ public class HighScoreController {//implements Initializable {
         {
             instructions.setText(getGameName());
             highScores = getHighScores();
+            System.out.println(highScores);
             Set<String> keySet = highScores.keySet();
             ArrayList<String> listOfKeys = new ArrayList<String>(keySet);
             Collection<String> values = highScores.values();
             ArrayList<String> listOfValues = new ArrayList<String>(values);
-            name1.setText(listOfKeys.get(1));
-            score1.setText(listOfValues.get(1));
+            try {
+                name1.setText(listOfKeys.get(1));
+                score1.setText(listOfValues.get(1));
 
-            name2.setText(listOfKeys.get(2));
-            score2.setText(listOfValues.get(2));
+                name2.setText(listOfKeys.get(2));
+                score2.setText(listOfValues.get(2));
 
-            name3.setText(listOfKeys.get(3));
-            score3.setText(listOfValues.get(3));
+                name3.setText(listOfKeys.get(3));
+                score3.setText(listOfValues.get(3));
 
-            name4.setText(listOfKeys.get(4));
-            score4.setText(listOfValues.get(4));
+                name4.setText(listOfKeys.get(4));
+                score4.setText(listOfValues.get(4));
 
-            name5.setText(listOfKeys.get(5));
-            score5.setText(listOfValues.get(5));
+                name5.setText(listOfKeys.get(5));
+                score5.setText(listOfValues.get(5));
 
-            name6.setText(listOfKeys.get(6));
-            score6.setText(listOfValues.get(6));
+                name6.setText(listOfKeys.get(6));
+                score6.setText(listOfValues.get(6));
 
-            name7.setText(listOfKeys.get(7));
-            score7.setText(listOfValues.get(7));
+                name7.setText(listOfKeys.get(7));
+                score7.setText(listOfValues.get(7));
 
-            name8.setText(listOfKeys.get(8));
-            score8.setText(listOfValues.get(8));
+                name8.setText(listOfKeys.get(8));
+                score8.setText(listOfValues.get(8));
 
-            name9.setText(listOfKeys.get(9));
-            score9.setText(listOfValues.get(9));
+                name9.setText(listOfKeys.get(9));
+                score9.setText(listOfValues.get(9));
 
-            name10.setText(listOfKeys.get(10));
-            score10.setText(listOfValues.get(10));
+                name10.setText(listOfKeys.get(10));
+                score10.setText(listOfValues.get(10));
+            } catch (Exception x){}
 //            for(int i = 0; i < 10; i++)
 //            {
 //                Label name = names.get(i);

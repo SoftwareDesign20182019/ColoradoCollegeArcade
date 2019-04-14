@@ -147,11 +147,7 @@ public class ScoreDatabase {
      */
     private LinkedHashMap<String, String> topTenScores(LinkedHashMap<String, String> hashMap) {
         List<String> mapKeys = new ArrayList<>(hashMap.keySet());
-        if (hashMap.size() < 10) {
-            for (int i = hashMap.size(); i < 10; i++) {
-                hashMap.put("   ", "0");
-            }
-        } else {
+        if (hashMap.size() > 10) {
             for (int i = 10; i < hashMap.size(); i++) {
                 hashMap.remove(mapKeys.get(i));
             }
