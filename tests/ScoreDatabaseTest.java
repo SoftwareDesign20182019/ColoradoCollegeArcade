@@ -31,7 +31,7 @@ public class ScoreDatabaseTest {
 
     @Test
     public void addScoreTest() {
-        assertTrue(database.addScore(random.toString(), "tst", "18"));
+        assertTrue(database.addScore(random.toString(), "tst", 18));
     }
 
     @Test
