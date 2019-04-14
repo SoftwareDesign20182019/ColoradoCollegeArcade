@@ -82,6 +82,7 @@ public class NameSelectorController {
             else if (lettersInputed == 3 && row == 2 && column == 9) {
                 String name = letterOne + letterTwo + letterThree;
                 returnName(name);
+                nameSelector.stop();
 //                System.exit(0);
                 //TODO GO TO NEXT SCREEN
             }

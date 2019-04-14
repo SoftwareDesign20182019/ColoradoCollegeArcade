@@ -42,6 +42,11 @@ public class HighScore extends Application {
 	public String getGameName(){
 		return arcade.getGameName();
 	}
+	
+	@Override
+	public void stop(){
+		primaryStage.close();
+	}
 
 
 }
