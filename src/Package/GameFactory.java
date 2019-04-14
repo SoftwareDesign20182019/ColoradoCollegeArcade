@@ -28,7 +28,9 @@ public class GameFactory {
         		javelinStage.show();
         		*/
             	return javelinGame;
-            	
+            case 4:
+                RectangleManMain rectangleManMain = new RectangleManMain();
+                return rectangleManMain;
             default:
                 return null;
         }

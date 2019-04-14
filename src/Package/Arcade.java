@@ -73,6 +73,7 @@ public class Arcade {
 
     public void finishGame(String name) throws Exception {
 	    gameName = game.toString();
+	    database.createTable(gameName);
         database.addScore(gameName, name, Integer.toString(highScore));
         topTenScores = database.getScores(gameName);
         Stage stage = new Stage();

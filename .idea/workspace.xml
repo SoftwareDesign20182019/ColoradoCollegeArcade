@@ -3,17 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="65e0709a-6548-4321-8e52-a58d7e3cd46b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/Arcade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/Arcade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/EnterName.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/EnterName.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/HighScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/HighScore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/HighScores.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/HighScores.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/JavelinController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/JavelinController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/JavelinThrow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/JavelinThrow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/Menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/NameSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/NameSelector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/NameSelectorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/NameSelectorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/RandomScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/RandomScore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/High Scores Screen/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/High Scores Screen/sample/EnterName.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/High Scores Screen/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/High Scores Screen/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/Arcade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Arcade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/GameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/GameFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/HighScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/HighScoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/RectangleMan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/RectangleMan.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/RectangleManController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/RectangleManController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/RectangleManMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/RectangleManMain.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,52 +28,54 @@
     <session id="-354591783">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="3" />
+          <entry key="class" value="4" />
+          <entry key="java" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="3" />
+          <entry key="CLASS" value="4" />
+          <entry key="JAVA" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="133" />
-          <entry key="txt" value="78" />
+          <entry key="java" value="772" />
+          <entry key="txt" value="121" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="133" />
-          <entry key="PLAIN_TEXT" value="78" />
+          <entry key="JAVA" value="772" />
+          <entry key="PLAIN_TEXT" value="121" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Package/JavelinThrow.java">
+        <entry file="file://$PROJECT_DIR$/src/Package/Arcade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+            <state relative-caret-position="76">
+              <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Package/Arcade.java">
+        <entry file="file://$PROJECT_DIR$/src/Package/GameFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+            <state relative-caret-position="222">
+              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -82,64 +83,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Package/ScoreDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2190">
-              <caret line="149" column="34" selection-start-line="149" selection-start-column="34" selection-end-line="149" selection-end-column="34" />
+            <state relative-caret-position="190">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Package/HighScoreController.java">
+        <entry file="file://$PROJECT_DIR$/src/Package/RectangleManController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="159" column="35" lean-forward="true" selection-start-line="159" selection-start-column="35" selection-end-line="159" selection-end-column="35" />
+            <state relative-caret-position="173">
+              <caret line="330" column="36" selection-start-line="330" selection-start-column="36" selection-end-line="330" selection-end-column="56" />
               <folding>
-                <element signature="e#4957#4958#0" expanded="true" />
-                <element signature="e#4999#5000#0" expanded="true" />
+                <element signature="e#12795#12796#0" expanded="true" />
+                <element signature="e#12842#12843#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Package/HighScore.java">
+        <entry file="file://$PROJECT_DIR$/src/Package/RectangleManMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="336">
+              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Package/JavelinController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="197" selection-start-line="197" selection-end-line="200" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#997#1016#0" expanded="true" />
+                <element signature="e#1405#1406#0" expanded="true" />
+                <element signature="e#1423#1424#0" expanded="true" />
+                <element signature="e#945#946#0" expanded="true" />
+                <element signature="e#963#964#0" expanded="true" />
+                <element signature="e#1006#1007#0" expanded="true" />
+                <element signature="e#1025#1026#0" expanded="true" />
+                <element signature="e#1685#1686#0" expanded="true" />
+                <element signature="e#1700#1701#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Package/HighScores.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        <entry file="file://$PROJECT_DIR$/src/Package/HighScoreController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Package/NameSelector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="53">
+              <caret line="159" column="34" selection-start-line="159" selection-start-column="34" selection-end-line="159" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -147,8 +134,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Package/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="245">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Package/JavelinThrow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-39">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="28" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Package/JavelinController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="201" column="60" selection-start-line="201" selection-start-column="51" selection-end-line="201" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,6 +175,12 @@
       <find>selectchar</find>
       <find>game</find>
       <find>sample</find>
+      <find>score</find>
+      <find>stopGame</find>
+      <find>Exception</find>
+      <find>checkColl</find>
+      <find>coll</find>
+      <find>collisions</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,28 +208,29 @@
         <option value="$PROJECT_DIR$/src/Package/EnterName.fxml" />
         <option value="$PROJECT_DIR$/src/Package/HighScoreScreenController.java" />
         <option value="$PROJECT_DIR$/src/Package/ArcadeMenu.java" />
-        <option value="$PROJECT_DIR$/src/Package/Arcade.java" />
         <option value="$PROJECT_DIR$/src/Package/HighScoreScreen.java" />
         <option value="$PROJECT_DIR$/src/Package/Command.java" />
         <option value="$PROJECT_DIR$/src/Package/Controller.java" />
         <option value="$PROJECT_DIR$/src/Package/NameCommand.java" />
         <option value="$PROJECT_DIR$/src/sample/EnterName.fxml" />
-        <option value="$PROJECT_DIR$/src/Package/GameFactory.java" />
         <option value="$PROJECT_DIR$/src/Package/ApplicationFactory.java" />
         <option value="$PROJECT_DIR$/src/Package/HighScoresController.java" />
         <option value="$PROJECT_DIR$/src/Package/HighScore.java" />
         <option value="$PROJECT_DIR$/src/Package/JavelinThrow.java" />
         <option value="$PROJECT_DIR$/src/Package/HighScores.fxml" />
         <option value="$PROJECT_DIR$/src/Package/Menu.fxml" />
-        <option value="$PROJECT_DIR$/src/Package/HighScoreController.java" />
         <option value="$PROJECT_DIR$/src/Package/ScoreDatabase.java" />
+        <option value="$PROJECT_DIR$/src/Package/RectangleManController.java" />
+        <option value="$PROJECT_DIR$/src/Package/GameFactory.java" />
+        <option value="$PROJECT_DIR$/src/Package/Arcade.java" />
+        <option value="$PROJECT_DIR$/src/Package/RectangleManMain.java" />
+        <option value="$PROJECT_DIR$/src/Package/HighScoreController.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="13" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1612" />
+    <option name="width" value="1440" />
     <option name="height" value="824" />
   </component>
   <component name="ProjectView">
@@ -245,15 +260,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555210156796" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555216019753" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -346,15 +361,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RectangleManMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Package.RectangleManMain" />
+      <module name="HardwickNeuhrohrPasleyRose" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Package.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Arcade" />
       <item itemvalue="Application.ArcadeMenu" />
       <item itemvalue="Application.HighScoreScreen" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.RectangleManMain" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Arcade" />
+        <item itemvalue="Application.RectangleManMain" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.HighScoreScreen" />
         <item itemvalue="Application.ArcadeMenu" />
@@ -421,13 +451,21 @@
       <option name="project" value="LOCAL" />
       <updated>1555209688087</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="some things tbh i dont remember what">
+      <created>1555210177248</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1555210177248</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4985755" visible="true" weight="0.27181688" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4985755" visible="true" weight="0.27539343" />
       <window_info id="Structure" order="1" sideWeight="0.5014245" side_tool="true" weight="0.23360917" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -436,7 +474,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4990452" weight="0.3293124" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49458945" visible="true" weight="0.17076503" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49458945" visible="true" weight="0.40710384" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -444,8 +482,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50541055" side_tool="true" weight="0.15319662" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49695328" weight="0.1363088" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49713558" weight="0.25814235" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49713558" weight="0.2568306" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -454,6 +491,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -491,24 +529,10 @@
     <MESSAGE value="Finished High Scores Screen, Enter Name Screen" />
     <MESSAGE value="Tabs not spaces" />
     <MESSAGE value="Fixed high score error when there were less than 10 scores in the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed high score error when there were less than 10 scores in the database" />
+    <MESSAGE value="some things tbh i dont remember what" />
+    <option name="LAST_COMMIT_MESSAGE" value="some things tbh i dont remember what" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/TestClassPleaseIgnore.java" />
-    <entry file="file://$PROJECT_DIR$/src/HelloWorld.java" />
-    <entry file="file://$PROJECT_DIR$/out/production/High Scores Screen/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HardwickNeuhrohrPasleyRose.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.project">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/High Scores Screen/sample/Main.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -548,12 +572,12 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/HighScores.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/HardwickNeuhrohrPasleyRose/Package/EnterName.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Package/HighScoreScreen.java" />
     <entry file="file://$PROJECT_DIR$/src/Package/RandomScore.java">
@@ -587,12 +611,12 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Package/Javelin.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Package/ArcadeMenu.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -609,12 +633,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Package/EnterName.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Package/ApplicationFactory.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Launcher.class" />
@@ -636,67 +660,108 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Package/ArcadeMenu.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Package/Menu.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Package/HighScores.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Package/Game.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Package/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="245">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Package/ArcadeMenu.class">
+    <entry file="file://$PROJECT_DIR$/src/Package/JavelinController.class">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Package/JavelinThrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-39">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="28" selection-end-column="28" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Package/JavelinController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="197" selection-start-line="197" selection-end-line="200" selection-end-column="5" />
+        <state relative-caret-position="393">
+          <caret line="201" column="60" selection-start-line="201" selection-start-column="51" selection-end-line="201" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Package/HighScoreController.java">
+    <entry file="file://$PROJECT_DIR$/src/Package/GameFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="159" column="35" lean-forward="true" selection-start-line="159" selection-start-column="35" selection-end-line="159" selection-end-column="35" />
-          <folding>
-            <element signature="e#4957#4958#0" expanded="true" />
-            <element signature="e#4999#5000#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Package/JavelinThrow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        <state relative-caret-position="222">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Package/Arcade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+        <state relative-caret-position="76">
+          <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Package/ScoreDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2190">
-          <caret line="149" column="34" selection-start-line="149" selection-start-column="34" selection-end-line="149" selection-end-column="34" />
+        <state relative-caret-position="190">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Package/Menu.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/Package/HighScoreController.class">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Package/HighScores.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/Package/RectangleManMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="336">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <folding>
+            <element signature="e#997#1016#0" expanded="true" />
+            <element signature="e#1405#1406#0" expanded="true" />
+            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#963#964#0" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Package/RectangleManController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="330" column="36" selection-start-line="330" selection-start-column="36" selection-end-line="330" selection-end-column="56" />
+          <folding>
+            <element signature="e#12795#12796#0" expanded="true" />
+            <element signature="e#12842#12843#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Package/HighScoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="159" column="34" selection-start-line="159" selection-start-column="34" selection-end-line="159" selection-end-column="34" />
         </state>
       </provider>
     </entry>

@@ -321,7 +321,7 @@
          </fill></Rectangle>
       <Label fx:id="labelStart" alignment="CENTER" layoutY="2.0" prefHeight="40.0" prefWidth="800.0" text="Press Enter to Begin">
          <font>
-            <Font name="Aldrich" size="38.0" />
+            <Font name="Silom" size="38.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
@@ -396,7 +396,7 @@
       <Rectangle fx:id="badBlock52" fill="#d33535c7" height="115.0" stroke="BLACK" strokeType="INSIDE" width="40.0" x="800.0" y="50.0" />
       <Label fx:id="labelScore" layoutX="600.0" layoutY="360.0" prefHeight="22.0" prefWidth="200.0" text="Score: ">
          <font>
-            <Font name="Aldrich" size="20.0" />
+            <Font name="Silom" size="20.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
@@ -419,7 +419,7 @@
             </LinearGradient>
          </textFill>
          <font>
-            <Font name="Aldrich" size="37.0" />
+            <Font name="Silom" size="37.0" />
          </font>
       </Label>
    </children>

@@ -52,7 +52,9 @@ public class RectangleManController {
 	Rectangle roof;
 	
 	Random random = new Random();
-	
+
+	private RectangleManMain rectangleManMain;
+
 	private SequentialTransition badBlock11Transition;
 	private SequentialTransition badBlock12Transition;
 	private ParallelTransition badBlock13Transition;
@@ -277,52 +279,66 @@ public class RectangleManController {
 	}
 		
 	//CHECKS FOR COLLISIONS
-	private void checkCollisions()
+	private void checkCollisions() throws Exception
 	{
-		collisionTimer.scheduleAtFixedRate(new TimerTask() {
-			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	if (!hit) {
-	            		Shape intersectBB11 = Shape.intersect(rectangleMan, badBlock11);
-	            		if (intersectBB11.getBoundsInParent().getWidth() > 0)
-	            		{
-	            			hit = true;
-	            			stopGame();
-	            		}
-	            		Shape intersectBB12 = Shape.intersect(rectangleMan, badBlock12);
-	            		if (intersectBB12.getBoundsInParent().getWidth() > 0)
-	            		{
-	            			hit = true;
-	            			stopGame();
-	            		}
-	            		Shape intersectBB2 = Shape.intersect(rectangleMan, badBlock2);
-	            		if (intersectBB2.getBoundsInParent().getWidth() > 0)
-	            		{
-	            			hit = true;
-	            			stopGame();
-	            		}
-	            		Shape intersectBB3 = Shape.intersect(rectangleMan, badBlock3);
-	            		if (intersectBB3.getBoundsInParent().getWidth() > 0)
-	            		{
-	            			hit = true;
-	            			stopGame();
-	            		}
-	            		Shape intersectBB4 = Shape.intersect(rectangleMan, badBlock4);
-	            		if (intersectBB4.getBoundsInParent().getWidth() > 0)
-	            		{
-	            			hit = true;
-	            			stopGame();
-	            		}
-	            	}
-	            });
-			 }
-	    },0l, 50l);
+			collisionTimer.scheduleAtFixedRate(new TimerTask() {
+				@Override
+				public void run() {
+					Platform.runLater(() -> {
+						if (!hit) {
+							Shape intersectBB11 = Shape.intersect(rectangleMan, badBlock11);
+							if (intersectBB11.getBoundsInParent().getWidth() > 0) {
+								hit = true;
+								try {
+									stopGame();
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
+							Shape intersectBB12 = Shape.intersect(rectangleMan, badBlock12);
+							if (intersectBB12.getBoundsInParent().getWidth() > 0) {
+								hit = true;
+								try {
+									stopGame();
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
+							Shape intersectBB2 = Shape.intersect(rectangleMan, badBlock2);
+							if (intersectBB2.getBoundsInParent().getWidth() > 0) {
+								hit = true;
+								try {
+									stopGame();
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
+							Shape intersectBB3 = Shape.intersect(rectangleMan, badBlock3);
+							if (intersectBB3.getBoundsInParent().getWidth() > 0) {
+								hit = true;
+								try {
+									stopGame();
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
+							Shape intersectBB4 = Shape.intersect(rectangleMan, badBlock4);
+							if (intersectBB4.getBoundsInParent().getWidth() > 0) {
+								hit = true;
+								try {
+									stopGame();
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
+						}
+					});
+				}
+			}, 0l, 50l);
 	}
 	
 	//STOPS GAME
-	private void stopGame()
-	{
+	private void stopGame() throws Exception {
 		badBlock13Transition.stop();
 		badBlock2Transition.stop();
 		badBlock3Transition.stop();
@@ -330,6 +346,8 @@ public class RectangleManController {
 		badBlock53Transition.stop();
 		canExit = true;
 		labelEnd.setLayoutY(0);
+		rectangleManMain.setScore(score);
+		rectangleManMain.setGameToDone();
 	}
 	
 	//KEEPS SCORE
@@ -366,7 +384,10 @@ public class RectangleManController {
 			labelStart.setVisible(false);
 			gameStarted = true;
 			runEnemies();
-			checkCollisions();
+			try {
+				checkCollisions();
+			}
+			catch (Exception x){}
 			scoreKeeper();
 		}
 		
@@ -411,5 +432,9 @@ public class RectangleManController {
 		{
 			
 		}
+	}
+
+	public void initData(RectangleManMain rectangleManMain) {
+		this.rectangleManMain = rectangleManMain;
 	}
 }
