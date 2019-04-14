@@ -37,5 +37,10 @@ public class NameSelector extends Application {
     public void finishGame() throws Exception {
         arcade.finishGame(name);
     }
+    
+	@Override
+	public void stop(){
+		primaryStage.close();
+	}
 
 }
