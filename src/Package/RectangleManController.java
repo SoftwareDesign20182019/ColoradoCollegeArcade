@@ -331,6 +331,24 @@ public class RectangleManController {
 									e.printStackTrace();
 								}
 							}
+							Shape intersectBB51 = Shape.intersect(rectangleMan, badBlock51);
+							if (intersectBB51.getBoundsInParent().getWidth() > 0) {
+								hit = true;
+								try {
+									stopGame();
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
+							Shape intersectBB52 = Shape.intersect(rectangleMan, badBlock52);
+							if (intersectBB52.getBoundsInParent().getWidth() > 0) {
+								hit = true;
+								try {
+									stopGame();
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
 						}
 					});
 				}
