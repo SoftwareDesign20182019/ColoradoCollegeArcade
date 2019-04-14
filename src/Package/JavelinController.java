@@ -1,21 +1,18 @@
 package Package;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
-
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-import javafx.animation.*;
-import javafx.animation.Animation.Status;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class JavelinController implements Initializable {
 	
@@ -57,9 +54,8 @@ public class JavelinController implements Initializable {
 	public void initData(JavelinThrow game) {
 		this.game = game;
 	}
-	
-	private void moveJavelinMan() throws Exception
-	{
+
+	private void moveJavelinMan() {
 		throwJavelin = new SequentialTransition();
 		
 		ParallelTransition javelinAndManTransition = new ParallelTransition();
@@ -82,7 +78,7 @@ public class JavelinController implements Initializable {
 		javelinDown.setByY(100);
 		//translates javelin right through the air
 		TranslateTransition javelinRight = new TranslateTransition(Duration.millis(1000), javelin);
-		javelinRight.setByX((int)distance/2);
+		javelinRight.setByX(distance / 2);
 		//rotates the javelin
 		RotateTransition javelinRotate = new RotateTransition(Duration.millis(1000), javelin);
 		javelinRotate.setByAngle(45);
@@ -95,10 +91,9 @@ public class JavelinController implements Initializable {
 		throwJavelin.getChildren().addAll(javelinAndManTransition, javelinUpRight, javelinDownRight);
 		throwJavelin.play();
 	}
-	
-	private void displayScore() throws Exception
-	{
-		String newLabel = "You Scored: " + total + "! (Game Over)";
+
+	private void displayScore() {
+		String newLabel = "You Scored: " + total + "! (Game Over) Press Enter to Continue";
 		label.setText(newLabel);
 		
 		ParallelTransition labelMove = new ParallelTransition();
@@ -192,10 +187,10 @@ public class JavelinController implements Initializable {
 			accuracy = 100 - accuracy;
 			accuracy = 100 - accuracy;
 		}
-		total = (int) (accuracy + power)/2;
+		total = (accuracy + power) / 2;
 	}
-	
-	private void returnScore() {
+
+	private void returnScore() throws Exception {
 		game.setScore(total);
 		game.setGameToDone();
 	}
@@ -219,11 +214,12 @@ public class JavelinController implements Initializable {
 			accuracyBarAnimation();
 			sequence++;
 		}
-		else if (e.getCode() == KeyCode.S && sequence == 3)
-		{
+		else if (e.getCode() == KeyCode.S && sequence == 3) {
 			accuracyBarStop();
 			moveJavelinMan();
 			displayScore();
+			sequence++;
+		} else if (e.getCode() == KeyCode.ENTER && sequence == 4) {
 			returnScore();
 			sequence++;
 		}

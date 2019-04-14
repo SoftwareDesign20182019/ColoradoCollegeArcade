@@ -1,55 +1,47 @@
 package Package;
 
+import java.io.IOException;
+import java.util.HashMap;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class HighScore extends Application implements Game {
+public class HighScore extends Application {
+
 
 	private Stage primaryStage;
-	private int score;
 	private Arcade arcade;
-	boolean isGameDone;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+
+
 		this.primaryStage = primaryStage;
-		isGameDone = false;
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("HighScores.fxml"));
 		Parent root = loader.load();
-		HighScoresController controller = loader.<HighScoresController>getController();
+		HighScoreController controller = loader.<HighScoreController>getController();
 		controller.initData(this);
-		primaryStage.setTitle("High Scores");
-		primaryStage.setScene(new Scene(root, 600,700));
+		primaryStage.setTitle("High Score");
+		primaryStage.setScene(new Scene(root, 600, 700));
 		primaryStage.show();
+		
 	}
 
-	public int playGame(Stage stage, Arcade arcade) throws Exception {
+	public void displayHighScores(Stage stage, Arcade arcade) throws Exception{
 		this.arcade = arcade;
 		start(stage);
-		return score;
 	}
 
-	public void setScore(int score) {
-		System.out.println("Score is: " + score);
-		this.score = score;
+	public HashMap<String, String> getHighScores(){
+		return arcade.getHighScores();
 	}
 
-	public String toString() {
-		return "High Scores";
+	public String getGameName(){
+		return arcade.getGameName();
 	}
 
-	public String getName() {
-		return "NUL";
-	}
 
-	public boolean isGameDone() {
-		return isGameDone;
-	}
-
-	public void setGameToDone() {
-		arcade.gameUpdate(score);
-	}
 }

@@ -1,5 +1,7 @@
 package Package;
+
 import javafx.stage.Stage;
+
 import java.util.HashMap;
 
 /**
@@ -9,77 +11,98 @@ import java.util.HashMap;
  *
  */
 public class Arcade {
-	
+
 	private ArcadeMenu menu;
 	private MenuController controller;
-	private ApplicationFactory factory;
+	private GameFactory factory;
 	private ScoreDatabase database;
 	private Game game;
     private HashMap<String, String> topTenScores;
+    private int highScore;
+    private NameSelector nameSelector;
+    private HighScore highScoreScreen;
+    private Stage gameStage;
+    private String gameName;
 
 	/**
 	 * simple constructor for the arcade,
 	 * creates a new game factory and database for storing scores
 	 */
     public Arcade() {
-		factory = new ApplicationFactory();
+		factory = new GameFactory();
 		database = new ScoreDatabase("ArcadeGames");
         topTenScores = new HashMap<>();
-	}
-	
+    }
+
+    /**
+     * main method for the class -
+     * creates an instance of this class for calling other methods
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        Arcade arcade = new Arcade();
+        arcade.createMenu();
+        arcade.showMenu();
+    }
+
 	/**
 	 * takes the choice picked from the game menu and
 	 * creates a corresponding game to be played
 	 * then saves the high score, player, and game to the database
 	 * @param choice integer choice for the game to play
 	 * @return the string representation of each game
-	 * @throws Exception 
+     * @throws Exception
 	 */
 	public void runNewGame(int choice) throws Exception {
-		Stage stage = new Stage();		
-    	game = factory.selectGame(choice);
-    	if (game != null) {
-        	game.playGame(stage, this);
-        	//playerName = game.getName();
-        	//gameName = game.toString();
-            //database.addScore(gameName, playerName, Integer.toString(highScore));
-            //topTenScores = database.getScores(gameName);
-    	}
-	}
-	
-	public void gameUpdate(int score) {
-		int highScore = score;
-		String playerName = game.getName();
-		String gameName = game.toString();
-        database.addScore(gameName, playerName, Integer.toString(highScore));
+        Stage gameStage = new Stage();
+        game = factory.selectGame(choice);
+        if (game != null) {
+            game.playGame(gameStage, this);
+        }
+    }
+
+    public void gameUpdate(int score) throws Exception {
+        highScore = score;
+//        gameStage.hide();
+        Stage nameStage = new Stage();
+        nameSelector = new NameSelector();
+        nameSelector.openNameSelector(nameStage, this);
+    }
+
+
+    public void finishGame(String name) throws Exception {
+	    gameName = game.toString();
+        database.addScore(gameName, name, Integer.toString(highScore));
         topTenScores = database.getScores(gameName);
-		
-	}
-	
-	/**
+        Stage stage = new Stage();
+        highScoreScreen = new HighScore();
+        highScoreScreen.displayHighScores(stage, this);
+
+    }
+
+    public HashMap<String, String> getHighScores() {
+        topTenScores = database.getScores(gameName);
+        return topTenScores;
+    }
+
+    public String getGameName(){
+	    return game.getGameName();
+    }
+
+    /**
 	 * starts the arcade menu application
 	 */
 	private void showMenu() {
-    	String[] args = {};
+        String[] args = {};
 		ArcadeMenu.main(args);
 	}
-	
-	/**
+
+    /**
 	 * creates a new arcade menu application
 	 */
 	private void createMenu() {
 		menu = new ArcadeMenu();
-	}
-	
-	/**
-	 * main method for the class -
-	 * creates an instance of this class for calling other methods
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		Arcade arcade = new Arcade();
-		arcade.createMenu();
-		arcade.showMenu();
 	}
 
 }

@@ -26,6 +26,7 @@ public class NameSelectorController {
     private String letterOne;
     private String letterTwo;
     private String letterThree;
+    private NameSelector nameSelector;
 
 
     @FXML
@@ -61,16 +62,12 @@ public class NameSelectorController {
 
     }
 
-    public String returnName(String name) {
-        return name;
-    }
-
     /**
      * Handles key presses and does different actions based on the key pressed and the state
      * @param e - the key event
      */
     @FXML
-    private void handleKeyPress(KeyEvent e) {
+    private void handleKeyPress(KeyEvent e) throws Exception{
         //ENTER
         if (e.getCode() == KeyCode.ENTER) {
 
@@ -85,8 +82,8 @@ public class NameSelectorController {
             else if (lettersInputed == 3 && row == 2 && column == 9) {
                 String name = letterOne + letterTwo + letterThree;
                 returnName(name);
-                System.exit(0);
-                //TODO RETURN NAME AND GO TO NEXT SCREEN
+//                System.exit(0);
+                //TODO GO TO NEXT SCREEN
             }
 
             //LETTER SELECTION
@@ -183,5 +180,14 @@ public class NameSelectorController {
         if (column == 9)
             rightCol = true;
         leftCol = false;
+    }
+
+    private void returnName(String name) throws Exception{
+        nameSelector.setName(name);
+        nameSelector.finishGame();
+    }
+
+    void initData(NameSelector nameSelector) {
+        this.nameSelector = nameSelector;
     }
 }

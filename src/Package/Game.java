@@ -14,20 +14,20 @@ public interface Game {
 	int playGame(Stage stage, Arcade arcade) throws Exception;
 	
 	/**
-	 * prompts the user to enter their name via a new javaFX window
-	 * @return the user's name
+	 *
+	 * @return
 	 */
-	String getName();
+	String getGameName();
 	
 	/**
 	 * the string representation of the game
 	 * @return the string
 	 */
 	String toString();
-	
-    public boolean isGameDone();
-    
-    public void setGameToDone();
+
+	boolean isGameDone();
+
+	void setGameToDone() throws Exception;
 
 	
 }
