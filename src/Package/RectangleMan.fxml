@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPress" onKeyReleased="#handleKeyRelease" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.RectangleManController">
+   <children>
+      <Rectangle fill="#1a141e" height="400.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" radius="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="25.0" layoutY="-90.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="114.0" layoutY="-71.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="580.0" layoutY="13.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="146.0" layoutY="10.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="322.0" layoutY="-5.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="358.0" layoutY="-95.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="449.0" layoutY="-15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="470.0" layoutY="-5.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="5.0" layoutY="-47.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="156.0" layoutY="-85.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="114.0" layoutY="-37.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="251.0" layoutY="-66.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="663.0" layoutY="96.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="535.0" layoutY="-66.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="273.0" layoutY="-107.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="424.0" layoutY="-70.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="-10.0" layoutY="96.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="45.0" layoutY="74.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="40.0" layoutY="36.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="60.0" layoutY="-10.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="135.0" layoutY="138.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="151.0" layoutY="70.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="216.0" layoutY="50.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="395.0" layoutY="65.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="325.0" layoutY="47.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="444.0" layoutY="47.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="319.0" layoutY="124.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="247.0" layoutY="124.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="235.0" layoutY="-8.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="407.0" layoutY="169.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Rectangle height="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" x="100.0" y="350.0">
+         <effect>
+            <BoxBlur height="20.0" width="255.0" />
+         </effect>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#ff80fba7" />
+                  <Stop color="#ff80fba7" offset="0.007434944237918215" />
+                  <Stop color="#7a7dffcc" offset="0.7472118959107806" />
+                  <Stop color="#7a7dffcc" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill></Rectangle>
+      <Rectangle fx:id="rectangleMan" arcHeight="5.0" arcWidth="5.0" fill="#a5ff7ecc" height="80.0" stroke="BLACK" strokeType="INSIDE" width="40.0" x="100.0" y="260.0" />
+      <Button fx:id="button" layoutX="700.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleButtonPress" text="Button" />
+      <Rectangle fx:id="roof" height="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" x="100.0">
+         <effect>
+            <BoxBlur height="20.0" width="255.0" />
+         </effect>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#7a94ffcf" />
+                  <Stop color="#7a94ffcf" offset="0.007434944237918215" />
+                  <Stop color="#f47affcf" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill></Rectangle>
+      <Label fx:id="labelStart" alignment="CENTER" layoutY="2.0" prefHeight="40.0" prefWidth="800.0" text="Press Enter to Begin">
+         <font>
+            <Font name="Aldrich" size="38.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d0ff78ce" />
+                  <Stop color="#d0ff78ce" offset="0.24907063197026022" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Circle centerX="700.0" centerY="150.0" fill="WHITE" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="700.0" centerY="300.0" fill="WHITE" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="592.0" layoutY="-52.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="584.0" layoutY="101.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="508.0" layoutY="91.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Circle centerX="60.0" centerY="150.0" fill="WHITE" layoutX="670.0" layoutY="-32.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <Bloom threshold="1.0">
+               <input>
+                  <GaussianBlur />
+               </input>
+            </Bloom>
+         </effect>
+      </Circle>
+      <Rectangle fx:id="badBlock12" fill="#d33535c7" height="115.0" stroke="BLACK" strokeType="INSIDE" width="40.0" x="800.0" y="50.0" />
+      <Rectangle fx:id="badBlock11" fill="#d33535c7" height="115.0" stroke="BLACK" strokeType="INSIDE" width="40.0" x="800.0" y="235.0" />
+      <Rectangle fx:id="badBlock2" fill="#d33535c7" height="225.0" stroke="BLACK" strokeType="INSIDE" width="40.0" x="800.0" y="125.0" />
+      <Rectangle fx:id="badBlock3" fill="#d33535c7" height="225.0" stroke="BLACK" strokeType="INSIDE" width="40.0" x="800.0" y="50.0" />
+      <Rectangle fx:id="badBlock4" fill="#d33535c7" height="225.0" stroke="BLACK" strokeType="INSIDE" width="40.0" x="800.0" y="50.0" />
+      <Rectangle fx:id="badBlock51" fill="#d33535c7" height="115.0" stroke="BLACK" strokeType="INSIDE" width="40.0" x="800.0" y="235.0" />
+      <Rectangle fx:id="badBlock52" fill="#d33535c7" height="115.0" stroke="BLACK" strokeType="INSIDE" width="40.0" x="800.0" y="50.0" />
+      <Label fx:id="labelScore" layoutX="600.0" layoutY="360.0" prefHeight="22.0" prefWidth="200.0" text="Score: ">
+         <font>
+            <Font name="Aldrich" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d0ff78ce" />
+                  <Stop color="#d0ff78ce" offset="0.007434944237918215" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="labelEnd" alignment="CENTER" layoutY="-100.0" prefHeight="54.0" prefWidth="800.0" text="Game Over! Press Enter to Quit">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d0ff78ce" />
+                  <Stop color="#d0ff78ce" offset="0.007434944237918215" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Aldrich" size="37.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
