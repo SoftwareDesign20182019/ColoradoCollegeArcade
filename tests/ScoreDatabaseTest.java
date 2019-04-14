@@ -36,7 +36,6 @@ public class ScoreDatabaseTest {
 
     @Test
     public void getScoresTest() {
-//        assertTrue(database.getScores(random.getName()));
         assertNotNull(database.getScores(random.toString()));
     }
 
