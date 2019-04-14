@@ -67,4 +67,10 @@ public class RectangleManMain extends Application implements Game{
 	public String toString(){
 		return "RectangleMan";
 	}
+
+	@Override
+	public void stop(){
+		System.out.println("Stage is closing");
+		// Save file
+	}
 }

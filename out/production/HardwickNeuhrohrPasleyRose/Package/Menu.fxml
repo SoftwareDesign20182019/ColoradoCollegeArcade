@@ -52,7 +52,7 @@
             <Font name="Silom" size="18.0" />
          </font>
       </Label>
-      <Label text="Driving Range" textFill="WHITE" translateX="50.0" translateY="190.0">
+      <Label text="Rectangle Man" textFill="WHITE" translateX="50.0" translateY="190.0">
          <font>
             <Font name="Silom" size="18.0" />
          </font>

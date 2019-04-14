@@ -74,8 +74,8 @@ public class Arcade {
     public void finishGame(String name) throws Exception {
 	    gameName = game.toString();
 	    database.createTable(gameName);
-        database.addScore(gameName, name, Integer.toString(highScore));
-        topTenScores = database.getScores(gameName);
+        database.addScore(gameName, name, highScore);
+//        topTenScores = database.getScores(gameName);
         Stage stage = new Stage();
         highScoreScreen = new HighScore();
         highScoreScreen.displayHighScores(stage, this);
@@ -84,6 +84,7 @@ public class Arcade {
 
     public HashMap<String, String> getHighScores() {
         topTenScores = database.getScores(gameName);
+//        topTenScores = database.
         return topTenScores;
     }
 
