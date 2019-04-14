@@ -364,7 +364,7 @@ public class RectangleManController {
 		badBlock53Transition.stop();
 		canExit = true;
 		labelEnd.setLayoutY(0);
-//		exitApplication();
+		rectangleManMain.stop();
 		rectangleManMain.setScore(score);
 		rectangleManMain.setGameToDone();
 	}
