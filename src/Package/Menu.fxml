@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPress" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.MenuController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000d5" height="700.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <Label alignment="CENTER" ellipsisString="" prefHeight="34.0" prefWidth="600.0" text="Choose Your Game">
+         <font>
+            <Font name="Silom" size="50.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7884615384615384" startX="1.0" startY="0.3028846153846154">
+               <stops>
+                  <Stop color="#3a76ba" />
+                  <Stop color="#3a76ba" offset="0.10780669144981413" />
+                  <Stop color="WHITE" offset="0.4214046822742475" />
+                  <Stop color="#f08802" offset="0.7732342007434942" />
+                  <Stop color="#ed02ed7f" offset="0.8959107806691443" />
+                  <Stop color="#ed02ed7f" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </Label>
+      <Label text="Random Score Generator" textFill="WHITE" translateX="50.0" translateY="100.0">
+         <font>
+            <Font name="Silom" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Deathrace For Love" textFill="WHITE" translateX="50.0" translateY="130.0">
+         <font>
+            <Font name="Silom" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Isley's Revenge" textFill="WHITE" translateX="50.0" translateY="160.0">
+         <font>
+            <Font name="Silom" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Driving Range" textFill="WHITE" translateX="50.0" translateY="190.0">
+         <font>
+            <Font name="Silom" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="selectorRec" arcHeight="5.0" arcWidth="5.0" height="8.0" stroke="BLACK" strokeType="INSIDE" width="20.0" x="23.0" y="110.0">
+         <fill>
+            <LinearGradient endX="0.8894230769230769" endY="0.8942307692307693" startX="0.10576923076923077">
+               <stops>
+                  <Stop color="#466ee0" />
+                  <Stop color="#466ee0" offset="0.12267657992565055" />
+                  <Stop color="WHITE" offset="0.379182156133829" />
+                  <Stop color="#e48d1b" offset="0.5752508361204014" />
+                  <Stop color="#f073e1" offset="0.929368029739777" />
+                  <Stop color="#f073e1" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="300.0" stroke="TRANSPARENT" strokeType="INSIDE" translateY="400.0" width="600.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.04807692307692307" startX="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#96369cf7" />
+                  <Stop color="#96369cf7" offset="0.007434944237918215" />
+                  <Stop color="#41254563" offset="0.8587360594795539" />
+                  <Stop color="#d807eb00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Circle radius="100.0" stroke="TRANSPARENT" strokeType="INSIDE" translateX="300.0" translateY="452.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#ee00ff" />
+                  <Stop color="#ee00ff" offset="0.007434944237918215" />
+                  <Stop color="#631d6300" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Circle>
+      <QuadCurve controlX="20.0" controlY="460.0" endX="100.0" endY="452.0" fill="#ffffff00" startY="500.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="580.0" controlY="460.0" endX="500.0" endY="452.0" fill="#ffffff00" startX="600.0" startY="500.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="430.0" controlY="500.0" endX="370.0" endY="452.0" fill="#ffffff00" startX="460.0" startY="700.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="170.0" controlY="500.0" endX="230.0" endY="452.0" fill="#ffffff00" startX="140.0" startY="700.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="80.0" controlY="490.0" endX="150.0" endY="452.0" fill="#ffffff00" startY="650.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <QuadCurve controlX="520.0" controlY="490.0" endX="450.0" endY="452.0" fill="#ffffff00" startX="600.0" startY="650.0" stroke="#379aa17a" strokeType="INSIDE" />
+      <Line endX="300.0" endY="452.0" startX="300.0" startY="700.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="452.0" startY="452.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="453.0" startY="453.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="455.0" startY="455.0" stroke="#369aa37a" />
+      <Line endX="600.0" endY="458.0" startY="458.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="462.0" startY="462.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="468.0" startY="468.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="475.0" startY="475.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="486.0" startY="486.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="500.0" startY="500.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="518.0" startY="518.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="539.0" startY="539.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="562.0" startY="562.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="586.0" startY="586.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="613.0" startY="613.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="641.0" startY="641.0" stroke="#369aa37b" />
+      <Line endX="600.0" endY="670.0" startY="670.0" stroke="#369aa37b" />
+      <Button layoutX="650.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleButtonPress" text="Button" />
+       <Label layoutX="50.0" layoutY="223.0" text="Quit" textFill="WHITE">
+           <font>
+               <Font name="Silom" size="18.0" />
+           </font>
+       </Label>
+   </children>
+</AnchorPane>

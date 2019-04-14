@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="400.0" maxWidth="800.0" minHeight="400.0" minWidth="800.0" onKeyPressed="#handleKeyPress" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.JavelinController">
+   <children>
+      <Button layoutX="900.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleButtonPress" text="Button" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1783ff76" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
+      <Line endX="800.0" endY="350.0" fill="WHITE" startY="350.0" stroke="WHITE" strokeWidth="2.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3cba20a4" height="55.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="810.0" x="-5.0" y="351.0">
+         <effect>
+            <GaussianBlur radius="21.25" />
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="100.0" x="50.0" y="50.0">
+         <effect>
+            <GaussianBlur radius="7.0" />
+         </effect>
+      </Rectangle>
+      <Circle centerX="50.0" centerY="50.0" fill="WHITE" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <GaussianBlur radius="7.0" />
+         </effect>
+      </Circle>
+      <Circle centerX="150.0" centerY="50.0" fill="WHITE" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <GaussianBlur radius="7.0" />
+         </effect>
+      </Circle>
+      <Circle centerX="80.0" centerY="40.0" fill="WHITE" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <GaussianBlur radius="7.0" />
+         </effect>
+      </Circle>
+      <Circle centerX="118.0" centerY="30.0" fill="WHITE" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <effect>
+            <GaussianBlur radius="7.0" />
+         </effect>
+      </Circle>
+      <Circle centerX="118.0" centerY="30.0" fill="WHITE" layoutX="10.0" layoutY="10.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="400.0" translateY="30.0">
+         <effect>
+            <GaussianBlur radius="6.25" />
+         </effect>
+      </Circle>
+      <Circle centerX="80.0" centerY="40.0" fill="WHITE" layoutX="10.0" layoutY="10.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="400.0" translateY="30.0">
+         <effect>
+            <GaussianBlur radius="6.25" />
+         </effect>
+      </Circle>
+      <Circle centerX="150.0" centerY="50.0" fill="WHITE" layoutX="10.0" layoutY="10.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="400.0" translateY="30.0">
+         <effect>
+            <GaussianBlur radius="6.25" />
+         </effect>
+      </Circle>
+      <Circle centerX="50.0" centerY="50.0" fill="WHITE" layoutX="10.0" layoutY="10.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="400.0" translateY="30.0">
+         <effect>
+            <GaussianBlur radius="6.25" />
+         </effect>
+      </Circle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="400.0" translateY="30.0" width="100.0" x="50.0" y="50.0">
+         <effect>
+            <GaussianBlur radius="6.25" />
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#977653" height="50.0" layoutX="1.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="50.0" x="20.0" y="300.0">
+         <effect>
+            <Lighting diffuseConstant="1.43">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="143.57" />
+               </light>
+            </Lighting>
+         </effect>
+      </Rectangle>
+      <Polygon fill="#bf6363" layoutX="46.0" layoutY="305.0" scaleX="0.66" scaleY="0.4" scaleZ="0.5" stroke="BLACK" strokeType="INSIDE">
+        <points>
+          <Double fx:value="-50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="0.0" />
+          <Double fx:value="-60.0" />
+        </points>
+         <effect>
+            <Lighting diffuseConstant="1.24" specularConstant="0.18" specularExponent="20.48" surfaceScale="1.74">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="135.0" elevation="40.71" />
+               </light>
+            </Lighting>
+         </effect>
+      </Polygon>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b56056" height="20.0" layoutX="38.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="15.0">
+         <effect>
+            <Lighting diffuseConstant="1.38">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="139.29" />
+               </light>
+            </Lighting>
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="10.0" stroke="BLACK" strokeType="INSIDE" width="10.0" x="50.0" y="320.0">
+         <effect>
+            <Reflection fraction="0.0" topOpacity="0.0" />
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="10.0" stroke="BLACK" strokeType="INSIDE" width="10.0" x="30.0" y="320.0">
+         <effect>
+            <Reflection fraction="0.0" topOpacity="0.0" />
+         </effect>
+      </Rectangle>
+      <Line endX="39.0" endY="325.0" startX="31.0" startY="325.0" />
+      <Line endX="59.0" endY="325.0" startX="51.0" startY="325.0" />
+      <Line endX="55.0" endY="329.0" startX="55.0" startY="321.0" />
+      <Line endX="35.0" endY="329.0" startX="35.0" startY="321.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dd3434" height="25.0" layoutX="190.0" layoutY="364.0" stroke="BLACK" strokeType="INSIDE" width="10.0">
+         <effect>
+            <SepiaTone level="0.55">
+               <input>
+                  <Glow level="0.51" />
+               </input>
+            </SepiaTone>
+         </effect>
+      </Rectangle>
+      <Rectangle fill="#f2f2f2" height="49.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="200.0" y="350.0" />
+      <Rectangle fill="#f2f2f2" height="49.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="325.0" y="350.0" />
+      <Rectangle fill="#f2f2f2" height="49.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="450.0" y="350.0" />
+      <Rectangle fill="#f2f2f2" height="49.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="575.0" y="350.0" />
+      <Rectangle fill="#f2f2f2" height="49.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="700.0" y="350.0" />
+      <Line endX="705.0" endY="340.0" startX="705.0" startY="375.0" strokeWidth="2.0" />
+      <Polygon fill="#c64141" layoutX="715.0" layoutY="360.0" rotate="90.0" scaleX="0.2" scaleY="0.2" stroke="BLACK" strokeType="INSIDE">
+        <points>
+          <Double fx:value="-50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="0.0" />
+          <Double fx:value="-60.0" />
+        </points>
+      </Polygon>
+      <Line endX="693.0" endY="385.0" startX="705.0" startY="375.0" strokeWidth="2.0">
+         <effect>
+            <GaussianBlur radius="3.25" />
+         </effect>
+      </Line>
+      <Polygon fill="#000000b4" layoutX="690.0" layoutY="370.0" rotate="16.7" scaleX="0.15" scaleY="0.1" stroke="BLACK" strokeType="INSIDE" translateX="10.0" translateY="22.0">
+         <points>
+            <Double fx:value="-50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="0.0" />
+            <Double fx:value="-60.0" />
+         </points>
+         <effect>
+            <GaussianBlur radius="40.75" />
+         </effect>
+      </Polygon>
+      <Label fx:id="label" alignment="CENTER" layoutY="20.0" prefHeight="22.0" prefWidth="800.0" text="Press S to Begin">
+         <font>
+            <Font name="Silom" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="javelinMan" fitHeight="210.0" fitWidth="227.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@JavelinMan.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="javelin" arcHeight="5.0" arcWidth="5.0" height="50.0" onKeyPressed="#handleKeyPress" rotate="45.0" stroke="BLACK" strokeType="INSIDE" width="3.0" x="100.0" y="312.0" />
+      <Rectangle fill="#e5e5e500" height="202.0" layoutX="85.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+      <Rectangle fx:id="powerBar" fill="#d35437" height="10.0" layoutX="86.0" layoutY="195.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
+      <Rectangle fill="#ffffff00" height="30.0" layoutX="150.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="204.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0e543d4" height="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" x="232.0" y="101.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4ce34483" height="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="10.0" x="247.0" y="101.0" />
+      <Rectangle fx:id="accuracyBar" fill="#d35437" height="28.0" layoutX="151.0" layoutY="101.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+   </children>
+</AnchorPane>
