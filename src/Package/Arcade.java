@@ -63,11 +63,14 @@ public class Arcade {
         }
     }
 	
+
+	
 	public void playAgain() throws Exception {
 		Stage gameStage = new Stage();
 		game.playGame(gameStage, this);
 	}
 
+	
     public void gameUpdate(int score) throws Exception {
         highScore = score;
 //        gameStage.hide();
