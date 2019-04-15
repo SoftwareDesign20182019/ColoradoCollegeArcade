@@ -25,7 +25,13 @@ public class JavelinController {
 	Rectangle javelin;
 	
 	@FXML
-	Label label;
+	Label instructionLabel1;
+	
+	@FXML
+	Label instructionLabel2;
+	
+	@FXML
+	Label instructionLabel3;
 	
 	@FXML
 	Rectangle powerBar;
@@ -60,7 +66,9 @@ public class JavelinController {
 	@FXML
 	private void handleKeyPress(KeyEvent e) throws Exception
 	{
-		label.setVisible(false);
+		instructionLabel1.setVisible(false);
+		instructionLabel2.setVisible(false);
+		instructionLabel3.setVisible(false);
 		if (e.getCode() == KeyCode.S && sequence == 1)
 		{
 			powerBarAnimation();
@@ -138,20 +146,20 @@ public class JavelinController {
 	 */
 	private void displayScore() {
 		String newLabel = "You Scored: " + total + "! (Game Over) Press Enter to Continue";
-		label.setText(newLabel);
+		instructionLabel2.setText(newLabel);
 		
 		ParallelTransition labelMove = new ParallelTransition();
 		SequentialTransition labelFadeIn = new SequentialTransition();
 		
-		TranslateTransition labelStall = new TranslateTransition(Duration.millis(4000), label);
+		TranslateTransition labelStall = new TranslateTransition(Duration.millis(4000), instructionLabel2);
 		labelStall.setByY(175);
 		
-		FadeTransition keepLabelInvisible = new FadeTransition(Duration.millis(4000), label);
+		FadeTransition keepLabelInvisible = new FadeTransition(Duration.millis(4000), instructionLabel2);
 		keepLabelInvisible.setFromValue(0.0);
 		keepLabelInvisible.setToValue(0.0);
 		keepLabelInvisible.setCycleCount(1);
 		
-		FadeTransition labelFade = new FadeTransition(Duration.millis(200), label);
+		FadeTransition labelFade = new FadeTransition(Duration.millis(200), instructionLabel2);
 		labelFade.setFromValue(0.0);
 		labelFade.setToValue(1.0);
 		labelFade.setCycleCount(1);
@@ -159,7 +167,7 @@ public class JavelinController {
 		labelMove.getChildren().addAll(labelStall, keepLabelInvisible);
 		labelFadeIn.getChildren().addAll(labelMove, labelFade);
 		labelFadeIn.play();
-		label.setVisible(true);
+		instructionLabel2.setVisible(true);
 	}
 	
 	/**
