@@ -8,6 +8,10 @@ public class FactorySelectionTest {
 
 	private GameFactory factory;
 	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		factory = new GameFactory();
