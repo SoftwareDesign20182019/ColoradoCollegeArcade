@@ -384,6 +384,9 @@ public class RectangleManController {
 		badBlock53Transition.stop();
 		canExit = true;
 		labelEnd.setLayoutY(0);
+	}
+	
+	private void endGame() throws Exception {
 		rectangleManMain.stop();
 		rectangleManMain.setScore(score);
 		rectangleManMain.setGameToDone();
@@ -428,7 +431,7 @@ public class RectangleManController {
 
 		if (e.getCode() == KeyCode.ENTER && canExit)
 		{
-			System.exit(0);
+			endGame();
 		}
 		if (e.getCode() == KeyCode.ENTER && !gameStarted)
 		{
