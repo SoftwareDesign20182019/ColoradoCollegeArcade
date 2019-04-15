@@ -5,15 +5,15 @@ package Package;
  */
 public interface Command {
 
-    /**
-     * Do a command
-     *
-     * @return String
-     */
-    String execute();
+	/**
+	 * Do a command
+	 *
+	 * @return String
+	 */
+	String execute();
 
-    /**
-     * Undo a command
-     */
-    void undo();
+	/**
+	 * Undo a command
+	 */
+	void undo();
 }

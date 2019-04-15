@@ -53,7 +53,6 @@ public class ScoreDatabase {
                 "primary key (id)";
         String sql = "create table if not exists " + tableName + " (" + tableValues + ");";
         try {
-//        	Statement stmt = this.conn.createStatement();
             stmt.execute(sql);
             return true;
         } catch (SQLException e) {
@@ -72,7 +71,6 @@ public class ScoreDatabase {
         createTable(table);
         String sql = "insert into " + table + " (name, score) values ('" + name + "', " + score + ")";
         try {
-//        	Statement stmt = this.conn.createStatement();
             stmt.executeUpdate(sql);
             return true;
         } catch (SQLException e) {
@@ -82,7 +80,6 @@ public class ScoreDatabase {
     }
 
     /**
-     * TODO error handling if the table doesn't exist?
      * Returns the top ten scores from a game
      * @param table - the game to retrieve high scores from
      * @return LinkedHashMap<String ,   String> - the hashmap of the top ten names and scores
@@ -104,7 +101,6 @@ public class ScoreDatabase {
 
     /**
      * Sorts a hashmap by the values (scores)
-     *
      * @param passedMap - the initial hashmap
      * @return - the sorted hashmap
      */
@@ -140,9 +136,8 @@ public class ScoreDatabase {
     }
 
     /**
-     * Returns the first ten key-value pairs of a hashmap, filling in remaining entries with "   "=0 if
-     * there are less than 10 entries in the hashmap
-     *
+     * Returns the first ten key-value pairs of a hashmap
+     * If there are less than 10 entries that is handled in the high score controller
      * @param hashMap - a SORTED hashmap
      * @return the hashmap of size 10
      */

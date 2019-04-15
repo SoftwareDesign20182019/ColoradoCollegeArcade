@@ -1,32 +1,28 @@
 package Package;
 
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-public class RectangleManMain extends Application implements Game{
+/**
+ * Implementation of the game interface for the Rectangle Man game
+ * @author ellaneurohr
+ *
+ */
+public class RectangleMan extends Application implements Game{
 
 	private Stage rectangleManStage;
 	private Arcade arcade;
 	private int score;
-	
+
+	/**
+	 * Loads the fxml and sets up the controller
+	 * @param primaryStage - the new stage for this fxml file
+	 */
 	@Override
 	public void start(Stage rectangleManStage) throws Exception {
-		
-//		this.rectangleManStage = rectangleManStage;
-//		FXMLLoader recloader = new FXMLLoader(getClass().getResource("RectangleMan.fxml"));
-//		Parent rectangleManRoot = recloader.load();
-//		rectangleManStage.setTitle("Rectangle Man");
-//		rectangleManStage.setScene(new Scene(rectangleManRoot, 800,400));
-//		rectangleManStage.setResizable(false);
-//		rectangleManStage.show();
-
 		this.rectangleManStage = rectangleManStage;
-//		isGameDone = false;
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("RectangleMan.fxml"));
 		Parent root = loader.load();
 		RectangleManController controller = loader.<RectangleManController>getController();
@@ -36,7 +32,14 @@ public class RectangleManMain extends Application implements Game{
 		rectangleManStage.show();
 	}
 
-
+	/**
+	 * Calls the start method
+	 * Gets called from the main arcade class
+	 * @param stage - the new stage for this game
+	 * @param arcade - the instance of the arcade
+	 * @return int - the score
+	 * @throws Exception
+	 */
 	@Override
 	public int playGame(Stage stage, Arcade arcade) throws Exception {
 		this.arcade = arcade;
@@ -44,30 +47,44 @@ public class RectangleManMain extends Application implements Game{
 		return 0;
 	}
 
+	/**
+	 * Sets the score of the game
+	 * @param score - the game score
+	 */
 	public void setScore(int score){
 		this.score = score;
 	}
 
+	/**
+	 * The display name of the game
+	 * @return String - game name
+	 */
 	@Override
 	public String getGameName() {
 		return "Rectangle Man";
 	}
 
-	@Override
-	public boolean isGameDone() {
-		return false;
-	}
-
+	/**
+	 * calls the arcade method to end the game and prompt name selection
+	 * @throws Exception
+	 */
 	@Override
 	public void setGameToDone() throws Exception {
-		arcade.gameUpdate(score);
+		arcade.endGameToNameChoice(score);
 
 	}
 
+	/**
+	 * The database name of the game
+	 * @return String - game name
+	 */
 	public String toString(){
 		return "RectangleMan";
 	}
 
+	/**
+	 * Overrides the fxml process to close this game stage
+	 */
 	@Override
 	public void stop(){
 		rectangleManStage.close();

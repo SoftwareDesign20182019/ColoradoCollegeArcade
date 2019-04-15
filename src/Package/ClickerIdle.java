@@ -53,7 +53,7 @@ public class ClickerIdle extends Application implements Game {
 	}
 
 	public void setGameToDone() throws Exception {
-		arcade.gameUpdate(score);
+		arcade.endGameToNameChoice(score);
 	}
 
 	@Override

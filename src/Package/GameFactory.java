@@ -1,25 +1,24 @@
 package Package;
 
-import java.io.IOException;
-
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
 /**
  * 
  * Class for the factory that switches to the user-selected game
  */
 public class GameFactory {
 
-    public Game selectGame(int userChoice) throws Exception {
+	/**
+	 * Factory that returns a new instance of a game base on user selection
+	 * @param userChoice - the game that the user selected
+	 * @return Game - the game to be played
+	 * @throws Exception
+	 */
+	public Game selectGame(int userChoice) throws Exception {
         switch (userChoice) {
             case Arcade.JAVELIN_THROW:
             	JavelinThrow javelinGame = new JavelinThrow();
                 return javelinGame;
             case Arcade.RECTANGLE_MAN:
-                RectangleManMain rectangleManMain = new RectangleManMain();
+                RectangleMan rectangleManMain = new RectangleMan();
                 return rectangleManMain;
             case Arcade.SUPER_VACUUM:
             	return null;
