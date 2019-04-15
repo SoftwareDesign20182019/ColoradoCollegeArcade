@@ -259,7 +259,6 @@ public class JavelinController {
 	private void returnScore() throws Exception {
 		game.setScore(total);
 		game.setGameToDone();
-		game.stop();
 	}
 	
 

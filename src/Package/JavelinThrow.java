@@ -84,13 +84,6 @@ public class JavelinThrow extends Application implements Game {
 	@Override
 	public void setGameToDone() throws Exception {
 		arcade.endGameToNameChoice(score);
-	}
-
-	/**
-	 * Overrides the fxml process to close this game stage
-	 */
-	@Override
-	public void stop() {
 		primaryStage.close();
 	}
 }

@@ -71,7 +71,7 @@ public class RectangleMan extends Application implements Game{
 	@Override
 	public void setGameToDone() throws Exception {
 		arcade.endGameToNameChoice(score);
-
+		rectangleManStage.close();
 	}
 
 	/**
@@ -80,13 +80,5 @@ public class RectangleMan extends Application implements Game{
 	 */
 	public String toString(){
 		return "RectangleMan";
-	}
-
-	/**
-	 * Overrides the fxml process to close this game stage
-	 */
-	@Override
-	public void stop(){
-		rectangleManStage.close();
 	}
 }

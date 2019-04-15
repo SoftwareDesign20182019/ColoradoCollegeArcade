@@ -389,7 +389,6 @@ public class RectangleManController {
 	 * @throws Exception
 	 */
 	private void endGame() throws Exception {
-		rectangleManMain.stop();
 		rectangleManMain.setScore(score);
 		rectangleManMain.setGameToDone();
 	}
