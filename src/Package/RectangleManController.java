@@ -50,6 +50,8 @@ public class RectangleManController {
 	Rectangle badBlock52;
 	@FXML
 	Rectangle roof;
+	@FXML
+	Label instructions;
 	
 	Random random = new Random();
 
@@ -405,6 +407,7 @@ public class RectangleManController {
 		}
 		if (e.getCode() == KeyCode.ENTER && !gameStarted)
 		{
+			instructions.setVisible(false);
 			labelStart.setVisible(false);
 			gameStarted = true;
 			runEnemies();

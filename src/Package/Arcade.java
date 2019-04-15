@@ -33,7 +33,7 @@ public class Arcade {
 
 	/**
 	 * simple constructor for the arcade,
-	 * creates a new game factory and database for storing scores
+	 * creates a new game factory, a database for storing scores, and a hashmap for the top ten scores
 	 */
     public Arcade() {
 		factory = new GameFactory();
@@ -42,9 +42,8 @@ public class Arcade {
     }
 
     /**
-     * main method for the class -
-     * creates an instance of this class for calling other methods
-     *
+     * Main method to begin the game
+     * Opens a new menu
      * @param args
      */
     public static void main(String[] args) {
@@ -54,9 +53,7 @@ public class Arcade {
     }
 
 	/**
-	 * takes the choice picked from the game menu and
-	 * creates a corresponding game to be played
-	 * then saves the high score, player, and game to the database
+	 * calls the factory to create a new game based on the game selected in the menu
 	 * @param choice integer choice for the game to play
 	 * @return the string representation of each game
      * @throws Exception

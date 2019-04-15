@@ -422,5 +422,19 @@
             <Font name="Silom" size="37.0" />
          </font>
       </Label>
+      <Label fx:id="instructions" alignment="CENTER" layoutY="51.0" prefHeight="40.0" prefWidth="800.0" text="Move up and down with W/S and rotate with A">
+         <font>
+            <Font name="Silom" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d0ff78ce" />
+                  <Stop color="#d0ff78ce" offset="0.24907063197026022" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>
