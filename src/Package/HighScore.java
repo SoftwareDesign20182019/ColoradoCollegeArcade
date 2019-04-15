@@ -47,6 +47,10 @@ public class HighScore extends Application {
 	public void stop(){
 		primaryStage.close();
 	}
+	
+	public void playAgain() throws Exception {
+		arcade.playAgain();
+	}
 
 
 }

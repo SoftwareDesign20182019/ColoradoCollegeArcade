@@ -57,4 +57,8 @@ public class JavelinThrow extends Application implements Game {
 	public void setGameToDone() throws Exception {
     	arcade.gameUpdate(score);
     }
+	
+	public void stop() {
+		primaryStage.close();
+	}
 }

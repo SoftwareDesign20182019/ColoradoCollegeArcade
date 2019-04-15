@@ -193,6 +193,7 @@ public class JavelinController implements Initializable {
 	private void returnScore() throws Exception {
 		game.setScore(total);
 		game.setGameToDone();
+		game.stop();
 	}
 	
 	@FXML

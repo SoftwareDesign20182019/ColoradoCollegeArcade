@@ -23,6 +23,8 @@ public class HighScoreController {//implements Initializable {
     @FXML
     private Label instructions;
     @FXML
+    private Label continueInstructions;
+    @FXML
     private Label name1;
     @FXML
     private Label name2;
@@ -64,6 +66,8 @@ public class HighScoreController {//implements Initializable {
     @FXML
     private Label score10;
 
+    private int selection;
+
 
     /**
      * Constructor that initializes variables
@@ -85,6 +89,7 @@ public class HighScoreController {//implements Initializable {
         names.add(name8);
         names.add(name9);
         names.add(name10);
+        selection = 0;
 
     }
 
@@ -115,18 +120,21 @@ public class HighScoreController {//implements Initializable {
     /**
      * Handles key presses and does different actions based on the key pressed and the state
      * @param e - the key event
+     * @throws Exception 
      */
     @FXML
-    private void handleKeyPress(KeyEvent e) {
-        if(e.getCode() == KeyCode.ENTER )
+    private void handleKeyPress(KeyEvent e) throws Exception {
+        if(e.getCode() == KeyCode.ENTER && selection == 0)
         {
             instructions.setText(getGameName());
             highScores = getHighScores();
             System.out.println(highScores);
+            continueInstructions.setText("Press P to play again or Enter to return to main menu");
             Set<String> keySet = highScores.keySet();
             ArrayList<String> listOfKeys = new ArrayList<String>(keySet);
             Collection<String> values = highScores.values();
             ArrayList<String> listOfValues = new ArrayList<String>(values);
+            selection++;
             try {
                 name1.setText(listOfKeys.get(0));
                 score1.setText(listOfValues.get(0));
@@ -164,6 +172,15 @@ public class HighScoreController {//implements Initializable {
 //                System.out.println(name);
 //                name.setText(listOfKeys.get(i));
 //            }
+        }
+        else if(e.getCode() == KeyCode.ENTER && selection == 1)
+        {
+            highScore.stop();
+        }
+        else if(e.getCode() == KeyCode.P && selection == 1)
+        {
+        	highScore.stop();
+        	highScore.playAgain();
         }
 //        highScores = getHighScores();
 //        Set<String> keySet = highScores.keySet();

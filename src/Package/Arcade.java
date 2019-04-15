@@ -34,8 +34,6 @@ public class Arcade {
 	/**
 	 * simple constructor for the arcade,
 	 * creates a new game factory and database for storing scores
-	 * 
-	 * 
 	 */
     public Arcade() {
 		factory = new GameFactory();

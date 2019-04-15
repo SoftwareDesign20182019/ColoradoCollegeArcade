@@ -15,16 +15,23 @@ public class GameFactory {
 
     public Game selectGame(int userChoice) throws Exception {
         switch (userChoice) {
-            case Arcade.JAVELIN_THROW:
+            case 1:
+                RandomScore randomScore = new RandomScore();
+                return randomScore;
+            case 2:
             	JavelinThrow javelinGame = new JavelinThrow();
-                return javelinGame;
-            case Arcade.RECTANGLE_MAN:
+            	/*
+            	FXMLLoader loader = new FXMLLoader(getClass().getResource("Javelin.fxml"));
+        		Parent javelinRoot = loader.load();
+        		Stage javelinStage = new Stage();
+        		javelinStage.setTitle("Menu");
+        		javelinStage.setScene(new Scene(javelinRoot, 800,400));
+        		javelinStage.show();
+        		*/
+            	return javelinGame;
+            case 4:
                 RectangleManMain rectangleManMain = new RectangleManMain();
                 return rectangleManMain;
-            case Arcade.SUPER_VACUUM:
-            	return null;
-            case Arcade.CLICKER_GAME:
-            	return null;
             default:
                 return null;
         }
