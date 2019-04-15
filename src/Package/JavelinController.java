@@ -1,23 +1,22 @@
 package Package;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
-
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-import javafx.animation.*;
-import javafx.animation.Animation.Status;
 
-public class JavelinController implements Initializable {
+
+/**
+ * Controller for the Javelin Throw fxml file
+ * @author ellaneurohr
+ *
+ */
+public class JavelinController {
 	
 	@FXML
 	ImageView javelinMan;
@@ -26,7 +25,13 @@ public class JavelinController implements Initializable {
 	Rectangle javelin;
 	
 	@FXML
-	Label label;
+	Label instructionLabel1;
+	
+	@FXML
+	Label instructionLabel2;
+	
+	@FXML
+	Label instructionLabel3;
 	
 	@FXML
 	Rectangle powerBar;
@@ -39,22 +44,67 @@ public class JavelinController implements Initializable {
 	private int accuracy;
 	private int total;
 	private int distance;
+	private JavelinThrow game;
 	
 	SequentialTransition powerBarSequence;
 	SequentialTransition accuracyBarSequence;
 	SequentialTransition throwJavelin;
 	
-	public JavelinController() {
-	}
+	/**
+	 * Handles the button press
+	 * Necessary for weird button bug
+	 * @param event
+	 */
+	@FXML
+	public void handleButtonPress(ActionEvent event){}
 	
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-
-		
-	}
-	
-	private void moveJavelinMan() throws Exception
+	/**
+	 * Calls methods to deal with key presses
+	 * @param e
+	 * @throws Exception
+	 */
+	@FXML
+	private void handleKeyPress(KeyEvent e) throws Exception
 	{
+		instructionLabel1.setVisible(false);
+		instructionLabel2.setVisible(false);
+		instructionLabel3.setVisible(false);
+		if (e.getCode() == KeyCode.S && sequence == 1)
+		{
+			powerBarAnimation();
+			sequence++;
+		}	
+		else if (e.getCode() == KeyCode.S && sequence == 2)
+		{
+			powerBarStop();
+			accuracyBarAnimation();
+			sequence++;
+		}
+		else if (e.getCode() == KeyCode.S && sequence == 3) {
+			accuracyBarStop();
+			moveJavelinMan();
+			displayScore();
+			sequence++;
+		} else if (e.getCode() == KeyCode.ENTER && sequence == 4) {
+			returnScore();
+			sequence++;
+		}
+	}
+
+
+	/**
+	 * Allows the main JavelinThrow class to be passed in to this controller
+	 * Necessary for backwards retrieval of data
+	 * @param game - the instance of the JavelinThrow class
+	 */
+	public void initData(JavelinThrow game) {
+		this.game = game;
+	}
+
+	/**
+	 * Animation method for moving the man
+	 */
+	private void moveJavelinMan() {
 		throwJavelin = new SequentialTransition();
 		
 		ParallelTransition javelinAndManTransition = new ParallelTransition();
@@ -77,7 +127,7 @@ public class JavelinController implements Initializable {
 		javelinDown.setByY(100);
 		//translates javelin right through the air
 		TranslateTransition javelinRight = new TranslateTransition(Duration.millis(1000), javelin);
-		javelinRight.setByX((int)distance/2);
+		javelinRight.setByX(distance / 2);
 		//rotates the javelin
 		RotateTransition javelinRotate = new RotateTransition(Duration.millis(1000), javelin);
 		javelinRotate.setByAngle(45);
@@ -90,24 +140,26 @@ public class JavelinController implements Initializable {
 		throwJavelin.getChildren().addAll(javelinAndManTransition, javelinUpRight, javelinDownRight);
 		throwJavelin.play();
 	}
-	
-	private void displayScore() throws Exception
-	{
-		String newLabel = "You Scored: " + total + "! (Game Over)";
-		label.setText(newLabel);
+
+	/**
+	 * Method for displaying the final score
+	 */
+	private void displayScore() {
+		String newLabel = "You Scored: " + total + "! (Game Over) Press Enter to Continue";
+		instructionLabel2.setText(newLabel);
 		
 		ParallelTransition labelMove = new ParallelTransition();
 		SequentialTransition labelFadeIn = new SequentialTransition();
 		
-		TranslateTransition labelStall = new TranslateTransition(Duration.millis(4000), label);
+		TranslateTransition labelStall = new TranslateTransition(Duration.millis(4000), instructionLabel2);
 		labelStall.setByY(175);
 		
-		FadeTransition keepLabelInvisible = new FadeTransition(Duration.millis(4000), label);
+		FadeTransition keepLabelInvisible = new FadeTransition(Duration.millis(4000), instructionLabel2);
 		keepLabelInvisible.setFromValue(0.0);
 		keepLabelInvisible.setToValue(0.0);
 		keepLabelInvisible.setCycleCount(1);
 		
-		FadeTransition labelFade = new FadeTransition(Duration.millis(200), label);
+		FadeTransition labelFade = new FadeTransition(Duration.millis(200), instructionLabel2);
 		labelFade.setFromValue(0.0);
 		labelFade.setToValue(1.0);
 		labelFade.setCycleCount(1);
@@ -115,10 +167,12 @@ public class JavelinController implements Initializable {
 		labelMove.getChildren().addAll(labelStall, keepLabelInvisible);
 		labelFadeIn.getChildren().addAll(labelMove, labelFade);
 		labelFadeIn.play();
-		label.setVisible(true);
+		instructionLabel2.setVisible(true);
 	}
 	
-	//PowerBar goes up, then down
+	/**
+	 * Animates the power bar so it can go up then down
+	 */
 	private void powerBarAnimation()
 	{
 		powerBarSequence = new SequentialTransition();
@@ -137,7 +191,9 @@ public class JavelinController implements Initializable {
 		powerBarSequence.play();
 	}
 	
-	//PowerBar stops on s.
+	/**
+	 * Animation so the power bar stops on the s key press
+	 */
 	private void powerBarStop()
 	{	
 		powerBarSequence.stop();
@@ -150,6 +206,9 @@ public class JavelinController implements Initializable {
 		}
 	}
 	
+	/**
+	 * Animation for the accuracy bar
+	 */
 	private void accuracyBarAnimation()
 	{
 		accuracyBarSequence = new SequentialTransition();
@@ -172,6 +231,9 @@ public class JavelinController implements Initializable {
 		accuracyBarSequence.play();
 	}
 	
+	/**
+	 * Stops the accuracy bar animation
+	 */
 	private void accuracyBarStop()
 	{
 		accuracyBarSequence.stop();
@@ -187,44 +249,18 @@ public class JavelinController implements Initializable {
 			accuracy = 100 - accuracy;
 			accuracy = 100 - accuracy;
 		}
-		total = (int) (accuracy + power)/2;
+		total = (accuracy + power) / 2;
+	}
+
+	/**
+	 * Returns the score to the JavelinThrow class and stops the game
+	 * @throws Exception
+	 */
+	private void returnScore() throws Exception {
+		game.setScore(total);
+		game.setGameToDone();
 	}
 	
-	private int returnScore() {
-		return total;
-	}
-	
-	@FXML
-	public void handleButtonPress(ActionEvent event){}
-	
-	@FXML
-	private void handleKeyPress(KeyEvent e) throws Exception
-	{
-		label.setVisible(false);
-		if (e.getCode() == KeyCode.S && sequence == 1)
-		{
-			//moveJavelinMan();
-			powerBarAnimation();
-			sequence++;
-		}	
-		else if (e.getCode() == KeyCode.S && sequence == 2)
-		{
-			powerBarStop();
-			accuracyBarAnimation();
-			sequence++;
-		}
-		else if (e.getCode() == KeyCode.S && sequence == 3)
-		{
-			accuracyBarStop();
-			moveJavelinMan();
-			displayScore();
-			sequence++;
-		}
-		else if (e.getCode() == KeyCode.S && sequence == 4)
-		{
-			returnScore();
-		}
-	}
 
 
 }

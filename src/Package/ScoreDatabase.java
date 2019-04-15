@@ -49,11 +49,10 @@ public class ScoreDatabase {
     public boolean createTable(String tableName) {
         String tableValues = "id int NOT NULL AUTO_INCREMENT, " +
                 "name varchar(3) NOT NULL, " +
-                "score varchar(50) NOT NULL, " +
+                "score int NOT NULL, " +
                 "primary key (id)";
         String sql = "create table if not exists " + tableName + " (" + tableValues + ");";
         try {
-//        	Statement stmt = this.conn.createStatement();
             stmt.execute(sql);
             return true;
         } catch (SQLException e) {
@@ -68,11 +67,10 @@ public class ScoreDatabase {
      * @param name - the 3 character name
      * @param score - the score
      */
-    public boolean addScore(String table, String name, String score) {
+    public boolean addScore(String table, String name, int score) {
         createTable(table);
         String sql = "insert into " + table + " (name, score) values ('" + name + "', " + score + ")";
         try {
-//        	Statement stmt = this.conn.createStatement();
             stmt.executeUpdate(sql);
             return true;
         } catch (SQLException e) {
@@ -82,18 +80,17 @@ public class ScoreDatabase {
     }
 
     /**
-     * TODO error handling if the table doesn't exist?
      * Returns the top ten scores from a game
      * @param table - the game to retrieve high scores from
      * @return LinkedHashMap<String ,   String> - the hashmap of the top ten names and scores
      */
     public LinkedHashMap<String, String> getScores(String table) {
         String sql = "SELECT name, score FROM " + table;
-        HashMap<String, String> hashMap = new HashMap<>();
+        HashMap<String, Integer> hashMap = new HashMap<>();
         try {
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                hashMap.put(rs.getString(1), rs.getString(2));
+                hashMap.put(rs.getString(1), rs.getInt(2));
             }
             rs.close();
         } catch (SQLException e) {
@@ -104,33 +101,33 @@ public class ScoreDatabase {
 
     /**
      * Sorts a hashmap by the values (scores)
-     *
      * @param passedMap - the initial hashmap
      * @return - the sorted hashmap
      */
     private LinkedHashMap<String, String> sortHashMapByValues(
-            HashMap<String, String> passedMap) {
+            HashMap<String, Integer> passedMap) {
         List<String> mapKeys = new ArrayList<>(passedMap.keySet());
-        List<String> mapValues = new ArrayList<>(passedMap.values());
+        List<Integer> mapValues = new ArrayList<>(passedMap.values());
         Collections.sort(mapValues, Collections.reverseOrder());
         Collections.sort(mapKeys, Collections.reverseOrder());
 
         LinkedHashMap<String, String> sortedMap =
                 new LinkedHashMap<>();
 
-        Iterator<String> valueIt = mapValues.iterator();
+        Iterator<Integer> valueIt = mapValues.iterator();
         while (valueIt.hasNext()) {
-            String val = valueIt.next();
+            int val = valueIt.next();
+            String stringVal = Integer.toString(val);
             Iterator<String> keyIt = mapKeys.iterator();
 
             while (keyIt.hasNext()) {
                 String key = keyIt.next();
-                String comp1 = passedMap.get(key);
-                String comp2 = val;
+                int comp1 = passedMap.get(key);
+                int comp2 = val;
 
-                if (comp1.equals(comp2)) {
+                if (comp1 == comp2) {
                     keyIt.remove();
-                    sortedMap.put(key, val);
+                    sortedMap.put(key, stringVal);
                     break;
                 }
             }
@@ -139,19 +136,14 @@ public class ScoreDatabase {
     }
 
     /**
-     * Returns the first ten key-value pairs of a hashmap, filling in remaining entries with "   "=0 if
-     * there are less than 10 entries in the hashmap
-     *
+     * Returns the first ten key-value pairs of a hashmap
+     * If there are less than 10 entries that is handled in the high score controller
      * @param hashMap - a SORTED hashmap
      * @return the hashmap of size 10
      */
     private LinkedHashMap<String, String> topTenScores(LinkedHashMap<String, String> hashMap) {
         List<String> mapKeys = new ArrayList<>(hashMap.keySet());
-        if (hashMap.size() < 10) {
-            for (int i = hashMap.size(); i < 10; i++) {
-                hashMap.put("   ", "0");
-            }
-        } else {
+        if (hashMap.size() > 10) {
             for (int i = 10; i < hashMap.size(); i++) {
                 hashMap.remove(mapKeys.get(i));
             }

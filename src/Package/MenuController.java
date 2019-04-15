@@ -2,6 +2,7 @@ package Package;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
@@ -10,22 +11,25 @@ import javafx.scene.shape.Rectangle;
  * Controller class for the game select menu view
  */
 public class MenuController {
-	
+
+	@SuppressWarnings("unused")
 	private ArcadeMenu arcadeMenu;
 	private int selection = 1;
 	private int choice;
 	private Arcade arcade;
-	
+
 	@FXML
 	private Rectangle selectorRec;
-	
+	@FXML
+	private Label damon;
+
 	/**
 	 * simple constructor creates an instance of an arcade
 	 */
 	public MenuController() {
 		arcade = new Arcade();
 	}
-	
+
 	/**
 	 * buttonPress handler for pressing the button in menu view
 	 * @param event the clicking of the button
@@ -34,7 +38,7 @@ public class MenuController {
 	public void handleButtonPress(ActionEvent event) {
 
 	}
-	
+
 	/**
 	 * keyPress handler for scrolling through various game options
 	 * in the game menu
@@ -48,15 +52,19 @@ public class MenuController {
 		if (e.getCode() == KeyCode.ENTER)
 		{
 			choice = selection;
-			System.out.println("CHOICE: "+choice);
 			if (choice == 5)
 				System.exit(0);
 			arcade.runNewGame(choice);
+			if(choice == 4)
+			{
+				damon.setText("patience. damon hasn't written this one yet.");
+			}
 		}
 		//DOWN
 		else if (e.getCode() == KeyCode.S && selection == 4) {
 			selectorRec.setY(230);
 			selection++;
+			damon.setText("");
 		} else if (e.getCode() == KeyCode.S && selection == 3 ) {
 			selectorRec.setY(200);
 			selection++;
@@ -79,11 +87,17 @@ public class MenuController {
 		} else if (e.getCode() == KeyCode.W && selection == 4 ) {
 			selectorRec.setY(170);
 			selection--;
+			damon.setText("");
 		} else if (e.getCode() == KeyCode.W && selection == 5) {
 			selectorRec.setY(200);
 			selection--;
 		}
+
+	}
+
+	public void initData(ArcadeMenu arcadeMenu2) {
+		this.arcadeMenu = arcadeMenu2;
 		
 	}
-	
+
 }

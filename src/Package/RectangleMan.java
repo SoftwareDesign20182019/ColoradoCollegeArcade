@@ -5,35 +5,31 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 /**
- * Opens the Javelin Throw screen
+ * Implementation of the game interface for the Rectangle Man game
  * @author ellaneurohr
  *
  */
-public class JavelinThrow extends Application implements Game {
+public class RectangleMan extends Application implements Game{
 
-	private Stage primaryStage;
-	private int score;
+	private Stage rectangleManStage;
 	private Arcade arcade;
-	boolean isGameDone;
+	private int score;
 
 	/**
 	 * Loads the fxml and sets up the controller
 	 * @param primaryStage - the new stage for this fxml file
 	 */
 	@Override
-	public void start(Stage primaryStage) throws Exception {
-
-		this.primaryStage = primaryStage;
-		isGameDone = false;
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("Javelin.fxml"));
+	public void start(Stage rectangleManStage) throws Exception {
+		this.rectangleManStage = rectangleManStage;
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("RectangleMan.fxml"));
 		Parent root = loader.load();
-		JavelinController controller = loader.<JavelinController>getController();
+		RectangleManController controller = loader.<RectangleManController>getController();
 		controller.initData(this);
-		primaryStage.setTitle("Javelin Throw!");
-		primaryStage.setScene(new Scene(root, 790,400));
-		primaryStage.show();
+		rectangleManStage.setTitle("Rectangle Man!");
+		rectangleManStage.setScene(new Scene(root, 790,400));
+		rectangleManStage.show();
 	}
 
 	/**
@@ -44,28 +40,19 @@ public class JavelinThrow extends Application implements Game {
 	 * @return int - the score
 	 * @throws Exception
 	 */
+	@Override
 	public int playGame(Stage stage, Arcade arcade) throws Exception {
 		this.arcade = arcade;
 		start(stage);
-		return score;
+		return 0;
 	}
 
 	/**
 	 * Sets the score of the game
 	 * @param score - the game score
 	 */
-	@Override
-	public void setScore(int score) {
+	public void setScore(int score){
 		this.score = score;
-	}
-
-	/**
-	 * The database name of the game
-	 * @return String - game name
-	 */
-	@Override
-	public String toString() {
-		return "javelinThrow";
 	}
 
 	/**
@@ -74,7 +61,7 @@ public class JavelinThrow extends Application implements Game {
 	 */
 	@Override
 	public String getGameName() {
-		return "Javelin Throw";
+		return "Rectangle Man";
 	}
 
 	/**
@@ -84,6 +71,14 @@ public class JavelinThrow extends Application implements Game {
 	@Override
 	public void setGameToDone() throws Exception {
 		arcade.endGameToNameChoice(score);
-		primaryStage.close();
+		rectangleManStage.close();
+	}
+
+	/**
+	 * The database name of the game
+	 * @return String - game name
+	 */
+	public String toString(){
+		return "RectangleMan";
 	}
 }

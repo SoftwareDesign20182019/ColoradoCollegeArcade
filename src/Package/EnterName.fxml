@@ -9,7 +9,7 @@
 <?import javafx.scene.text.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="700.0" maxWidth="600.0" minHeight="700.0" minWidth="600.0"
             onKeyPressed="#handleKeyPress" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
-            fx:controller="sample.Controller">
+            fx:controller="Package.NameSelectorController">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2b2b2b" height="700.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" height="86.0" layoutY="614.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
@@ -68,16 +68,16 @@
                 <Bloom />
             </effect>
         </Label>
-        <Label layoutX="235.0" layoutY="275.0" text="A" textFill="#f59943" translateY="-85.0">
+        <Label fx:id="label1" layoutX="235.0" layoutY="275.0" text=" " textFill="#f59943" translateY="-85.0">
             <font>
                 <Font name="Silom" size="48.0" />
             </font></Label>
-        <Label layoutX="283.0" layoutY="275.0" text="B" textFill="#f59943" translateY="-85.0">
+        <Label fx:id="label2" layoutX="283.0" layoutY="275.0" text=" " textFill="#f59943" translateY="-85.0">
             <font>
                 <Font name="Silom" size="48.0" />
             </font>
         </Label>
-        <Label layoutX="331.0" layoutY="275.0" text="C" textFill="#f59943" translateY="-85.0">
+        <Label fx:id="label3" layoutX="331.0" layoutY="275.0" text=" " textFill="#f59943" translateY="-85.0">
             <font>
                 <Font name="Silom" size="48.0" />
             </font>
@@ -257,7 +257,6 @@
                 <Font name="Silom" size="48.0"/>
             </font>
         </Label>
-        <Text fx:id="text1" layoutX="124.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text"/>
         <Button layoutX="700.0" layoutY="800.0" mnemonicParsing="false" onAction="#handleButtonPress"
                 text="Bottom Text"/>
     </children>
