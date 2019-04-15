@@ -8,18 +8,19 @@ public class FactorySelectionTest {
 
 	private GameFactory factory;
 	
-	/**
-	 * 
-	 * @throws Exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 		factory = new GameFactory();
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void validNumber() throws Exception {
+		assertNotNull("valid number should return game", factory.selectGame(2));
+	}
+	
+	@Test
+	public void invalidNumber() throws Exception {
+		assertNull("invalid number should return null", factory.selectGame(9));
 	}
 
 }
