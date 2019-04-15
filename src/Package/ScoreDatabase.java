@@ -80,7 +80,6 @@ public class ScoreDatabase {
     }
 
     /**
-     * TODO error handling if the table doesn't exist?
      * Returns the top ten scores from a game
      * @param table - the game to retrieve high scores from
      * @return LinkedHashMap<String ,   String> - the hashmap of the top ten names and scores
