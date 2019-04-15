@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane minHeight="700.0" minWidth="600.0" onKeyPressed="#handleKeyPress" onKeyReleased="#handleKeyRelease" prefHeight="700.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Package.SuperVacuumController">
+<AnchorPane minHeight="700.0" minWidth="600.0" onKeyPressed="#handleKeyPress" onKeyReleased="#handleKeyRelease" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.SuperVacuumController">
    <children>
       <Label fx:id="labelLives0" prefHeight="30.0" prefWidth="200.0" text="Lives: 0">
          <font>
@@ -29,9 +28,9 @@
          </image>
       </ImageView>
       <Rectangle fill="#acd7ff" height="700.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
-      <Text fx:id="startText" layoutX="145.0" layoutY="286.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uh Oh! Evil Co. is having spring cleaning! The city is in danger of being littered with garbage. Only Super Vacuum can save us now... (Press Enter to start)" textAlignment="JUSTIFY" wrappingWidth="310.0">
+      <Text fx:id="startText" layoutX="145.0" layoutY="172.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uh Oh! Evil Co. is having spring cleaning! The city is in danger of being littered with garbage. Only Super Vacuum can save us now... (Press Enter to start)" textAlignment="CENTER" wrappingWidth="310.0">
          <font>
-            <Font name="Aldrich" size="22.0" />
+            <Font name="Silom" size="22.0" />
          </font>
       </Text>
       <Rectangle fx:id="ground" fill="#649936da" height="52.0" layoutX="-1.0" layoutY="658.0" stroke="BLACK" strokeType="INSIDE" width="602.0" />
@@ -750,13 +749,18 @@
       </Circle>
       <Label fx:id="labelScore" layoutX="407.0" layoutY="6.0" prefHeight="30.0" prefWidth="188.0" text="Score: 0">
          <font>
-            <Font name="Aldrich" size="16.0" />
+            <Font name="Silom" size="16.0" />
          </font>
       </Label>
       <Label fx:id="labelLives" prefHeight="30.0" prefWidth="200.0" text="Lives: 3">
          <font>
-            <Font name="Aldrich" size="16.0" />
+            <Font name="Silom" size="16.0" />
          </font>
       </Label>
+      <Text fx:id="endText" layoutX="145.0" layoutY="232.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="310.0">
+         <font>
+            <Font name="Silom" size="22.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

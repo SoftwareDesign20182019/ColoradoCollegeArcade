@@ -21,7 +21,8 @@ public class GameFactory {
                 RectangleMan rectangleManMain = new RectangleMan();
                 return rectangleManMain;
             case Arcade.SUPER_VACUUM:
-            	return null;
+            	SuperVacuum superVacuum = new SuperVacuum();
+            	return superVacuum;
             case Arcade.CLICKER_GAME:
             	//ClickerIdle clickerIdle = new ClickerIdle(); currently in development, ignore!
             	//return clickerIdle;

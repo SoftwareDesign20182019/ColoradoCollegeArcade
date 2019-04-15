@@ -195,5 +195,10 @@
                <Font name="Silom" size="18.0" />
            </font>
        </Label>
+      <Label fx:id="damon" layoutX="200.0" layoutY="199.0" textFill="WHITE">
+         <font>
+            <Font name="Silom" size="6.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

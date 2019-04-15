@@ -2,6 +2,7 @@ package Package;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
@@ -19,6 +20,8 @@ public class MenuController {
 
 	@FXML
 	private Rectangle selectorRec;
+	@FXML
+	private Label damon;
 
 	/**
 	 * simple constructor creates an instance of an arcade
@@ -52,11 +55,16 @@ public class MenuController {
 			if (choice == 5)
 				System.exit(0);
 			arcade.runNewGame(choice);
+			if(choice == 4)
+			{
+				damon.setText("patience. damon hasn't written this one yet.");
+			}
 		}
 		//DOWN
 		else if (e.getCode() == KeyCode.S && selection == 4) {
 			selectorRec.setY(230);
 			selection++;
+			damon.setText("");
 		} else if (e.getCode() == KeyCode.S && selection == 3 ) {
 			selectorRec.setY(200);
 			selection++;
@@ -79,11 +87,17 @@ public class MenuController {
 		} else if (e.getCode() == KeyCode.W && selection == 4 ) {
 			selectorRec.setY(170);
 			selection--;
+			damon.setText("");
 		} else if (e.getCode() == KeyCode.W && selection == 5) {
 			selectorRec.setY(200);
 			selection--;
 		}
 
+	}
+
+	public void initData(ArcadeMenu arcadeMenu2) {
+		this.arcadeMenu = arcadeMenu2;
+		
 	}
 
 }

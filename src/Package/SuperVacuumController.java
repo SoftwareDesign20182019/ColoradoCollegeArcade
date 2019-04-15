@@ -1,7 +1,6 @@
 package Package;
 
 
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
@@ -16,11 +15,14 @@ import javafx.util.Duration;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-import javafx.geometry.Bounds;
-import javafx.scene.*;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
+/**
+ * Controller for the Super Vacuum Stage
+ * @author ellaneurohr
+ *
+ */
 public class SuperVacuumController{
 	@FXML
 	ImageView superVacuum;
@@ -32,6 +34,8 @@ public class SuperVacuumController{
 	ImageView superVacuumRight;
 	@FXML
 	Text startText;
+	@FXML
+	Text endText;
 	@FXML
 	ImageView villain1;
 	@FXML
@@ -49,6 +53,8 @@ public class SuperVacuumController{
 	@FXML
 	Label labelLives0;
 	
+	Thread t;
+
 	private boolean movingLeft = false;
 	private boolean movingRight= false;
 	private boolean gameStarted = false;
@@ -57,23 +63,26 @@ public class SuperVacuumController{
 	private boolean canReach = false;
 	private boolean loseLife = true;
 	private boolean gameEnded = false;
-	
+	private SuperVacuum superVacuumMain;
+
 	Timer timer = new Timer();
 	Timer reachTimer = new Timer();
-	
+
 	long pace = 0;
-	
+
 	int trash1x;
 	int trash2x;
 	int lives = 3;
 	int score = 0;
-	
+
 	SequentialTransition trash1Move;
 	SequentialTransition trash1Reset;
 	SequentialTransition trash2Move;
 	SequentialTransition trash2Reset;
-	
-	//MOVES ALL SUPER VACUUM IMAGES AND THE HIT BOX LEFT
+
+	/**
+	 * Moves all super vacuum images and the hit box left
+	 */
 	private void moveLeft()
 	{
 		TranslateTransition superVacuumMoveLeft = new TranslateTransition(Duration.millis(1), superVacuum);
@@ -84,45 +93,47 @@ public class SuperVacuumController{
 		superVacuumRightLeft.setByX(-2);
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	if (movingLeft && !movingRight)
-	            		superVacuumMoveLeft.play();
-	            });
-			 }
-	    }, 0l, 1l);
+			public void run() {
+				Platform.runLater(() -> {
+					if (movingLeft && !movingRight)
+						superVacuumMoveLeft.play();
+				});
+			}
+		}, 0l, 1l);
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	if (movingLeft && !movingRight)
-	            		superVacuumLeftLeft.play();
-	            });
-			 }
-	    }, 0l, 1l);
+			public void run() {
+				Platform.runLater(() -> {
+					if (movingLeft && !movingRight)
+						superVacuumLeftLeft.play();
+				});
+			}
+		}, 0l, 1l);
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	if (movingLeft && !movingRight)
-	            		superVacuumRightLeft.play();
-	            });
-			 }
-	    }, 0l, 1l);
+			public void run() {
+				Platform.runLater(() -> {
+					if (movingLeft && !movingRight)
+						superVacuumRightLeft.play();
+				});
+			}
+		}, 0l, 1l);
 		TranslateTransition hitBoxLeft = new TranslateTransition(Duration.millis(1), hitBox);
 		hitBoxLeft.setByX(-2);
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	if (movingLeft && !movingRight)
-	            		hitBoxLeft.play();
-	            });
-			 }
-	    }, 0l, 1l);
+			public void run() {
+				Platform.runLater(() -> {
+					if (movingLeft && !movingRight)
+						hitBoxLeft.play();
+				});
+			}
+		}, 0l, 1l);
 	}
-	
-	//MOVES ALL SUPER VACUUM IMAGES AND THE HIT BOX RIGHT
+
+	/**
+	 * Moves all super vacuum images and the hit box right
+	 */
 	private void moveRight()
 	{
 		TranslateTransition superVacuumMoveRight = new TranslateTransition(Duration.millis(1), superVacuum);
@@ -133,46 +144,48 @@ public class SuperVacuumController{
 		superVacuumRightRight.setByX(2);
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	if (movingRight && !movingLeft)
-	            		superVacuumMoveRight.play();
-	            });
-			 }
-	    }, 0l, 1l);
+			public void run() {
+				Platform.runLater(() -> {
+					if (movingRight && !movingLeft)
+						superVacuumMoveRight.play();
+				});
+			}
+		}, 0l, 1l);
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	if (movingRight && !movingLeft)
-	            		superVacuumLeftRight.play();
-	            });
-			 }
-	    }, 0l, 1l);
+			public void run() {
+				Platform.runLater(() -> {
+					if (movingRight && !movingLeft)
+						superVacuumLeftRight.play();
+				});
+			}
+		}, 0l, 1l);
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	if (movingRight && !movingLeft)
-	            		superVacuumRightRight.play();
-	            });
-			 }
-	    }, 0l, 1l);
-		
+			public void run() {
+				Platform.runLater(() -> {
+					if (movingRight && !movingLeft)
+						superVacuumRightRight.play();
+				});
+			}
+		}, 0l, 1l);
+
 		TranslateTransition hitBoxRight = new TranslateTransition(Duration.millis(1), hitBox);
 		hitBoxRight.setByX(2);
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	if (movingRight && !movingLeft)
-	            		hitBoxRight.play();
-	            });
-			 }
-	    }, 0l, 1l);
+			public void run() {
+				Platform.runLater(() -> {
+					if (movingRight && !movingLeft)
+						hitBoxRight.play();
+				});
+			}
+		}, 0l, 1l);
 	}
-	
-	//VILLAIN1
+
+	/**
+	 * Villain 1
+	 */
 	public void villain1Actions()
 	{
 		SequentialTransition villain1Move = new SequentialTransition();
@@ -184,6 +197,10 @@ public class SuperVacuumController{
 		villain1Move.play();
 		villain1Schedule();
 	}
+	
+	/**
+	 * Villain 1 timer
+	 */
 	public void villain1Schedule()
 	{
 		TimerTask villain1Task = new TimerTask() {
@@ -194,8 +211,10 @@ public class SuperVacuumController{
 		};
 		timer.schedule(villain1Task, 6000l-pace);
 	}
-	
-	//VILLAIN2
+
+	/**
+	 * Villain 2
+	 */
 	public void villain2Actions()
 	{
 		SequentialTransition villain2Move = new SequentialTransition();
@@ -207,6 +226,10 @@ public class SuperVacuumController{
 		villain2Move.play();
 		villain2Schedule();
 	}
+	
+	/**
+	 * Villain 2 timer
+	 */
 	public void villain2Schedule()
 	{
 		TimerTask villain1Task = new TimerTask() {
@@ -217,8 +240,10 @@ public class SuperVacuumController{
 		};
 		timer.schedule(villain1Task, 6000l-pace);
 	}
-	
-	//TRASH 1
+
+	/**
+	 * Trash 1
+	 */
 	public void trash1Actions()
 	{
 		Random random = new Random();
@@ -240,9 +265,13 @@ public class SuperVacuumController{
 		trash1Move.play();
 		trash1Schedule();
 	}
+	
+	/**
+	 * Trash 1 timer
+	 */
 	public void trash1Schedule()
 	{
-		
+
 		TimerTask trash1Task = new TimerTask() {
 			public void run()
 			{
@@ -259,10 +288,14 @@ public class SuperVacuumController{
 				trash1Actions();
 			}
 		};
-		timer.schedule(trash1Task, 6000l-(pace+52));
+		try {
+			timer.schedule(trash1Task, 6000l-(pace+52));
+		} catch (Exception e){} //doesn't like when the timer ends but isn't actually an error
 	}
-	
-	//TRASH 2
+
+	/**
+	 * Trash 2
+	 */
 	public void trash2Actions()
 	{
 		Random random = new Random();
@@ -284,9 +317,13 @@ public class SuperVacuumController{
 		trash2Move.play();
 		trash2Schedule();
 	}
+	
+	/**
+	 * Trash 2 Timer
+	 */
 	public void trash2Schedule()
 	{
-		
+
 		TimerTask trash2Task = new TimerTask() {
 			public void run()
 			{
@@ -295,9 +332,9 @@ public class SuperVacuumController{
 					lives -= 1;
 					if (lives == 0)
 					{
+						labelLives.setText("Lives: "+lives);
 						endGame();
 					}
-					System.out.println("Lives: "+ lives);
 				}
 				loseLife = true;
 				trash2.setVisible(true);
@@ -306,41 +343,52 @@ public class SuperVacuumController{
 		};
 		timer.schedule(trash2Task, 6000l-(pace+52));
 	}
-	
-	//SCORE GAME
-	
+
+	/**
+	 * Repeatedly called to update game score
+	 */
 	public void scoreGame()
 	{
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-		            score += 100;
-		            labelScore.setText("Score: "+score);
-		            labelLives.setText("Lives: "+lives);
-	            });
-			 }
-	    }, 3000l, 3000l);
+			public void run() {
+				Platform.runLater(() -> {
+					score += 100;
+					if(lives >= 0 )
+					{
+						labelLives.setText("Lives: "+lives);
+					}
+					if(lives > 0)
+					{
+						labelScore.setText("Score: "+score);
+					}
+				});
+			}
+		}, 3000l, 3000l);
 	}
-	
-	//END GAME
+
+	/**
+	 * Calls up end game text
+	 */
 	public void endGame()
 	{
-		timer.cancel();
+		//		timer.cancel(); // I feel like we don't need this but I'm not will so I''m not gonna delete it yet
 		canReach = false;
-		startText.setText("Game Over! You Scored: " + score + " Points. Press Enter to Continue.");
+		startText.setText("Game Over!");
+		endText.setText("You Scored: " + score + " Points. Press Enter to Continue.");
+		endText.setVisible(true);
 		startText.setVisible(true);
-		labelLives.setVisible(false);
-		labelLives.setText("Lives: 0");
 		labelLives.setVisible(true);
 		gameEnded = true;
 	}
-	
-	//PLAY GAME
+
+	/**
+	 * Plays the game
+	 */
 	public void playGame()
 	{
 		villain1Actions();
-		
+
 		TimerTask startVillain2 = new TimerTask() {
 			public void run()
 			{
@@ -348,7 +396,7 @@ public class SuperVacuumController{
 			}
 		};
 		timer.schedule(startVillain2, 3000l);
-		
+
 		TimerTask startTrash1 = new TimerTask() {
 			public void run()
 			{
@@ -356,7 +404,7 @@ public class SuperVacuumController{
 			}
 		};
 		timer.schedule(startTrash1, 3000l);
-		
+
 		TimerTask startTrash2 = new TimerTask() {
 			public void run()
 			{
@@ -364,18 +412,21 @@ public class SuperVacuumController{
 			}
 		};
 		timer.schedule(startTrash2, 6000l);
-		
+
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
-	        public void run() {
-	            Platform.runLater(() -> {
-	            	if (pace < 1500)
-	            		pace += 100;
-	            });
-			 }
-	    }, 5000l, 5000l);
+			public void run() {
+				Platform.runLater(() -> {
+					if (pace < 1500)
+						pace += 100;
+				});
+			}
+		}, 5000l, 5000l);
 	}
 
+	/**
+	 * Collision timer
+	 */
 	public void collisionTimer() {
 		TimerTask task = new TimerTask() {
 			public void run()
@@ -384,35 +435,49 @@ public class SuperVacuumController{
 			}
 		};
 		timer.schedule(task, 5l);
-	 }
-	
-	public void checkCollisions() {
-	            	Shape intersectTrash1 = Shape.intersect(hitBox, trash1);
-	            	if (intersectTrash1.getBoundsInParent().getWidth() > 0) {
-	            		loseLife = false;
-	            		trash1.setVisible(false);
-	            	}
-	            	
-	            	Shape intersectTrash2 = Shape.intersect(hitBox, trash2);
-	            	if (intersectTrash2.getBoundsInParent().getWidth() > 0) {
-	            		loseLife = false;
-	            		trash2.setVisible(false);
-	            	}
-	            	collisionTimer();
 	}
-	
+
+	/**
+	 * Checks collisions
+	 */
+	public void checkCollisions() {
+		Shape intersectTrash1 = Shape.intersect(hitBox, trash1);
+		if (intersectTrash1.getBoundsInParent().getWidth() > 0) {
+			loseLife = false;
+			trash1.setVisible(false);
+		}
+
+		Shape intersectTrash2 = Shape.intersect(hitBox, trash2);
+		if (intersectTrash2.getBoundsInParent().getWidth() > 0) {
+			loseLife = false;
+			trash2.setVisible(false);
+		}
+		collisionTimer();
+	}
+
+	/**
+	 * Button press event necessary for functionality because of weird button bug
+	 * @param event - button press
+	 */
 	@FXML
 	private void handleButtonPress(ActionEvent event) 
 	{
 		System.out.println("I AM WILL");
 	}
-	
+
+	/**
+	 * Handles key presses and does different actions based on the key pressed and the state
+	 * @param e - the key event
+	 * @throws Exception 
+	 */
 	@FXML
 	private void handleKeyPress(KeyEvent e) throws Exception
 	{
 		if (e.getCode() == KeyCode.ENTER && gameEnded)
 		{
-			//ELLA THIS IS YOUR SECTION
+			//TODO ELLA THIS IS YOUR SECTION
+			superVacuumMain.setScore(score);
+			superVacuumMain.setGameToDone();
 		}
 		if (e.getCode() == KeyCode.ENTER && !gameStarted)
 		{
@@ -448,7 +513,12 @@ public class SuperVacuumController{
 			superVacuumRight.toFront();
 		}
 	}
-	
+
+	/**
+	 * Handles key releases and does different actions based on the key released and the state
+	 * @param e - the key event
+	 * @throws Exception 
+	 */
 	@FXML
 	private void handleKeyRelease(KeyEvent e) throws Exception
 	{
@@ -474,6 +544,15 @@ public class SuperVacuumController{
 			superVacuumRight.toBack();
 			superVacuum.toFront();
 		}
+	}
+
+	/**
+	 * Allows the main SuperVacuum class to be passed in to this controller
+	 * Necessary for backwards retrieval of data
+	 * @param highScore - the instance of the SuperVacuum class
+	 */
+	public void initData(SuperVacuum superVacuumMain) {
+		this.superVacuumMain = superVacuumMain;
 	}
 
 }

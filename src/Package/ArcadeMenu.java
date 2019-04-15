@@ -25,6 +25,8 @@ public class ArcadeMenu extends Application {
 		this.primaryStage = primaryStage;
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
 		Parent root = loader.load();
+		MenuController controller = loader.<MenuController>getController();
+		controller.initData(this);
 		primaryStage.setTitle("Menu");
 		primaryStage.setScene(new Scene(root, 600,700));
 		primaryStage.show();
