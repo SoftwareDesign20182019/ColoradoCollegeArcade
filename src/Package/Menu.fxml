@@ -37,22 +37,22 @@
             <Bloom threshold="0.43" />
          </effect>
       </Label>
-      <Label text="High Score Generator" textFill="WHITE" translateX="50.0" translateY="100.0">
+      <Label text="Javelin Throw" textFill="WHITE" translateX="50.0" translateY="100.0">
          <font>
             <Font name="Silom" size="18.0" />
          </font>
       </Label>
-      <Label text="Javelin Throw!" textFill="WHITE" translateX="50.0" translateY="130.0">
+      <Label text="Rectangle Man" textFill="WHITE" translateX="50.0" translateY="130.0">
          <font>
             <Font name="Silom" size="18.0" />
          </font>
       </Label>
-      <Label text="Isley's Revenge" textFill="WHITE" translateX="50.0" translateY="160.0">
+      <Label text="Super Vacuum" textFill="WHITE" translateX="50.0" translateY="160.0">
          <font>
             <Font name="Silom" size="18.0" />
          </font>
       </Label>
-      <Label text="Rectangle Man" textFill="WHITE" translateX="50.0" translateY="190.0">
+      <Label text="Clicker Game" textFill="WHITE" translateX="50.0" translateY="190.0">
          <font>
             <Font name="Silom" size="18.0" />
          </font>
