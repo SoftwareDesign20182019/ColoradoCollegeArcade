@@ -10,22 +10,23 @@ import javafx.scene.shape.Rectangle;
  * Controller class for the game select menu view
  */
 public class MenuController {
-	
+
+	@SuppressWarnings("unused")
 	private ArcadeMenu arcadeMenu;
 	private int selection = 1;
 	private int choice;
 	private Arcade arcade;
-	
+
 	@FXML
 	private Rectangle selectorRec;
-	
+
 	/**
 	 * simple constructor creates an instance of an arcade
 	 */
 	public MenuController() {
 		arcade = new Arcade();
 	}
-	
+
 	/**
 	 * buttonPress handler for pressing the button in menu view
 	 * @param event the clicking of the button
@@ -34,7 +35,7 @@ public class MenuController {
 	public void handleButtonPress(ActionEvent event) {
 
 	}
-	
+
 	/**
 	 * keyPress handler for scrolling through various game options
 	 * in the game menu
@@ -82,7 +83,7 @@ public class MenuController {
 			selectorRec.setY(200);
 			selection--;
 		}
-		
+
 	}
-	
+
 }

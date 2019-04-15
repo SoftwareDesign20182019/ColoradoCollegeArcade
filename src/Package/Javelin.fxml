@@ -171,7 +171,7 @@
             <GaussianBlur radius="40.75" />
          </effect>
       </Polygon>
-      <Label fx:id="label" alignment="CENTER" layoutY="20.0" prefHeight="22.0" prefWidth="800.0" text="Press S to Begin">
+      <Label fx:id="instructionLabel1" alignment="CENTER" layoutY="10.0" prefHeight="30.0" prefWidth="800.0" text="Press S to stop power and accurracy bar">
          <font>
             <Font name="Silom" size="15.0" />
          </font>
@@ -188,5 +188,15 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0e543d4" height="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" x="232.0" y="101.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4ce34483" height="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="10.0" x="247.0" y="101.0" />
       <Rectangle fx:id="accuracyBar" fill="#d35437" height="28.0" layoutX="151.0" layoutY="101.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+      <Label fx:id="instructionLabel2" alignment="CENTER" layoutY="35.0" prefHeight="30.0" prefWidth="800.0" text="You only get two chances to select power and three to select accuracy. Act fast.">
+         <font>
+            <Font name="Silom" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="instructionLabel3" alignment="CENTER" layoutY="60.0" prefHeight="30.0" prefWidth="800.0" text="Press S to begin">
+         <font>
+            <Font name="Silom" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
