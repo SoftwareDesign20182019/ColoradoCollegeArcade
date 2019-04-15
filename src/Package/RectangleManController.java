@@ -372,11 +372,9 @@ public class RectangleManController {
 	}
 
 	/**
-	 * Stops game
-	 * Calls game end methods in RectangleMan
-	 * @throws Exception
+	 * Stops game and displays end game message
 	 */
-	private void stopGame() throws Exception {
+	private void stopGame() {
 		badBlock13Transition.stop();
 		badBlock2Transition.stop();
 		badBlock3Transition.stop();
@@ -386,6 +384,10 @@ public class RectangleManController {
 		labelEnd.setLayoutY(0);
 	}
 	
+	/**
+	 * Calls end of game methods in RectangleMan
+	 * @throws Exception
+	 */
 	private void endGame() throws Exception {
 		rectangleManMain.stop();
 		rectangleManMain.setScore(score);
