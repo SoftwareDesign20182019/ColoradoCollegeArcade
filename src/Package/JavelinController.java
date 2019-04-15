@@ -3,7 +3,6 @@ package Package;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -11,10 +10,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class JavelinController implements Initializable {
+/**
+ * Controller for the Javelin Throw fxml file
+ * @author ellaneurohr
+ *
+ */
+public class JavelinController {
 	
 	@FXML
 	ImageView javelinMan;
@@ -42,19 +44,58 @@ public class JavelinController implements Initializable {
 	SequentialTransition accuracyBarSequence;
 	SequentialTransition throwJavelin;
 	
-	public JavelinController() {
-	}
+	/**
+	 * Handles the button press
+	 * Necessary for weird button bug
+	 * @param event
+	 */
+	@FXML
+	public void handleButtonPress(ActionEvent event){}
 	
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	/**
+	 * Calls methods to deal with key presses
+	 * @param e
+	 * @throws Exception
+	 */
+	@FXML
+	private void handleKeyPress(KeyEvent e) throws Exception
+	{
+		label.setVisible(false);
+		if (e.getCode() == KeyCode.S && sequence == 1)
+		{
+			powerBarAnimation();
+			sequence++;
+		}	
+		else if (e.getCode() == KeyCode.S && sequence == 2)
+		{
+			powerBarStop();
+			accuracyBarAnimation();
+			sequence++;
+		}
+		else if (e.getCode() == KeyCode.S && sequence == 3) {
+			accuracyBarStop();
+			moveJavelinMan();
+			displayScore();
+			sequence++;
+		} else if (e.getCode() == KeyCode.ENTER && sequence == 4) {
+			returnScore();
+			sequence++;
+		}
+	}
 
-		
-	}
-	
+
+	/**
+	 * Allows the main JavelinThrow class to be passed in to this controller
+	 * Necessary for backwards retrieval of data
+	 * @param game - the instance of the JavelinThrow class
+	 */
 	public void initData(JavelinThrow game) {
 		this.game = game;
 	}
 
+	/**
+	 * Animation method for moving the man
+	 */
 	private void moveJavelinMan() {
 		throwJavelin = new SequentialTransition();
 		
@@ -92,6 +133,9 @@ public class JavelinController implements Initializable {
 		throwJavelin.play();
 	}
 
+	/**
+	 * Method for displaying the final score
+	 */
 	private void displayScore() {
 		String newLabel = "You Scored: " + total + "! (Game Over) Press Enter to Continue";
 		label.setText(newLabel);
@@ -118,7 +162,9 @@ public class JavelinController implements Initializable {
 		label.setVisible(true);
 	}
 	
-	//PowerBar goes up, then down
+	/**
+	 * Animates the power bar so it can go up then down
+	 */
 	private void powerBarAnimation()
 	{
 		powerBarSequence = new SequentialTransition();
@@ -137,7 +183,9 @@ public class JavelinController implements Initializable {
 		powerBarSequence.play();
 	}
 	
-	//PowerBar stops on s.
+	/**
+	 * Animation so the power bar stops on the s key press
+	 */
 	private void powerBarStop()
 	{	
 		powerBarSequence.stop();
@@ -150,6 +198,9 @@ public class JavelinController implements Initializable {
 		}
 	}
 	
+	/**
+	 * Animation for the accuracy bar
+	 */
 	private void accuracyBarAnimation()
 	{
 		accuracyBarSequence = new SequentialTransition();
@@ -172,6 +223,9 @@ public class JavelinController implements Initializable {
 		accuracyBarSequence.play();
 	}
 	
+	/**
+	 * Stops the accuracy bar animation
+	 */
 	private void accuracyBarStop()
 	{
 		accuracyBarSequence.stop();
@@ -190,41 +244,16 @@ public class JavelinController implements Initializable {
 		total = (accuracy + power) / 2;
 	}
 
+	/**
+	 * Returns the score to the JavelinThrow class and stops the game
+	 * @throws Exception
+	 */
 	private void returnScore() throws Exception {
 		game.setScore(total);
 		game.setGameToDone();
 		game.stop();
 	}
 	
-	@FXML
-	public void handleButtonPress(ActionEvent event){}
-	
-	@FXML
-	private void handleKeyPress(KeyEvent e) throws Exception
-	{
-		label.setVisible(false);
-		if (e.getCode() == KeyCode.S && sequence == 1)
-		{
-			//moveJavelinMan();
-			powerBarAnimation();
-			sequence++;
-		}	
-		else if (e.getCode() == KeyCode.S && sequence == 2)
-		{
-			powerBarStop();
-			accuracyBarAnimation();
-			sequence++;
-		}
-		else if (e.getCode() == KeyCode.S && sequence == 3) {
-			accuracyBarStop();
-			moveJavelinMan();
-			displayScore();
-			sequence++;
-		} else if (e.getCode() == KeyCode.ENTER && sequence == 4) {
-			returnScore();
-			sequence++;
-		}
-	}
 
 
 }

@@ -1,6 +1,5 @@
 package Package;
 
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
@@ -13,21 +12,13 @@ import javafx.util.Duration;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-import javafx.geometry.Bounds;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.StrokeType;
-import javafx.stage.Stage;
 
 public class RectangleManController {
 
 	//FXML IMPORTS
 	@FXML
-	Rectangle rectangleMan;
+	Rectangle rectangleManPiece;
 	@FXML
 	Label labelStart;
 	@FXML
@@ -55,7 +46,7 @@ public class RectangleManController {
 	
 	Random random = new Random();
 
-	private RectangleManMain rectangleManMain;
+	private RectangleMan rectangleManMain;
 
 	private SequentialTransition badBlock11Transition;
 	private SequentialTransition badBlock12Transition;
@@ -87,36 +78,49 @@ public class RectangleManController {
 	Timer collisionTimer = new Timer();
 	Timer scoreTimer = new Timer();
 	
-	//GAME PIECE MOVEMENTS
+	/**
+	 * Game piece movements
+	 */
 	private void jump()
 	{
-		TranslateTransition goUp = new TranslateTransition(Duration.millis(200), rectangleMan);
+		TranslateTransition goUp = new TranslateTransition(Duration.millis(200), rectangleManPiece);
 		goUp.setByY(-100);
 		goUp.play();
 	}
 	
+	/**
+	 * Game piece landing
+	 */
 	private void land()
 	{
-		TranslateTransition goDown = new TranslateTransition(Duration.millis(200), rectangleMan);
+		TranslateTransition goDown = new TranslateTransition(Duration.millis(200), rectangleManPiece);
 		goDown.setByY(100);
 		goDown.play();
 	}
 	
-	private void standUp()
+	/**
+	 * Game piece rotates back up
+	 */
+	private void rotatesUp()
 	{
-		RotateTransition standUp = new RotateTransition(Duration.millis(200), rectangleMan);
+		RotateTransition standUp = new RotateTransition(Duration.millis(200), rectangleManPiece);
 		standUp.setToAngle(0);
 		standUp.play();
 	}
 	
-	private void layDown()
+	/**
+	 * Game piece rotates down
+	 */
+	private void rotateDown()
 	{
-		RotateTransition layDown = new RotateTransition(Duration.millis(200), rectangleMan);
+		RotateTransition layDown = new RotateTransition(Duration.millis(200), rectangleManPiece);
 		layDown.setToAngle(-90);
 		layDown.play();
 	}
 	
-	//STARTS THE ENEMY MOVEMENTS
+	/**
+	 * Starts enemy block movements
+	 */
 	private void runEnemies() 
 	{
 		//INITIALIZES TRANSITIONS
@@ -280,7 +284,10 @@ public class RectangleManController {
 		timer.schedule(task, 200l);
 	}
 		
-	//CHECKS FOR COLLISIONS
+	/**
+	 * Checks for collisions, calls stop game if true
+	 * @throws Exception
+	 */
 	private void checkCollisions() throws Exception
 	{
 			collisionTimer.scheduleAtFixedRate(new TimerTask() {
@@ -288,7 +295,7 @@ public class RectangleManController {
 				public void run() {
 					Platform.runLater(() -> {
 						if (!hit) {
-							Shape intersectBB11 = Shape.intersect(rectangleMan, badBlock11);
+							Shape intersectBB11 = Shape.intersect(rectangleManPiece, badBlock11);
 							if (intersectBB11.getBoundsInParent().getWidth() > 0) {
 								hit = true;
 								try {
@@ -297,7 +304,7 @@ public class RectangleManController {
 									e.printStackTrace();
 								}
 							}
-							Shape intersectBB12 = Shape.intersect(rectangleMan, badBlock12);
+							Shape intersectBB12 = Shape.intersect(rectangleManPiece, badBlock12);
 							if (intersectBB12.getBoundsInParent().getWidth() > 0) {
 								hit = true;
 								try {
@@ -306,7 +313,7 @@ public class RectangleManController {
 									e.printStackTrace();
 								}
 							}
-							Shape intersectBB2 = Shape.intersect(rectangleMan, badBlock2);
+							Shape intersectBB2 = Shape.intersect(rectangleManPiece, badBlock2);
 							if (intersectBB2.getBoundsInParent().getWidth() > 0) {
 								hit = true;
 								try {
@@ -315,7 +322,7 @@ public class RectangleManController {
 									e.printStackTrace();
 								}
 							}
-							Shape intersectBB3 = Shape.intersect(rectangleMan, badBlock3);
+							Shape intersectBB3 = Shape.intersect(rectangleManPiece, badBlock3);
 							if (intersectBB3.getBoundsInParent().getWidth() > 0) {
 								hit = true;
 								try {
@@ -324,7 +331,7 @@ public class RectangleManController {
 									e.printStackTrace();
 								}
 							}
-							Shape intersectBB4 = Shape.intersect(rectangleMan, badBlock4);
+							Shape intersectBB4 = Shape.intersect(rectangleManPiece, badBlock4);
 							if (intersectBB4.getBoundsInParent().getWidth() > 0) {
 								hit = true;
 								try {
@@ -333,7 +340,7 @@ public class RectangleManController {
 									e.printStackTrace();
 								}
 							}
-							Shape intersectBB51 = Shape.intersect(rectangleMan, badBlock51);
+							Shape intersectBB51 = Shape.intersect(rectangleManPiece, badBlock51);
 							if (intersectBB51.getBoundsInParent().getWidth() > 0) {
 								hit = true;
 								try {
@@ -342,7 +349,7 @@ public class RectangleManController {
 									e.printStackTrace();
 								}
 							}
-							Shape intersectBB52 = Shape.intersect(rectangleMan, badBlock52);
+							Shape intersectBB52 = Shape.intersect(rectangleManPiece, badBlock52);
 							if (intersectBB52.getBoundsInParent().getWidth() > 0) {
 								hit = true;
 								try {
@@ -357,7 +364,10 @@ public class RectangleManController {
 			}, 0l, 50l);
 	}
 	
-	//STOPS GAME
+	/**
+	 * Stops the game movement and calls the end of game methods 
+	 * @throws Exception
+	 */
 	private void stopGame() throws Exception {
 		badBlock13Transition.stop();
 		badBlock2Transition.stop();
@@ -371,12 +381,14 @@ public class RectangleManController {
 		rectangleManMain.setGameToDone();
 	}
 
-	@FXML
-	public void exitApplication() {
-		Platform.exit();
-	}
+//	@FXML
+//	public void exitApplication() {
+//		Platform.exit();
+//	}
 	
-	//KEEPS SCORE
+	/**
+	 * Keeps game score
+	 */
 	private void scoreKeeper()
 	{
 		scoreTimer.scheduleAtFixedRate(new TimerTask() {
@@ -391,12 +403,21 @@ public class RectangleManController {
 	    }, 0l, 193l);
 	}
 	
+	 /**
+	  * Button press event necessary for functionality because of weird button bug
+	  *
+	  * @param event - button press
+	  */
 	@FXML
 	private void handleButtonPress(ActionEvent event) 
 	{
 		
 	}
 	
+	 /**
+	  * Handles key presses and does different actions based on the key pressed and the state
+	  * @param e - the key event
+	  */
 	@FXML
 	private void handleKeyPress(KeyEvent e) throws Exception
 	{
@@ -436,7 +457,7 @@ public class RectangleManController {
 		else if (e.getCode() == KeyCode.A)
 		{
 			up = false;
-			layDown();
+			rotateDown();
 		}
 		if (hit) 
 		{
@@ -444,6 +465,10 @@ public class RectangleManController {
 		}
 	}
 	
+	 /**
+	  * Handles key releases and does different actions based on the key pressed and the state
+	  * @param e - the key event
+	  */
 	@FXML
 	private void handleKeyRelease(KeyEvent e) throws Exception
 	{
@@ -451,7 +476,7 @@ public class RectangleManController {
 		{
 		case A:
 			up = true;
-			standUp();
+			rotatesUp();
 		default:
 			break;
 		}
@@ -461,7 +486,11 @@ public class RectangleManController {
 		}
 	}
 
-	public void initData(RectangleManMain rectangleManMain) {
-		this.rectangleManMain = rectangleManMain;
+	/**
+	 * Sets the RectangleMan main class so data can be passed back
+	 * @param rectangleMan
+	 */
+	public void initData(RectangleMan rectangleMan) {
+		this.rectangleManMain = rectangleMan;
 	}
 }

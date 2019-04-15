@@ -12,7 +12,9 @@ import java.util.HashMap;
  */
 public class Arcade {
 
+	@SuppressWarnings("unused")
 	private ArcadeMenu menu;
+	@SuppressWarnings("unused")
 	private MenuController controller;
 	private GameFactory factory;
 	private ScoreDatabase database;
@@ -21,7 +23,8 @@ public class Arcade {
     private int highScore;
     private NameSelector nameSelector;
     private HighScore highScoreScreen;
-    private Stage gameStage;
+    @SuppressWarnings("unused")
+	private Stage gameStage;
     private String gameName;
     
     public static final int JAVELIN_THROW = 1;
@@ -53,9 +56,8 @@ public class Arcade {
     }
 
 	/**
-	 * calls the factory to create a new game based on the game selected in the menu
-	 * @param choice integer choice for the game to play
-	 * @return the string representation of each game
+	 * Calls the factory to create a new game based on the game selected in the menu
+	 * @param choice integer choice selected from the menu
      * @throws Exception
 	 */
 	public void runNewGame(int choice) throws Exception {
@@ -66,43 +68,63 @@ public class Arcade {
         }
     }
 
+	/**
+	 * Method called if the user chooses to play the same game
+	 * game is saved as an attribute so the same game can just be played again on a new stage
+	 * @throws Exception
+	 */
 	public void playAgain() throws Exception {
 		Stage gameStage = new Stage();
 		game.playGame(gameStage, this);
 	}
 	
-    public void gameUpdate(int score) throws Exception {
+	/**
+	 * Method called when the game ends to open new stage for name selector
+	 * @param score - passed back from the game
+	 * @throws Exception
+	 */
+    public void endGameToNameChoice(int score) throws Exception {
         highScore = score;
-//        gameStage.hide();
         Stage nameStage = new Stage();
         nameSelector = new NameSelector();
         nameSelector.openNameSelector(nameStage, this);
     }
 
-
-    public void finishGame(String name) throws Exception {
+    /**
+     * Adds the new score to the database and opens a new stage for the high score screen
+     * @param name - the user selected name
+     * @throws Exception
+     */
+    public void displayHighScores(String name) throws Exception {
 	    gameName = game.toString();
 	    database.createTable(gameName);
         database.addScore(gameName, name, highScore);
-//        topTenScores = database.getScores(gameName);
         Stage stage = new Stage();
         highScoreScreen = new HighScore();
         highScoreScreen.displayHighScores(stage, this);
-
     }
 
+    /**
+     * Returns the top ten high scores from the database
+     * Effectively used by the HighScoreController to get scores
+     * @return - the hashmap of the top ten scores (with scores as a String)
+     */
     public HashMap<String, String> getHighScores() {
         topTenScores = database.getScores(gameName);
-//        topTenScores = database.
         return topTenScores;
     }
 
+    /**
+     * Returns the game name
+     * Used by HighScore which returns the gameName to the HighScoreController
+     * @return - the game's name
+     */
     public String getGameName(){
 	    return game.getGameName();
     }
 
     /**
-	 * starts the arcade menu application
+	 * Starts the arcade menu application
 	 */
 	private void showMenu() {
         String[] args = {};
@@ -110,7 +132,7 @@ public class Arcade {
 	}
 
     /**
-	 * creates a new arcade menu application
+	 * Creates a new arcade menu application
 	 */
 	private void createMenu() {
 		menu = new ArcadeMenu();
