@@ -73,7 +73,6 @@ public class Arcade {
 	
     public void gameUpdate(int score) throws Exception {
         highScore = score;
-//        gameStage.hide();
         Stage nameStage = new Stage();
         nameSelector = new NameSelector();
         nameSelector.openNameSelector(nameStage, this);
@@ -84,7 +83,6 @@ public class Arcade {
 	    gameName = game.toString();
 	    database.createTable(gameName);
         database.addScore(gameName, name, highScore);
-//        topTenScores = database.getScores(gameName);
         Stage stage = new Stage();
         highScoreScreen = new HighScore();
         highScoreScreen.displayHighScores(stage, this);
@@ -93,7 +91,6 @@ public class Arcade {
 
     public HashMap<String, String> getHighScores() {
         topTenScores = database.getScores(gameName);
-//        topTenScores = database.
         return topTenScores;
     }
 

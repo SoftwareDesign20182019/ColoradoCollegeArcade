@@ -54,7 +54,15 @@ public class JavelinController implements Initializable {
 	public void initData(JavelinThrow game) {
 		this.game = game;
 	}
-
+	
+	/**
+	 * sets the score for testing purposes
+	 * @param newScore the new score to set
+	 */
+	public void setScore(int newScore) {
+		total = newScore;
+	}
+	
 	private void moveJavelinMan() {
 		throwJavelin = new SequentialTransition();
 		

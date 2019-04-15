@@ -48,7 +48,6 @@ public class MenuController {
 		if (e.getCode() == KeyCode.ENTER)
 		{
 			choice = selection;
-			System.out.println("CHOICE: "+choice);
 			if (choice == 5)
 				System.exit(0);
 			arcade.runNewGame(choice);
