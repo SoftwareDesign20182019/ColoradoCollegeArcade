@@ -137,5 +137,21 @@ public class Arcade {
 	private void createMenu() {
 		menu = new ArcadeMenu();
 	}
+	
+	/**
+	 * sets the score for testing purposes
+	 * @param score the score to set
+	 */
+	public void setScore(int score) {
+		highScore = score;
+	}
+	
+	/**
+	 * gets the high score for testing purposes
+	 * @return the high score
+	 */
+	public int getScore() {
+		return highScore;
+	}
 
 }
