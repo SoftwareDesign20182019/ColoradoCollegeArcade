@@ -61,5 +61,10 @@
             <Font name="Aldrich" size="23.0" />
          </font>
       </Label>
+      <Label fx:id="instructions" alignment="CENTER" layoutY="80.0" prefHeight="80.0" prefWidth="600.0" text="Wait for the bob to dissapear underwater, then tap F repeatedly to catch the fish">
+         <font>
+            <Font name="Aldrich" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -32,6 +32,8 @@ public class FishermanController {
 	Line line2;
 	@FXML
 	Label label;
+	@FXML
+	Label instructions;
 
 	private boolean fishOn = false;
 	private boolean caught = false;
@@ -78,7 +80,7 @@ public class FishermanController {
 	{
 		timer.cancel();
 		Random random = new Random();
-		score = random.nextInt(180);
+		score = random.nextInt(80);
 		score += 20;
 		label.setText("Your Fish is " + score + "cm!");
 		label.toFront();
@@ -113,6 +115,7 @@ public class FishermanController {
 		if (e.getCode() == KeyCode.ENTER)
 		{
 			label.toBack();
+			instructions.setVisible(false);
 			Random random = new Random();
 			pulls = random.nextInt(10);
 			pulls += 5;
