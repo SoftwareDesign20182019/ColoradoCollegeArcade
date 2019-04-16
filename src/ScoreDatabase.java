@@ -1,12 +1,12 @@
 import java.sql.*;
 
 public class ScoreDatabase {
-    private static final String PORT_NUMBER = "3306";
-    private Connection conn;
-    //private Statement stmt;
+    private static final String PORT_NUMBER = "8889";
+    private Statement stmt;
 
-    public ScoreDatabase(String databaseName){
-        createDatabase(databaseName);
+    public ScoreDatabase() {
+//        createConnection("ArcadeGames");
+//        System.out.println("created connection");
     }
     
     public void createDatabase(String databaseName) {
@@ -22,16 +22,26 @@ public class ScoreDatabase {
 		}
 	}
 
+
     /**
      * Creates a connection to the server and database and creates a database with databaseName if one does not already exist
      * @param databaseName - the name of the database to open a connection to or create if not already made
      */
     public void createConnection(String databaseName) {
+
         try {
+<<<<<<< HEAD
             //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root");
             //stmt = conn.createStatement();
             //String sql = "create database if not exists " + databaseName;
             //stmt.execute(sql);
+=======
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root");
+
+            stmt = conn.createStatement();
+            String sql = "create database if not exists " + databaseName;
+            stmt.execute(sql);
+>>>>>>> 522da932a0dd1b2afd08ded1b2319938d26e1ea3
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:" + PORT_NUMBER + "/" + databaseName + "?user=root&password=root&serverTimezone=UTC"); // MySQL
             //stmt = conn.createStatement();
@@ -77,4 +87,8 @@ public class ScoreDatabase {
             e.printStackTrace();
         }
     }
+
+//    public static void main(String[] args){
+////        ScoreDatabase database = new ScoreDatabase("ArcadeGames");
+//    }
 }
