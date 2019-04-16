@@ -30,18 +30,11 @@ public class ScoreDatabase {
     public void createConnection(String databaseName) {
 
         try {
-<<<<<<< HEAD
-            //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root");
-            //stmt = conn.createStatement();
-            //String sql = "create database if not exists " + databaseName;
-            //stmt.execute(sql);
-=======
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:" + PORT_NUMBER + "/?user=root&password=root&serverTimezone=UTC", "root", "root");
 
             stmt = conn.createStatement();
             String sql = "create database if not exists " + databaseName;
             stmt.execute(sql);
->>>>>>> 522da932a0dd1b2afd08ded1b2319938d26e1ea3
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:" + PORT_NUMBER + "/" + databaseName + "?user=root&password=root&serverTimezone=UTC"); // MySQL
             //stmt = conn.createStatement();
