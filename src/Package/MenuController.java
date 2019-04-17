@@ -35,7 +35,7 @@ public class MenuController {
 	@FXML
 	private ImageView superVacuumPhoto;
 	@FXML
-	private ImageView clickerGamePhoto;
+	private ImageView softwareTycoonPhoto;
 	@FXML
 	private ImageView fisherManPhoto;
 	@FXML
@@ -106,12 +106,12 @@ public class MenuController {
 			else if(selection == SUPER_VACUUM)
 			{
 				superVacuumPhoto.setVisible(false);
-				clickerGamePhoto.setVisible(true);
+				softwareTycoonPhoto.setVisible(true);
 				down();
 			}
 			else if(selection == SOFTWARE_TYCOON)
 			{
-				clickerGamePhoto.setVisible(false);
+				softwareTycoonPhoto.setVisible(false);
 				fisherManPhoto.setVisible(true);
 				down();
 			}
@@ -142,14 +142,14 @@ public class MenuController {
 			}
 			else if(selection == SOFTWARE_TYCOON)
 			{
-				clickerGamePhoto.setVisible(false);
+				softwareTycoonPhoto.setVisible(false);
 				superVacuumPhoto.setVisible(true);
 				up();
 			}
 			else if(selection == FISHER_MAN)
 			{
 				fisherManPhoto.setVisible(false);
-				clickerGamePhoto.setVisible(true);
+				softwareTycoonPhoto.setVisible(true);
 				up();
 			}
 			else if(selection == QUIT)
