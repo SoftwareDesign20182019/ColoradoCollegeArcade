@@ -1,5 +1,7 @@
 package Package;
 
+import SoftwareTycoon;
+
 /**
  * 
  * Class for the factory that switches to the user-selected game
