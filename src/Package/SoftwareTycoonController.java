@@ -25,7 +25,9 @@ public class SoftwareTycoonController extends TimerTask implements Initializable
 
 	private SoftwareTycoon game;
 	
-	private int dollars;
+	private static final int BASE_COMMIT_VALUE = 20;
+	
+	private int dollars = 3000;
 	private int score;
 	private int timeLeft = 300;
 	private int cyclesLeftInSecond = 100;
@@ -38,11 +40,11 @@ public class SoftwareTycoonController extends TimerTask implements Initializable
 	private double codeRate = 0;
 	
 	private double juniorDevPrice = 10;
-	private double juniorDeveloperSpeed = .1;
+	private double juniorDeveloperSpeed = .2;
 	int juniorDevelopers = 0;
 	
 	private double softwareDeveloperPrice = 50;
-	private double softwareDeveloperSpeed = .15;
+	private double softwareDeveloperSpeed = .5;
 	int softwareDevelopers = 0;
 	
 	private double designArchitectPrice = 250;
@@ -50,15 +52,15 @@ public class SoftwareTycoonController extends TimerTask implements Initializable
 	int designArchitects = 0;
 	
 	private double technicalLeadPrice = 1000;
-	private double technicalLeadSpeed = .3;
+	private double technicalLeadSpeed = 1;
 	int technicalLeads = 0;
 	
-	private double tenXDeveloperPrice = 7500;
-	private double tenXDeveloperSpeed = 1;
+	private double tenXDeveloperPrice = 3000;
+	private double tenXDeveloperSpeed = 2;
 	int tenXDevelopers = 0;
 
-	private double theScrumMasterPrice = 30000;
-	private double theScrumMasterSpeed = 2;
+	private double theScrumMasterPrice = 7000;
+	private double theScrumMasterSpeed = 3;
 	int theScrumMasters = 0;
 	
 	private static final int LINES_TO_COMMIT = 500;
@@ -238,8 +240,8 @@ public class SoftwareTycoonController extends TimerTask implements Initializable
 	 */
 	private void pushCommit()
 	{
-		dollars += (10 + architectModifier);
-		score += (10 + architectModifier);
+		dollars += (BASE_COMMIT_VALUE + architectModifier);
+		score += (BASE_COMMIT_VALUE + architectModifier);
 		codeProgress = 0;
 	}
 

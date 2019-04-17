@@ -61,9 +61,9 @@
       <Label fx:id="softwareDeveloperPriceLabel" layoutX="221.0" layoutY="252.0" text="Have 0,  making 0 lines per second - Price: $50.0" textFill="WHITE" />
       <Label fx:id="designArchitectPriceLabel" layoutX="221.0" layoutY="285.0" text="Have 0, increasing commit value by 0 - Price: $250.0" textFill="WHITE" />
       <Label fx:id="technicalLeadPriceLabel" layoutX="221.0" layoutY="318.0" text="Have 0, making 0 lines per second - Price: $1000.0" textFill="WHITE" />
-      <Label fx:id="tenXDeveloperPriceLabel" layoutX="221.0" layoutY="351.0" text="Have 0, making 0 lines per second - Price: $7500.0" textFill="WHITE" />
+      <Label fx:id="tenXDeveloperPriceLabel" layoutX="221.0" layoutY="351.0" text="Have 0, making 0 lines per second - Price: $3000.0" textFill="WHITE" />
       <Button fx:id="hireTheScrumMaster" layoutX="74.0" layoutY="379.0" mnemonicParsing="false" onAction="#hireTheScrumMaster" text="The Scrum Master" />
-      <Label fx:id="theScrumMasterPriceLabel" layoutX="221.0" layoutY="384.0" text="Have 0, making ??? lines per second - Price: $30000.0" textFill="WHITE" />
+      <Label fx:id="theScrumMasterPriceLabel" layoutX="221.0" layoutY="384.0" text="Have 0, making ??? lines per second - Price: $7000.0" textFill="WHITE" />
       <Label fx:id="timeRemaining" alignment="CENTER" layoutY="588.0" prefHeight="17.0" prefWidth="600.0" text="Time Remaining: 300" textAlignment="CENTER" textFill="RED">
          <font>
             <Font name="Silom" size="36.0" />
