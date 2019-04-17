@@ -261,6 +261,21 @@ public class JavelinController {
 		game.setGameToDone();
 	}
 	
+	/**
+	 * sets the controller score for testing purposes
+	 * @param score the score to set
+	 */
+	public void setControllerScore(int score) {
+		total = score;
+	}
+	
+	/**
+	 * sets the view score for testing purposes
+	 */
+	public void setViewScore() {
+		game.setScore(total);
+	}
+	
 
 
 }

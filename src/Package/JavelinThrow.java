@@ -86,4 +86,22 @@ public class JavelinThrow extends Application implements Game {
 		arcade.endGameToNameChoice(score);
 		primaryStage.close();
 	}
+	
+	/**
+	 * sets the score in the arcade for testing purposes
+	 * @param arcade the arcade to contact
+	 * @param score the score to set
+	 */
+	public void setArcadeScore(Arcade arcade) {
+		this.arcade = arcade;
+		this.arcade.setScore(score);
+	}
+	
+	/**
+	 * gets the score stored in the view for testing purposes
+	 * @return the score
+	 */
+	public int getViewScore() {
+		return score;
+	}
 }
