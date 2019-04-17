@@ -332,7 +332,7 @@ public class SuperVacuumController{
 					lives -= 1;
 					if (lives == 0)
 					{
-						labelLives.setText("Lives: "+lives);
+//						labelLives.setText("Lives: "+lives);
 						endGame();
 					}
 				}
