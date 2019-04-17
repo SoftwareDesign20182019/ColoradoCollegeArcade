@@ -27,7 +27,7 @@ public class SoftwareTycoonController extends TimerTask implements Initializable
 	
 	private int dollars;
 	private int score;
-	private int timeLeft = 3;
+	private int timeLeft = 300;
 	private int cyclesLeftInSecond = 100;
 	
 	

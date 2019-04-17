@@ -106,12 +106,12 @@ public class MenuController {
 			else if(selection == SUPER_VACUUM)
 			{
 				superVacuumPhoto.setVisible(false);
-				//				clickerGamePhoto.setVisible(true);
+				clickerGamePhoto.setVisible(true);
 				down();
 			}
 			else if(selection == SOFTWARE_TYCOON)
 			{
-				//				clickerGamePhoto.setVisible(false);
+				clickerGamePhoto.setVisible(false);
 				fisherManPhoto.setVisible(true);
 				down();
 			}
@@ -142,14 +142,14 @@ public class MenuController {
 			}
 			else if(selection == SOFTWARE_TYCOON)
 			{
-				//				clickerGamePhoto.setVisible(false);
+				clickerGamePhoto.setVisible(false);
 				superVacuumPhoto.setVisible(true);
 				up();
 			}
 			else if(selection == FISHER_MAN)
 			{
 				fisherManPhoto.setVisible(false);
-				//				clickerGamePhoto.setVisible(true);
+				clickerGamePhoto.setVisible(true);
 				up();
 			}
 			else if(selection == QUIT)

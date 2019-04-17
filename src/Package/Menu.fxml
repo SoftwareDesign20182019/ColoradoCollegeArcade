@@ -221,5 +221,10 @@
             <Image url="@FishermanPreview.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="clickerGamePhoto" fitHeight="234.0" fitWidth="234.0" layoutX="313.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@SoftwareTycoonPreview.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
