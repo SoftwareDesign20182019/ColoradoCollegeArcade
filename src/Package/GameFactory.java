@@ -24,9 +24,8 @@ public class GameFactory {
             	SuperVacuum superVacuum = new SuperVacuum();
             	return superVacuum;
             case Arcade.SOFTWARE_TYCOON:
-            	//ClickerIdle clickerIdle = new ClickerIdle(); currently in development, ignore!
-            	//return clickerIdle;
-            	return null;
+            	SoftwareTycoon softwareTycoon = new SoftwareTycoon();
+            	return softwareTycoon;
             case Arcade.FISHERMAN:
             	FishermanMain fisherman = new FishermanMain();
             	return fisherman;
