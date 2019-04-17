@@ -29,10 +29,9 @@ public class ClickerIdle extends Application implements Game {
 		primaryStage.show();
 	}
 
-	public int playGame(Stage stage, Arcade arcade) throws Exception {
+	public void playGame(Stage stage, Arcade arcade) throws Exception {
 		this.arcade = arcade;
 		start(stage);
-		return score;
 	}
 
 	public void setScore(int score) {

@@ -17,6 +17,11 @@ import java.util.TimerTask;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
+/**
+ * controller for fisherman class
+ * @author hrose
+ *
+ */
 public class FishermanController {
 	
 	private FishermanMain fishermanMain;
@@ -47,8 +52,14 @@ public class FishermanController {
 	
 	Timer timer = new Timer();
 	
+	/**
+	 * runs the game
+	 */
 	public void startGame() {
 		TimerTask task = new TimerTask() {
+			/**
+			 * runner method - sets fishBite
+			 */
 			public void run()
 			{
 				fishBite();
@@ -57,12 +68,19 @@ public class FishermanController {
 		timer.schedule(task, 10000l);
 	}
 	
+	/**
+	 * places the fish
+	 */
 	public void fishBite()
 	{
 		bob.setVisible(false);
 		fishOn = true;
 	}
 	
+	/**
+	 * method for the switching of fisherman views
+	 * @throws Exception for javaFX related exceptions
+	 */
 	public void catchFish() throws Exception
 	{
 		fisherman.toBack();
@@ -80,6 +98,10 @@ public class FishermanController {
 		endGame();
 	}
 	
+	/**
+	 * method for displaying end game screen
+	 * @throws Exception for JavaFX related exceptions
+	 */
 	public void endGame() throws Exception
 	{
 //		timer.cancel();
@@ -93,6 +115,10 @@ public class FishermanController {
 		done = true;
 	}
 	
+	/**
+	 * checks if fish is on line yet
+	 * @throws Exception for JavaFX related exception
+	 */
 	public void checkCatch() throws Exception {
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
@@ -115,12 +141,21 @@ public class FishermanController {
 	}
 	
 	@FXML
+	/**
+	 * helps the javaFX stage run
+	 * @param event the empty button push
+	 */
 	public void handleButtonPress(ActionEvent event)
 	{
 		
 	}
 	
 	@FXML
+	/**
+	 * method for catching and handling button presses
+	 * @param e the keyevent
+	 * @throws Exception
+	 */
 	public void handleKeyPress(KeyEvent e) throws Exception
 	{
 		if (e.getCode() == KeyCode.ENTER)
@@ -147,6 +182,10 @@ public class FishermanController {
 	}
 	
 	@FXML
+	/**
+	 * method for catching and handling button releases
+	 * @param e the keyevent
+	 */
 	public void handleKeyRelease(KeyEvent e)
 	{
 		if (e.getCode() == KeyCode.L)
@@ -155,7 +194,11 @@ public class FishermanController {
 			fisherman2.toBack();
 		}
 	}
-
+	
+	/**
+	 * feeds the view to the controller
+	 * @param fishermanMain the view to be fed in
+	 */
 	public void initData(FishermanMain fishermanMain) {
 		this.fishermanMain = fishermanMain;
 	}
