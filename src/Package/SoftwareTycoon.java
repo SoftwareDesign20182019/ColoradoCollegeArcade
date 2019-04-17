@@ -7,8 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.util.Random;
-
 /**
  * Class for the software tycoon game, sets the stage and returns the score and name
  * @author dhardwick
