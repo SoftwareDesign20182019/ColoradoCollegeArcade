@@ -1,7 +1,6 @@
 package Package;
 
 import javafx.stage.Stage;
-
 import java.util.HashMap;
 
 /**
@@ -11,6 +10,7 @@ import java.util.HashMap;
  *
  */
 public class Arcade {
+
 
 	@SuppressWarnings("unused")
 	private ArcadeMenu menu;
@@ -30,7 +30,7 @@ public class Arcade {
     public static final int JAVELIN_THROW = 1;
     public static final int RECTANGLE_MAN = 2;
     public static final int SUPER_VACUUM = 3;
-    public static final int CLICKER_GAME = 4;
+    public static final int SOFTWARE_TYCOON = 4;
 
 
 

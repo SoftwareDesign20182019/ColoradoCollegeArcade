@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.SoftwareTycoonController">
+   <children>
+      <Rectangle fx:id="juniorDeveloperPrice" arcHeight="5.0" arcWidth="5.0" fill="#2b2b2b" height="700.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Button fx:id="writeCode" layoutX="23.0" layoutY="74.0" mnemonicParsing="false" onAction="#writeCode" text="Write Code">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <font>
+            <Font name="Silom" size="13.0" />
+         </font></Button>
+      <Label fx:id="currentCash" layoutX="396.0" layoutY="71.0" text="Money: 0" textFill="GOLD">
+         <font>
+            <Font name="Silom" size="18.0" />
+         </font></Label>
+      <Label alignment="CENTER" prefHeight="17.0" prefWidth="600.0" text="Software Tycoon" textFill="#38a2e0">
+         <font>
+            <Font name="Silom" size="36.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <ProgressBar fx:id="linesComplete" layoutX="167.0" layoutY="74.0" prefWidth="200.0" progress="0.0" />
+      <Label fx:id="juniorDevPriceLabel" layoutX="221.0" layoutY="218.0" text="Have 0, making 0 lines per second - Price: $10.0" textFill="WHITE" />
+      <Button fx:id="hireJuniorDeveloper" layoutX="74.0" layoutY="213.0" mnemonicParsing="false" onAction="#hireJuniorDeveloper" text="Junior Developer" />
+      <Label fx:id="currentScore" alignment="CENTER" layoutY="638.0" prefHeight="17.0" prefWidth="600.0" text="Score: 0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="Silom" size="24.0" />
+         </font></Label>
+      <Label fx:id="currentCodeProgress" layoutX="197.0" layoutY="95.0" text="Code Progress: 0 / 150" textFill="WHITE">
+         <font>
+            <Font name="Silom" size="13.0" />
+         </font></Label>
+      <Label layoutX="221.0" layoutY="178.0" text="Hire Staff" textFill="#1bff13">
+         <font>
+            <Font name="Silom" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="hireSoftwareDeveloper" layoutX="74.0" layoutY="247.0" mnemonicParsing="false" onAction="#hireSoftwareDeveloper" text="Software Developer" />
+      <Button fx:id="hireDesignArchitect" layoutX="75.0" layoutY="280.0" mnemonicParsing="false" onAction="#hireDesignArchitect" text="Design Architect" />
+      <Button fx:id="hireTechnicalLead" layoutX="74.0" layoutY="313.0" mnemonicParsing="false" onAction="#hireTechnicalLead" text="Technical Lead" />
+      <Button fx:id="hireTenXDeveloper" layoutX="74.0" layoutY="346.0" mnemonicParsing="false" onAction="#hireTenXDeveloper" text="10x Developer" />
+      <Label fx:id="softwareDeveloperPriceLabel" layoutX="221.0" layoutY="252.0" text="Have 0,  making 0 lines per second - Price: $50.0" textFill="WHITE" />
+      <Label fx:id="designArchitectPriceLabel" layoutX="221.0" layoutY="285.0" text="Have 0, increasing commit value by 0 - Price: $250.0" textFill="WHITE" />
+      <Label fx:id="technicalLeadPriceLabel" layoutX="221.0" layoutY="318.0" text="Have 0, making 0 lines per second - Price: $1000.0" textFill="WHITE" />
+      <Label fx:id="tenXDeveloperPriceLabel" layoutX="221.0" layoutY="351.0" text="Have 0, making 0 lines per second - Price: $7500.0" textFill="WHITE" />
+      <Button fx:id="hireTheScrumMaster" layoutX="74.0" layoutY="379.0" mnemonicParsing="false" onAction="#hireTheScrumMaster" text="The Scrum Master" />
+      <Label fx:id="theScrumMasterPriceLabel" layoutX="221.0" layoutY="384.0" text="Have 0, making ??? lines per second - Price: $30000.0" textFill="WHITE" />
+      <Label fx:id="timeRemaining" alignment="CENTER" layoutY="588.0" prefHeight="17.0" prefWidth="600.0" text="Time Remaining: 300" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="Silom" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentCodeProgress1" alignment="CENTER" layoutY="476.0" prefHeight="18.0" prefWidth="606.0" text="Instructions: Welcome to Software Tycoon, to get started, press &quot;Write Code&quot;" textFill="#38a2e0">
+         <font>
+            <Font name="Silom" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentCodeProgress11" alignment="CENTER" layoutY="494.0" prefHeight="18.0" prefWidth="606.0" text="Until the &quot;Code Progress&quot; bar fills up. After each commit of the code, your money" textFill="#38a2e0">
+         <font>
+            <Font name="Silom" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentCodeProgress111" alignment="CENTER" layoutY="512.0" prefHeight="18.0" prefWidth="606.0" text="and score will increase. Hire staff to automate the clicking, and try to achieve the" textFill="#38a2e0">
+         <font>
+            <Font name="Silom" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentCodeProgress1111" alignment="CENTER" layoutY="530.0" prefHeight="18.0" prefWidth="606.0" text="highest possible score in the next 5 minutes. Good Luck!" textFill="#38a2e0">
+         <font>
+            <Font name="Silom" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

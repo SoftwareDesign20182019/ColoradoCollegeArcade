@@ -20,8 +20,6 @@ public class MenuController {
 
 	@FXML
 	private Rectangle selectorRec;
-	@FXML
-	private Label damon;
 
 	/**
 	 * simple constructor creates an instance of an arcade
@@ -55,16 +53,11 @@ public class MenuController {
 			if (choice == 5)
 				System.exit(0);
 			arcade.runNewGame(choice);
-			if(choice == 4)
-			{
-				damon.setText("patience. damon hasn't written this one yet.");
-			}
 		}
 		//DOWN
 		else if (e.getCode() == KeyCode.S && selection == 4) {
 			selectorRec.setY(230);
 			selection++;
-			damon.setText("");
 		} else if (e.getCode() == KeyCode.S && selection == 3 ) {
 			selectorRec.setY(200);
 			selection++;
@@ -87,7 +80,6 @@ public class MenuController {
 		} else if (e.getCode() == KeyCode.W && selection == 4 ) {
 			selectorRec.setY(170);
 			selection--;
-			damon.setText("");
 		} else if (e.getCode() == KeyCode.W && selection == 5) {
 			selectorRec.setY(200);
 			selection--;
