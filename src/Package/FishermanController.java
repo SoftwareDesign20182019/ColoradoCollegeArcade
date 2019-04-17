@@ -18,6 +18,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public class FishermanController {
+	
+	private FishermanMain fishermanMain;
+	
 	@FXML
 	Line line;
 	@FXML
@@ -37,6 +40,7 @@ public class FishermanController {
 
 	private boolean fishOn = false;
 	private boolean caught = false;
+	private boolean done = false;
 	int pulls;
 	int presses;
 	int score;
@@ -59,7 +63,7 @@ public class FishermanController {
 		fishOn = true;
 	}
 	
-	public void catchFish()
+	public void catchFish() throws Exception
 	{
 		fisherman.toBack();
 		fisherman2.toFront();
@@ -76,18 +80,20 @@ public class FishermanController {
 		endGame();
 	}
 	
-	public void endGame()
+	public void endGame() throws Exception
 	{
-		timer.cancel();
+//		timer.cancel();
 		Random random = new Random();
 		score = random.nextInt(80);
 		score += 20;
+		instructions.setText("Press Enter to Continue");
+		instructions.setVisible(true);
 		label.setText("Your Fish is " + score + "cm!");
-		label.toFront();
-		
+		label.setVisible(true);
+		done = true;
 	}
 	
-	public void checkCatch() {
+	public void checkCatch() throws Exception {
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
@@ -96,7 +102,12 @@ public class FishermanController {
 					{
 						caught = true;
 						fishOn = false;
-						catchFish();
+						try {
+							catchFish();
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				});
 			}
@@ -110,11 +121,11 @@ public class FishermanController {
 	}
 	
 	@FXML
-	public void handleKeyPress(KeyEvent e)
+	public void handleKeyPress(KeyEvent e) throws Exception
 	{
 		if (e.getCode() == KeyCode.ENTER)
 		{
-			label.toBack();
+			label.setVisible(false);
 			instructions.setVisible(false);
 			Random random = new Random();
 			pulls = random.nextInt(10);
@@ -122,7 +133,12 @@ public class FishermanController {
 			startGame();
 			checkCatch();
 		}
-		if (e.getCode() == KeyCode.F && fishOn)
+		if(e.getCode() == KeyCode.ENTER && done)
+		{
+			fishermanMain.setScore(score);
+			fishermanMain.setGameToDone();
+		}
+		if (e.getCode() == KeyCode.L && fishOn)
 		{
 			presses += 1;
 			fisherman2.toFront();
@@ -133,10 +149,14 @@ public class FishermanController {
 	@FXML
 	public void handleKeyRelease(KeyEvent e)
 	{
-		if (e.getCode() == KeyCode.F)
+		if (e.getCode() == KeyCode.L)
 		{
 			fisherman.toFront();
 			fisherman2.toBack();
 		}
+	}
+
+	public void initData(FishermanMain fishermanMain) {
+		this.fishermanMain = fishermanMain;
 	}
 }

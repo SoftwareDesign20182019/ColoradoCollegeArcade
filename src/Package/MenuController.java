@@ -116,12 +116,12 @@ public class MenuController {
 			else if(selection == CLICKER_GAME)
 			{
 //				clickerGamePhoto.setVisible(false);
-//				fisherManPhoto.setVisible(true);
+				fisherManPhoto.setVisible(true);
 				down();
 			}
 			else if(selection == FISHER_MAN)
 			{
-//				fisherManPhoto.setVisible(false);
+				fisherManPhoto.setVisible(false);
 				down();
 			}
 			else if(selection == QUIT)
@@ -151,13 +151,13 @@ public class MenuController {
 			}
 			else if(selection == FISHER_MAN)
 			{
-//				fisherManPhoto.setVisible(false);
+				fisherManPhoto.setVisible(false);
 //				clickerGamePhoto.setVisible(true);
 				up();
 			}
 			else if(selection == QUIT)
 			{
-//				fisherManPhoto.setVisible(true);
+				fisherManPhoto.setVisible(true);
 				up();
 			}
 		}

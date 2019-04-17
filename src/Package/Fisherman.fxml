@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" onKeyPressed="#handleKeyPress" onKeyReleased="#handleKeyRelease" prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Package.FishermanController">
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" onKeyPressed="#handleKeyPress" onKeyReleased="#handleKeyRelease" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.FishermanController">
    <children>
       <ImageView fx:id="fisherman2" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" x="-6.0" y="250.0">
          <image>
@@ -58,12 +57,12 @@
       </Circle>
       <Label fx:id="label" alignment="CENTER" prefHeight="80.0" prefWidth="600.0" text="Press Enter to Fish">
          <font>
-            <Font name="Aldrich" size="23.0" />
+            <Font name="Silom" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="instructions" alignment="CENTER" layoutY="80.0" prefHeight="80.0" prefWidth="600.0" text="Wait for the bob to dissapear underwater, then tap F repeatedly to catch the fish">
+      <Label fx:id="instructions" alignment="CENTER" layoutY="80.0" prefHeight="80.0" prefWidth="600.0" text="Wait for the bob to dissapear underwater, then tap L repeatedly to catch the fish">
          <font>
-            <Font name="Aldrich" size="13.0" />
+            <Font name="Silom" size="13.0" />
          </font>
       </Label>
    </children>

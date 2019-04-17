@@ -27,6 +27,9 @@ public class GameFactory {
             	//ClickerIdle clickerIdle = new ClickerIdle(); currently in development, ignore!
             	//return clickerIdle;
             	return null;
+            case Arcade.FISHERMAN:
+            	FishermanMain fisherman = new FishermanMain();
+            	return fisherman;
             default:
                 return null;
         }

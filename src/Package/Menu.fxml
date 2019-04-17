@@ -216,5 +216,10 @@
             <Image url="@RectangleManPreview.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="fisherManPhoto" fitHeight="234.0" fitWidth="234.0" layoutX="313.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@FishermanPreview.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
