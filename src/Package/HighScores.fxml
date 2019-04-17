@@ -307,7 +307,7 @@
       <Line endX="500.0" endY="575.0" startX="100.0" startY="575.0" stroke="#2b2b2b" strokeWidth="7.0" />
       <Line endX="370.0" endY="657.0" fill="#29292900" layoutX="10.0" layoutY="10.0" startX="211.0" startY="657.0" stroke="#29292933" strokeWidth="7.0" />
       <Button layoutX="798.0" layoutY="503.0" mnemonicParsing="false" onAction="#handleButtonPress" text="Button" />
-      <Label fx:id="continueInstructions" alignment="CENTER" layoutY="475.0" prefHeight="26.0" prefWidth="601.0" textFill="#f59943">
+      <Label fx:id="continueInstructions" alignment="CENTER" layoutY="483.0" prefHeight="26.0" prefWidth="601.0" textFill="#f59943">
          <font>
             <Font name="Silom" size="18.0" />
          </font>
