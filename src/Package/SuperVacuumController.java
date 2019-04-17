@@ -475,7 +475,6 @@ public class SuperVacuumController{
 	{
 		if (e.getCode() == KeyCode.ENTER && gameEnded)
 		{
-			//TODO ELLA THIS IS YOUR SECTION
 			superVacuumMain.setScore(score);
 			superVacuumMain.setGameToDone();
 		}

@@ -1,12 +1,7 @@
 package Package;
 
-import java.io.File;
-import java.io.FileInputStream;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -24,12 +19,12 @@ public class MenuController {
 	private Arcade arcade;
 	private int cursor = 0;
 	private int diff = 40;
-	private static final int JAVELIN_THROW = 1;
-	private static final int RECTANGLE_MAN  = 2;
-	private static final int SUPER_VACUUM   = 3;
-	private static final int CLICKER_GAME   = 4;
-	private static final int FISHER_MAN     = 5;
-	private static final int QUIT           = 6;
+	private static final int JAVELIN_THROW   = 1;
+	private static final int RECTANGLE_MAN   = 2;
+	private static final int SUPER_VACUUM    = 3;
+	private static final int SOFTWARE_TYCOON = 4;
+	private static final int FISHER_MAN      = 5;
+	private static final int QUIT            = 6;
 
 	@FXML
 	private Rectangle selectorRec;
@@ -43,22 +38,21 @@ public class MenuController {
 	private ImageView clickerGamePhoto;
 	@FXML
 	private ImageView fisherManPhoto;
-	
+
 
 	/**
 	 * simple constructor creates an instance of an arcade
 	 */
 	public MenuController() {
 		arcade = new Arcade();
-//		photo.setVisible(false);
 	}
-	
+
 	public void down() {
 		cursor += diff;
 		selectorRec.setY(cursor);
 		selection++;
 	}
-	
+
 	public void up() {
 		cursor -= diff;
 		selectorRec.setY(cursor);
@@ -110,12 +104,12 @@ public class MenuController {
 			else if(selection == SUPER_VACUUM)
 			{
 				superVacuumPhoto.setVisible(false);
-//				clickerGamePhoto.setVisible(true);
+				//				clickerGamePhoto.setVisible(true);
 				down();
 			}
-			else if(selection == CLICKER_GAME)
+			else if(selection == SOFTWARE_TYCOON)
 			{
-//				clickerGamePhoto.setVisible(false);
+				//				clickerGamePhoto.setVisible(false);
 				fisherManPhoto.setVisible(true);
 				down();
 			}
@@ -143,16 +137,16 @@ public class MenuController {
 				rectangleManPhoto.setVisible(true);
 				up();
 			}
-			else if(selection == CLICKER_GAME)
+			else if(selection == SOFTWARE_TYCOON)
 			{
-//				clickerGamePhoto.setVisible(false);
+				//				clickerGamePhoto.setVisible(false);
 				superVacuumPhoto.setVisible(true);
 				up();
 			}
 			else if(selection == FISHER_MAN)
 			{
 				fisherManPhoto.setVisible(false);
-//				clickerGamePhoto.setVisible(true);
+				//				clickerGamePhoto.setVisible(true);
 				up();
 			}
 			else if(selection == QUIT)
@@ -163,8 +157,8 @@ public class MenuController {
 		}
 	}
 
-	public void initData(ArcadeMenu arcadeMenu2) {
-		this.arcadeMenu = arcadeMenu2;
-		
+	public void initData(ArcadeMenu arcadeMenu) {
+		this.arcadeMenu = arcadeMenu;
+
 	}
 }

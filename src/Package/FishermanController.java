@@ -8,8 +8,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 import javafx.util.Duration;
 import java.util.Random;
 import java.util.Timer;
@@ -17,6 +15,11 @@ import java.util.TimerTask;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
+/**
+ * Controller class for the fisherman game
+ * @author ellaneurohr
+ *
+ */
 public class FishermanController {
 	
 	private FishermanMain fishermanMain;
@@ -47,6 +50,9 @@ public class FishermanController {
 	
 	Timer timer = new Timer();
 	
+	/**
+	 * Starts the game
+	 */
 	public void startGame() {
 		TimerTask task = new TimerTask() {
 			public void run()
@@ -57,12 +63,19 @@ public class FishermanController {
 		timer.schedule(task, 10000l);
 	}
 	
+	/**
+	 * The fish biting the bob
+	 */
 	public void fishBite()
 	{
 		bob.setVisible(false);
 		fishOn = true;
 	}
 	
+	/**
+	 * The animation of the fish being caught
+	 * @throws Exception
+	 */
 	public void catchFish() throws Exception
 	{
 		fisherman.toBack();
@@ -80,9 +93,12 @@ public class FishermanController {
 		endGame();
 	}
 	
+	/**
+	 * Does end of game displays 
+	 * @throws Exception
+	 */
 	public void endGame() throws Exception
 	{
-//		timer.cancel();
 		Random random = new Random();
 		score = random.nextInt(80);
 		score += 20;
@@ -93,6 +109,10 @@ public class FishermanController {
 		done = true;
 	}
 	
+	/**
+	 * Checks to see if a fish has been caught
+	 * @throws Exception
+	 */
 	public void checkCatch() throws Exception {
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
@@ -104,22 +124,25 @@ public class FishermanController {
 						fishOn = false;
 						try {
 							catchFish();
-						} catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+						} catch (Exception e) {}
 					}
 				});
 			}
 		}, 0l,50l);
 	}
 	
+	/**
+	 * buttonPress handler for pressing the button in menu view
+	 * @param event the clicking of the button
+	 */
 	@FXML
-	public void handleButtonPress(ActionEvent event)
-	{
-		
-	}
+	public void handleButtonPress(ActionEvent event){}
 	
+	/**
+	 * keyPress handler for scrolling through various game options
+	 * in the game menu
+	 * @param e the keyEvent (pressing of a key)
+	 */
 	@FXML
 	public void handleKeyPress(KeyEvent e) throws Exception
 	{
@@ -146,6 +169,11 @@ public class FishermanController {
 		}
 	}
 	
+	/**
+	 * Handles key releases and does different actions based on the key released and the state
+	 * @param e - the key event
+	 * @throws Exception 
+	 */
 	@FXML
 	public void handleKeyRelease(KeyEvent e)
 	{
@@ -156,6 +184,11 @@ public class FishermanController {
 		}
 	}
 
+	/**
+	 * Allows the main SuperVacuum class to be passed in to this controller
+	 * Necessary for backwards retrieval of data
+	 * @param highScore - the instance of the SuperVacuum class
+	 */
 	public void initData(FishermanMain fishermanMain) {
 		this.fishermanMain = fishermanMain;
 	}
