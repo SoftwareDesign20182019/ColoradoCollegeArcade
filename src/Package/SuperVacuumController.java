@@ -64,6 +64,7 @@ public class SuperVacuumController{
 	private boolean loseLife = true;
 	private boolean gameEnded = false;
 	private SuperVacuum superVacuumMain;
+	private int instruction = 1;
 
 	Timer timer = new Timer();
 	Timer reachTimer = new Timer();
@@ -475,11 +476,15 @@ public class SuperVacuumController{
 	{
 		if (e.getCode() == KeyCode.ENTER && gameEnded)
 		{
-			//TODO ELLA THIS IS YOUR SECTION
 			superVacuumMain.setScore(score);
 			superVacuumMain.setGameToDone();
 		}
-		if (e.getCode() == KeyCode.ENTER && !gameStarted)
+		if (e.getCode() == KeyCode.ENTER && !gameStarted && instruction == 1)
+		{
+			startText.setText("Use A and D to move back and forth and J and L to extend your vacuum arm (Press Enter to Start)");
+			instruction++;
+		}
+		if (e.getCode() == KeyCode.ENTER && !gameStarted && instruction == 2)
 		{
 			gameStarted = true;
 			canReach = true;

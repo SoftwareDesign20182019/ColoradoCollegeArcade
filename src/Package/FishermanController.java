@@ -8,8 +8,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 import javafx.util.Duration;
 import java.util.Random;
 import java.util.Timer;
@@ -18,7 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 /**
- * controller for fisherman class
+ * controller for fisherman game
  * @author hrose
  *
  */
@@ -53,7 +51,7 @@ public class FishermanController {
 	Timer timer = new Timer();
 	
 	/**
-	 * runs the game
+	 * Starts the game
 	 */
 	public void startGame() {
 		TimerTask task = new TimerTask() {
@@ -69,7 +67,7 @@ public class FishermanController {
 	}
 	
 	/**
-	 * places the fish
+	 * The fish biting the bob
 	 */
 	public void fishBite()
 	{
@@ -99,12 +97,11 @@ public class FishermanController {
 	}
 	
 	/**
-	 * method for displaying end game screen
-	 * @throws Exception for JavaFX related exceptions
+	 * Does end of game displays 
+	 * @throws Exception
 	 */
 	public void endGame() throws Exception
 	{
-//		timer.cancel();
 		Random random = new Random();
 		score = random.nextInt(80);
 		score += 20;
@@ -130,10 +127,7 @@ public class FishermanController {
 						fishOn = false;
 						try {
 							catchFish();
-						} catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+						} catch (Exception e) {}
 					}
 				});
 			}

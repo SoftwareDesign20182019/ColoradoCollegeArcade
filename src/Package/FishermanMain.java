@@ -1,7 +1,5 @@
 package Package;
 
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,8 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * view class for fisherman game
- * @author hrose
+ * Implementation of the game interface for the fisherman game
+ * @author ellaneurohr
  *
  */
 public class FishermanMain extends Application implements Game {

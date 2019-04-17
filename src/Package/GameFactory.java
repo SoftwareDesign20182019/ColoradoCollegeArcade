@@ -23,7 +23,7 @@ public class GameFactory {
             case Arcade.SUPER_VACUUM:
             	SuperVacuum superVacuum = new SuperVacuum();
             	return superVacuum;
-            case Arcade.CLICKER_GAME:
+            case Arcade.SOFTWARE_TYCOON:
             	//ClickerIdle clickerIdle = new ClickerIdle(); currently in development, ignore!
             	//return clickerIdle;
             	return null;
