@@ -200,7 +200,7 @@
          <image>
             <Image url="@SuperVacuumPreview.png" />
          </image></ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ee00ff00" height="240.0" stroke="#ee00ff" strokeType="INSIDE" strokeWidth="3.0" translateX="310.0" translateY="100.0" width="240.0" />
+      <Rectangle fx:id="selector" arcHeight="5.0" arcWidth="5.0" fill="#ee00ff00" height="240.0" stroke="#ee00ff" strokeType="INSIDE" strokeWidth="3.0" translateX="310.0" translateY="100.0" width="240.0" />
       <Label text="Fisher Man" textFill="WHITE" translateX="50.0" translateY="260.0">
          <font>
             <Font name="Silom" size="25.0" />

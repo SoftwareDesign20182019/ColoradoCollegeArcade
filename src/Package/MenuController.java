@@ -38,6 +38,8 @@ public class MenuController {
 	private ImageView clickerGamePhoto;
 	@FXML
 	private ImageView fisherManPhoto;
+	@FXML
+	private Rectangle selector;
 
 
 	/**
@@ -116,6 +118,7 @@ public class MenuController {
 			else if(selection == FISHER_MAN)
 			{
 				fisherManPhoto.setVisible(false);
+				selector.setVisible(false);
 				down();
 			}
 			else if(selection == QUIT)
@@ -152,6 +155,7 @@ public class MenuController {
 			else if(selection == QUIT)
 			{
 				fisherManPhoto.setVisible(true);
+				selector.setVisible(true);
 				up();
 			}
 		}
