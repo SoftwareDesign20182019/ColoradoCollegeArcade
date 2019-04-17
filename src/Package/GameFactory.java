@@ -1,7 +1,5 @@
 package Package;
 
-import SoftwareTycoon;
-
 /**
  * 
  * Class for the factory that switches to the user-selected game
@@ -28,6 +26,9 @@ public class GameFactory {
             case Arcade.SOFTWARE_TYCOON:
             	SoftwareTycoon softwareTycoon = new SoftwareTycoon();
             	return softwareTycoon;
+            case Arcade.FISHERMAN:
+            	FishermanMain fisherman = new FishermanMain();
+            	return fisherman;
             default:
                 return null;
         }

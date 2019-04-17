@@ -37,14 +37,12 @@ public class RectangleMan extends Application implements Game{
 	 * Gets called from the main arcade class
 	 * @param stage - the new stage for this game
 	 * @param arcade - the instance of the arcade
-	 * @return int - the score
 	 * @throws Exception
 	 */
 	@Override
-	public int playGame(Stage stage, Arcade arcade) throws Exception {
+	public void playGame(Stage stage, Arcade arcade) throws Exception {
 		this.arcade = arcade;
 		start(stage);
-		return 0;
 	}
 
 	/**

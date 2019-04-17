@@ -27,10 +27,11 @@ public class Arcade {
 	private Stage gameStage;
     private String gameName;
     
-    public static final int JAVELIN_THROW = 1;
-    public static final int RECTANGLE_MAN = 2;
-    public static final int SUPER_VACUUM = 3;
+    public static final int JAVELIN_THROW 	= 1;
+    public static final int RECTANGLE_MAN 	= 2;
+    public static final int SUPER_VACUUM  	= 3;
     public static final int SOFTWARE_TYCOON = 4;
+    public static final int FISHERMAN 	  	= 5;
 
 
 

@@ -12,10 +12,9 @@ public interface Game {
 	 * Calls the start method for the stage
 	 * @param stage - the new stage for the game
 	 * @param arcade - the instance of the arcade, necessary for retrieving arcade data
-	 * @return int - the score of the game
 	 * @throws Exception
 	 */
-	int playGame(Stage stage, Arcade arcade) throws Exception;
+	void playGame(Stage stage, Arcade arcade) throws Exception;
 
 	/**
 	 * Returns the name of the game for display purposes

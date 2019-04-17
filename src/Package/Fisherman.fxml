@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" onKeyPressed="#handleKeyPress" onKeyReleased="#handleKeyRelease" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.FishermanController">
+   <children>
+      <ImageView fx:id="fisherman2" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" x="-6.0" y="250.0">
+         <image>
+            <Image url="@Fisherman2.png" />
+         </image>
+      </ImageView>
+      <Rectangle fill="#b3daff" height="600.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <Line fx:id="line2" endX="350.0" endY="530.0" startX="350.0" startY="500.0" />
+      <ImageView fx:id="fish" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="460.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Fish.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="button" layoutX="700.0" layoutY="700.0" mnemonicParsing="false" onAction="#handleButtonPress" text="Button" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#769e63" height="200.0" layoutY="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Ellipse fill="#3086d7" layoutX="341.0" layoutY="500.0" radiusX="250.0" radiusY="40.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fill="#90775c" height="30.0" stroke="BLACK" strokeType="INSIDE" width="10.0" x="20.0" y="410.0" />
+      <Rectangle fill="#90775c" height="30.0" stroke="BLACK" strokeType="INSIDE" width="10.0" x="30.0" y="420.0" />
+      <Rectangle fill="#90775c" height="30.0" layoutX="70.0" layoutY="-10.0" stroke="BLACK" strokeType="INSIDE" width="10.0" x="30.0" y="420.0" />
+      <Rectangle fill="#90775c" height="30.0" layoutX="70.0" layoutY="-10.0" stroke="BLACK" strokeType="INSIDE" width="10.0" x="20.0" y="410.0" />
+      <Rectangle fill="#90775c" height="40.0" layoutX="-7.0" layoutY="390.0" rotate="-81.1" stroke="BLACK" strokeType="INSIDE" width="150.0">
+         <rotationAxis>
+            <Point3D x="2.0" y="1.0" z="1.0" />
+         </rotationAxis>
+      </Rectangle>
+      <ImageView fx:id="fisherman" fitHeight="300.0" fitWidth="300.0" layoutX="-6.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Fisherman.png" />
+         </image>
+      </ImageView>
+      <Ellipse fill="#1f93ff00" layoutX="350.0" layoutY="500.0" radiusX="80.0" radiusY="15.0" stroke="#0032d7" strokeType="INSIDE" />
+      <Ellipse fill="#1f93ff00" layoutX="350.0" layoutY="500.0" radiusX="60.0" radiusY="10.0" stroke="#0032d7" strokeType="INSIDE" />
+      <Line fx:id="line" endX="350.0" endY="500.0" startX="227.0" startY="295.0" />
+      <Circle fx:id="bob" centerX="350.0" centerY="500.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.7403846153846154" startX="1.0">
+               <stops>
+                  <Stop color="#ff4c4c" />
+                  <Stop color="#ff4c4c" offset="0.007434944237918215" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <Label fx:id="label" alignment="CENTER" prefHeight="80.0" prefWidth="600.0" text="Press Enter to Fish">
+         <font>
+            <Font name="Silom" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="instructions" alignment="CENTER" layoutY="80.0" prefHeight="80.0" prefWidth="600.0" text="Wait for the bob to dissapear underwater, then tap L repeatedly to catch the fish">
+         <font>
+            <Font name="Silom" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
