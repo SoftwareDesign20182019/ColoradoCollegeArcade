@@ -45,7 +45,7 @@ public class ClickerIdle extends Application implements Game {
 	}
 
 	public String getName() {
-		return "ASS";
+		return "TST";
 	}
 
 	public boolean isGameDone() {

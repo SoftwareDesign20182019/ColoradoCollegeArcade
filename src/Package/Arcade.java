@@ -1,7 +1,6 @@
 package Package;
 
 import javafx.stage.Stage;
-
 import java.util.HashMap;
 
 /**
@@ -11,6 +10,7 @@ import java.util.HashMap;
  *
  */
 public class Arcade {
+
 
 	@SuppressWarnings("unused")
 	private ArcadeMenu menu;
