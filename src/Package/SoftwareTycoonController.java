@@ -19,10 +19,10 @@ import javafx.fxml.Initializable;
  * @author dhardwick
  *
  */
-public class ClickerController extends TimerTask implements Initializable {
+public class SoftwareTycoonController extends TimerTask implements Initializable {
 
 
-	private ClickerIdle game;
+	private SoftwareTycoon game;
 	
 	private int dollars;
 	private int score;
@@ -113,7 +113,7 @@ public class ClickerController extends TimerTask implements Initializable {
 		startUpdating();
 	}
 
-	public void initData(ClickerIdle game) {
+	public void initData(SoftwareTycoon game) {
 		this.game = game;
 	}
 
@@ -134,7 +134,11 @@ public class ClickerController extends TimerTask implements Initializable {
 		{
 			public void run(){
 				Platform.runLater(() -> {
-					refreshUpdate();
+					try {
+						refreshUpdate();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				});
 			}
 		};
@@ -144,12 +148,13 @@ public class ClickerController extends TimerTask implements Initializable {
 	/**
 	 * Continues the loop, updating the GUI and returning to the previous
 	 * method to wait until the next refresh
+	 * @throws Exception 
 	 */
-	public void refreshUpdate()
+	public void refreshUpdate() throws Exception
 	{
 		if(timeLeft == 0)
 		{
-			System.out.println("Time is up!"); //ELLA, just kick the player to the "enter name screen"
+			game.setGameToDone();
 		}
 		if(secondPassed())
 		{

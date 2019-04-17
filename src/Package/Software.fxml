@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.ClickerController">
+<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Package.SoftwareTycoonController">
    <children>
       <Rectangle fx:id="juniorDeveloperPrice" arcHeight="5.0" arcWidth="5.0" fill="#2b2b2b" height="700.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <Button fx:id="writeCode" layoutX="23.0" layoutY="74.0" mnemonicParsing="false" onAction="#writeCode" text="Write Code">
